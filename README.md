@@ -1,3 +1,11 @@
+###Notes
+
+1.Please work on your task directory and do not modify others codes!
+2.Every directory has its css file.Please use your directory css file to styling App!
+3.Work on dev branch!
+4.If you need anything inform me in trello!
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
