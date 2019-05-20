@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d617be46-7611-4572-9521-b98d1cc10cbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mockData/categories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mockData/platforms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mockData/products.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mockData/serverTypes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mockData/tickets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,11 +16,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mockData/products.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="49" column="2" lean-forward="true" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+            <state relative-caret-position="71">
+              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/mockData/tickets.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -64,6 +70,7 @@
         <option value="$PROJECT_DIR$/src/mockData/platforms.js" />
         <option value="$PROJECT_DIR$/src/mockData/serverTypes.js" />
         <option value="$PROJECT_DIR$/src/mockData/products.js" />
+        <option value="$PROJECT_DIR$/src/mockData/tickets.js" />
       </list>
     </option>
   </component>
@@ -142,12 +149,12 @@
       <workItem from="1555748029571" duration="3066000" />
       <workItem from="1555920310952" duration="52000" />
       <workItem from="1555920450260" duration="5451000" />
-      <workItem from="1558336285246" duration="5247000" />
+      <workItem from="1558336285246" duration="5489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25897000" />
+    <option name="totallyTimeSpent" value="26139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="7" />
@@ -403,8 +410,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mockData/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="49" column="2" lean-forward="true" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+        <state relative-caret-position="71">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mockData/tickets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
         </state>
       </provider>
     </entry>
