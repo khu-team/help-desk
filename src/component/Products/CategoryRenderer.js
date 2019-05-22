@@ -12,21 +12,30 @@ class CategoryRenderer extends React.Component{
         platformchek:false,
         typecheck:false,
         productitem:false
-    }
+    };
 
 
     handleChange=name=>event=>{
         this.setState({[name]: event.target.value});
         const fproducts=products.filter((product)=> product.category=this.state.category);
-        this.setState({products:fproducts})
+        this.setState({products:fproducts});
 
-        if(this.state.category===1)
-            this.setState({productitem:true})
-        else if(this.state.category===2)
-            this.setState({platformcheck:true})
-        else
-            this.setState({typecheck:true})
-    }
+        if(this.state.category===1) {
+            this.setState({productitem: true});
+            this.setState({typecheck: false});
+            this.setState({platfromitem: false})
+        }
+        else if(this.state.category===2) {
+            this.setState({platformcheck: true});
+            this.setState({typecheck: false});
+            this.setState({productitem: false})
+        }
+        else {
+            this.setState({typecheck: true});
+            this.setState({platformcheck: false});
+            this.setState({productitem: false});
+        }
+    };
 
     render() {
         return (
@@ -34,8 +43,9 @@ class CategoryRenderer extends React.Component{
                 <select onChange={this.handleChange('category')}>
                     {categories.map((cat)=>(<option value={cat.id}>{cat.name}</option>))}
                 </select>
+
             </div>
-        {this.state.platformchek && <playfromrenderer/>}
+
         );
     }
 }
