@@ -14,7 +14,39 @@ class AddTicket extends React.Component {
         answerStatus: false,
         submissionDateTime: 'not-set'
     }
-
+    
+    onFormChange = (event) => {
+      const { name, value } = event.target;
+      switch (name) {
+          case 'title':
+              this.setState(() => ({
+                  title: value
+              }));
+              break;
+          case 'product':
+              this.setState(() => ({
+                  product: value
+              }));
+              break;
+          case 'department':
+              this.setState(() => ({
+                  department: value
+              }));
+              break;
+          case 'priority':
+              this.setState(() => ({
+                  priority: value
+              }));
+              break;
+          case 'description':
+              this.setState(() => ({
+                  description: value
+              }));
+              break;
+          default:
+              return undefined;
+      }
+  }
 
   render() {
     return (
