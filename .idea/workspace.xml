@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d617be46-7611-4572-9521-b98d1cc10cbc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/component/Products/CategoryRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Products/CategoryRenderer.js" afterDir="false" />
-    </list>
+    <list default="true" id="d617be46-7611-4572-9521-b98d1cc10cbc" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -51,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/Products/CategoryRenderer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            <state relative-caret-position="352">
+              <caret line="43" column="51" lean-forward="true" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -128,9 +126,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-135" />
-    <option name="y" value="48" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-5" />
+    <option name="y" value="54" />
     <option name="width" value="1208" />
     <option name="height" value="648" />
   </component>
@@ -217,7 +215,7 @@
       <workItem from="1555920310952" duration="52000" />
       <workItem from="1555920450260" duration="5451000" />
       <workItem from="1558336285246" duration="6510000" />
-      <workItem from="1558513449923" duration="6471000" />
+      <workItem from="1558513449923" duration="6616000" />
     </task>
     <task id="LOCAL-00001" summary="category renderer done">
       <created>1558519535055</created>
@@ -230,11 +228,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33631000" />
+    <option name="totallyTimeSpent" value="33776000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="35" width="1208" height="648" extended-state="0" />
-    <editor active="true" />
+    <frame x="-5" y="54" width="1208" height="648" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2846154" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -499,8 +496,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/Products/CategoryRenderer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        <state relative-caret-position="352">
+          <caret line="43" column="51" lean-forward="true" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
