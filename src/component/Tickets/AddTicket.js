@@ -3,6 +3,19 @@ import { products } from "../../mockData/products";
 import { departments } from "../../mockData/departments";
 
 class AddTicket extends React.Component {
+
+    state = {
+        costumer: undefined,
+        title: '',
+        product: 1,
+        department: 1,
+        priority: 'MEDIUM',
+        description: '',
+        answerStatus: false,
+        submissionDateTime: 'not-set'
+    }
+
+
   render() {
     return (
       <React.Fragment>
