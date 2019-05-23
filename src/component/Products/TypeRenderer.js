@@ -1,5 +1,4 @@
 import React from 'react';
-import {products} from '../../mockData/products';
 import {serverTypes} from "../../mockData/serverTypes";
 
 
@@ -11,7 +10,7 @@ class TypeRenderer extends React.Component {
 
     handleChange =name=>event =>{
         this.setState({[name]:event.target.value});
-        const nproducts=products.filter((product) => product.type= this.state.type);
+        const nproducts=this.props.products.filter((product) => product.type == this.state.type);
         this.setState({products:nproducts});
 
     };
@@ -21,6 +20,7 @@ class TypeRenderer extends React.Component {
             <div>
                 <div>
                     <select onChange={this.handleChange('type')}>
+                        <option selected hidden>انتخاب</option>
                         {serverTypes.map((type)=>(<option value={type.id}>{type.name}</option>))}
                     </select>
                 </div>

@@ -13,20 +13,28 @@ class CategoryRenderer extends React.Component{
     };
 
 
-    handleChange=name=>event=>{
-        this.setState({[name]: event.target.value});
-        const fproducts=products.filter((product)=> product.category=this.state.category);
-        this.setState({products:fproducts});
+    handleChange = name => event => {
+        event.persist()
+        this.setState(() => ({ [name]: event.target.value }),
+            this.setState((state) => {
+                    const fproducts = products.filter((product) => product.category == state.category);
+                    return ({ products: fproducts });
+                },
+                () => console.log(this.state.products)
+            )
+        );
+
     };
 
     render() {
         return (
             <div>
-                <select onChange={this.handleChange('category')}>
-                    {categories.map((cat)=>(<option value={cat.id}>{cat.name}</option>))}
+                <select value={this.state.category} onChange={this.handleChange('category')}>
+                    <option key={5} selected hidden >نوع محصول</option>
+                    {categories.map((cat)=>(<option key={cat.id} value={cat.id}>{cat.name}</option>))}
                 </select>
-                {this.state.category==2 && <PlatformRenderer/>}
-                {this.state.category==3 && <TypeRenderer/>}
+                {this.state.category==2 && <PlatformRenderer products={this.state.products}/>}
+                {this.state.category==3 && <TypeRenderer products={this.state.products}/>}
             </div>
 
         );
