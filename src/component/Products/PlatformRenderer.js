@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {platforms} from '../../mockData/platforms';
+import ProductTable from "./ProductTable";
 
 
 class PlatformRenderer extends Component {
@@ -18,10 +19,11 @@ class PlatformRenderer extends Component {
         return (
             <div>
               <div>
-            <select onChange={this.handleChange('Platform')}>
+            <select  onChange={this.handleChange('Platform') }>
                 <option selected hidden >نوع پلتفرم</option>
                 {platforms.map((plat)=>(<option value={plat.id}>{plat.name}</option>))}
             </select>
+                  <ProductTable data={this.state.products}/>
                 </div>
         </div>
 
