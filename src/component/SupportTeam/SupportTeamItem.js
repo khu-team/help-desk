@@ -5,6 +5,13 @@ export const SupportTeamItem = ({fullName,email,phoneNumber,status,department,ro
         <table>
             <tbody>
             <tr>
+    
+                <th>وضعیت </th>
+                <th>{phoneNumber} </th>
+                <th>{email} </th>
+                <th>انتظار تکمیل</th>
+                <th>انتظار تکمیل</th>
+                <th>{fullName} </th>
 
             </tr>
 
