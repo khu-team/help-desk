@@ -3,7 +3,7 @@ import {cityRenderer} from '../../component/Costumers/City Render'
 import {Status} from '../../component/Costumers/Status Costumer'
 export const CostumerItem = ({ fullName, city, id,status}) => (
     <div > 
-     <table class="GeneratedTable">
+     <table class="GeneratedTable size">
   <tbody>
     <tr>
     

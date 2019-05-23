@@ -24,4 +24,6 @@ table.GeneratedTable {
   table.GeneratedTable thead {
     background-color: #61af5a;
   }
-
+.size{
+ font-size: 20px;
+}
