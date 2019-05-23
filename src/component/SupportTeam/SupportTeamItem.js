@@ -1,12 +1,12 @@
 import React from 'react';
 
-export const SupportTeamItem = ({fullName,email,phoneNumber,status,department,role}) => (
+export const SupportTeamItem = ({fullName,email,phoneNumber,status,department,role,id}) => (
     <div >
         <table>
             <tbody>
             <tr>
     
-                <th>وضعیت </th>
+                <th>{(status===true) ? 'فعال':'غیرفعال'}</th>
                 <th>{phoneNumber} </th>
                 <th>{email} </th>
                 <th>انتظار تکمیل</th>
