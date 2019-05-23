@@ -1,4 +1,4 @@
-import React from {Cotumerslist}'react';
+import React from 'react';
 //import './costomer.js';
 //import './src/App.js';
 class city extends React .component{
@@ -39,7 +39,7 @@ class city extends React .component{
                 <option value="active">active</option>
                 <option value="notactive">notactive</option>
             </select>
-            <button onclick={this.handleSubmit}>Submit</button>
+            <butto n onclick={this.handleSubmit}>Submit</button>
             <hr/>
              {this.state.reports.map((costomer) => (
                 <ul key={user.id}>
