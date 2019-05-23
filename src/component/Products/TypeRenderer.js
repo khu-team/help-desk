@@ -8,11 +8,9 @@ class TypeRenderer extends React.Component {
         products:[]
     };
 
-    handleChange =name=>event =>{
-        this.setState({[name]:event.target.value});
-        const nproducts=this.props.products.filter((product) => product.type == this.state.type);
-        this.setState({products:nproducts});
-
+    handleChange = name => event => {
+        const fproducts = this.props.products.filter((product) => product.type == event.target.value);
+        this.setState({products:fproducts})
     };
 
     render() {

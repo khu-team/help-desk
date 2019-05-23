@@ -4,6 +4,7 @@ import {products} from "../../mockData/products";
 import PlatformRenderer from './PlatformRenderer';
 import TypeRenderer from "./TypeRenderer";
 
+
 class CategoryRenderer extends React.Component{
 
 
@@ -14,16 +15,9 @@ class CategoryRenderer extends React.Component{
 
 
     handleChange = name => event => {
-        event.persist()
-        this.setState(() => ({ [name]: event.target.value }),
-            this.setState((state) => {
-                    const fproducts = products.filter((product) => product.category == state.category);
-                    return ({ products: fproducts });
-                },
-                () => console.log(this.state.products)
-            )
-        );
-
+        this.setState({[name]:event.target.value});
+        const fproducts = products.filter((product) => product.category == event.target.value);
+        this.setState({products:fproducts})
     };
 
     render() {
@@ -33,8 +27,8 @@ class CategoryRenderer extends React.Component{
                     <option key={5} selected hidden >نوع محصول</option>
                     {categories.map((cat)=>(<option key={cat.id} value={cat.id}>{cat.name}</option>))}
                 </select>
-                {this.state.category==2 && <PlatformRenderer products={this.state.products}/>}
-                {this.state.category==3 && <TypeRenderer products={this.state.products}/>}
+                {this.state.category==2 && this.state.products.length > 0 && <PlatformRenderer products={this.state.products}/>}
+                {this.state.category==3 && this.state.products.length > 0 && <TypeRenderer products={this.state.products}/>}
             </div>
 
         );
