@@ -25,6 +25,7 @@ class App extends React.Component {
                     <Route path="/add-product" component={AddProduct}/>
                     <Route path="/tickets" component={TicketsList}/>
                     <Route path="/add-ticket" component={AddTicket}/>
+
                 </Switch>
             </BrowserRouter>
         );
