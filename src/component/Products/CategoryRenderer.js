@@ -1,13 +1,13 @@
 import React from 'react';
 import {categories} from "../../mockData/categories";
 import {products} from "../../mockData/products";
-
+import PlatformRenderer from './PlatformRenderer';
 
 class CategoryRenderer extends React.Component{
 
 
     state={
-        category:'',
+        category:0,
         products:[],
         platformchek:false,
         typecheck:false,
@@ -43,7 +43,7 @@ class CategoryRenderer extends React.Component{
                 <select onChange={this.handleChange('category')}>
                     {categories.map((cat)=>(<option value={cat.id}>{cat.name}</option>))}
                 </select>
-
+                {this.state.category==2 && <PlatformRenderer/>}
             </div>
 
         );
