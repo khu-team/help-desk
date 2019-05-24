@@ -1,24 +1,38 @@
 import React from 'react';
-import ProductItem from "./ProductItem";
-import './style.css';
+
 
 class ProductTable extends React.Component{
 
 
+    renderTableData() {
+        return this.props.data.map((product,index) => {
+            const { id, name, price , discountPercentage , newprice } = product ;
+            return (
+                <tr key={id}>
+                    <td>{id}</td>
+                    <td>{name}</td>
+                    <td>{price}</td>
+                    <td>{discountPercentage}</td>
+                    <td>{newprice}</td>
+                </tr>
+            )
+        })
+    }
+
     render() {
         return (
             <div>
-                <h1 id='title'></h1>
-                <table id="customers">
-                    
-                    <tr key={6}>
+                <table id='products'>
+                    <tbody>
+                    <tr>
                         <th>ID</th>
                         <th>نام محصول</th>
                         <th>قیمت</th>
-                        <th>درصد تخفیف</th>
+                        <th>تخفیف</th>
                         <th>قیمت با تخفیف</th>
                     </tr>
-                    
+                    {this.renderTableData()}
+                    </tbody>
                 </table>
             </div>
         )

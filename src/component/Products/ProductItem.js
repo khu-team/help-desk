@@ -3,44 +3,38 @@ import ProductTable from "./ProductTable";
 
 class ProductItem extends React.Component{
 
-    renderTableData() {
+    state={
+        products:[]
+    }
+
+    Show=()=> {
         var numeral = require('numeral');
-       
-        return this.props.data.map((product,index) => {
-           
+        const newproducts=this.state.products;
+
+        this.props.data.map((product) => {
+
             const num = numeral(product.price).format('0,0');
             const persent= product.discountPercentage/100;
             const nprice=product.price -persent*product.price;
-            const newprice=numeral(nprice).format('0,0');
-            const { id, name,  discountPercentage } = product ;
-            
-            return (
-                <div>
 
-               
-                    <tr key={id}>
-                    <td>{id}</td>
-                    <td>{name}</td>
-                    <td>{num}__</td>
-                    <td>{discountPercentage}___</td>
-                    <td>{newprice}</td>
-
-
-
-                </tr>
-
-
-                </div>
-               
-            )
-        })
+            const nproducts= {
+                 id:product.id,
+                 name:product.name,
+                 price:num,
+                 discountPercentage:product.discountPercentage,
+                 newprice : numeral(nprice).format('0,0')
+              };
+              newproducts.push(nproducts);
+        });
+        this.setState({products:newproducts});
+        console.log(this.state.products)
     }
 
 render() {
     return(
         <div>
-            <ProductTable/>
-            {this.renderTableData()}
+            <button onClick={this.Show}>نمایش</button>
+            {this.state.products.length > 0 && <ProductTable data={this.state.products}/>}
         </div>
     )
 }

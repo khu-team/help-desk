@@ -1,6 +1,5 @@
 import React from 'react';
 import {serverTypes} from "../../mockData/serverTypes";
-import ProductTable from "./ProductTable";
 import ProductItem from "./ProductItem";
 
 

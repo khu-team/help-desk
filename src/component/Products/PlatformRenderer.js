@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {platforms} from '../../mockData/platforms';
-import ProductTable from "./ProductTable";
 import ProductItem from "./ProductItem";
 
 

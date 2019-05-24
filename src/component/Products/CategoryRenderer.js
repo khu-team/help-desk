@@ -3,7 +3,6 @@ import {categories} from "../../mockData/categories";
 import {products} from "../../mockData/products";
 import PlatformRenderer from './PlatformRenderer';
 import TypeRenderer from "./TypeRenderer";
-import ProductTable from "./ProductTable";
 import ProductItem from "./ProductItem";
 
 
