@@ -29,13 +29,13 @@ const Website = () => {
                 <label>
                     Front-end languge: 
                 </label>
-                <input type="number"></input>
+                <input type="text"></input>
         </div>
         <div>
                 <label>
                     Back-end languge: 
                 </label>
-                <input type="number"></input>
+                <input type="text"></input>
         </div>
         </React.Fragment>
      );

@@ -1,20 +1,20 @@
 import React from 'react'
-const MobileApp = () => {
+const MobileApp = (props) => {
     return ( 
        <React.Fragment>
         <div>
         <label>
             CustomerId: 
         </label>
-        <input type="text"></input>
+        <input type="text" onChange={props.handleId} value={props.localState.customerId} />
         </div>
        <div>
         <label>
             Platform: 
         </label>
-        <select>
-            <option>Android</option>
-            <option>IOS</option>
+        <select onChange={props.handlePlatform} value={props.localState.platform}>
+            <option value="Android">Android</option>
+            <option value="IOS">IOS</option>
         </select>
         </div>
         </React.Fragment>
