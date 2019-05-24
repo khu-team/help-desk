@@ -133,7 +133,9 @@ header{
     .container-table100 {
     position: absolute;
     width: 100%;
-    min-height: 80%;
+    position: absolute;
+    top: 10%;
+    min-height: 90%;
     background:linear-gradient(#4158d0, #c850c0);
     display: flex;
     align-items: center;
@@ -270,6 +272,9 @@ header{
     }
 
     @media screen and (max-width: 992px) {
+    .container-table100{
+        top: 25%;
+    }
     table {
         display: block;
     }
