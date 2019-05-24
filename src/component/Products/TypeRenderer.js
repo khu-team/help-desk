@@ -5,7 +5,6 @@ import ProductTable from "./ProductTable";
 
 class TypeRenderer extends React.Component {
     state = {
-        type :0,
         products:[]
     };
 
@@ -22,7 +21,7 @@ class TypeRenderer extends React.Component {
                         <option selected hidden>انتخاب</option>
                         {serverTypes.map((type)=>(<option value={type.id}>{type.name}</option>))}
                     </select>
-                    <ProductTable data={this.state.products}/>
+                    {this.state.products.length > 0 && <ProductTable data={this.state.products}/>}
                 </div>
             </div>
 

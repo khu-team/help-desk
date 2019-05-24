@@ -23,7 +23,7 @@ class PlatformRenderer extends Component {
                 <option selected hidden >نوع پلتفرم</option>
                 {platforms.map((plat)=>(<option value={plat.id}>{plat.name}</option>))}
             </select>
-                  <ProductTable data={this.state.products}/>
+                  {this.state.products.length > 0 && <ProductTable data={this.state.products}/>}
                 </div>
         </div>
 
