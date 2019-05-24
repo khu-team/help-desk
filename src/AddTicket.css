@@ -1,0 +1,70 @@
+
+input{
+    display: inline;
+    width:86%;
+    font-family: inherit;
+    font-weight: inherit;
+     border-radius: 0.4rem; 
+    border:1px solid #999;
+    padding: .5em 2em;
+  }
+ 
+  
+  select{
+    padding: 2px;
+    margin: 2px;
+    font-family: inherit;
+  }
+
+  .Input-text:focus {
+    outline: none;
+    box-shadow: 0.2rem 0.8rem 1.6rem var(--colorPrimary600);
+  }
+
+.addTicket{
+        
+        margin-left:auto;
+        margin-right:auto;
+        width: 965px;
+        height: 450px;
+        padding:30px;
+        left: 50%;
+        border-radius: 10px;
+  
+        /* background: rgba(0, 0, 0, 0.4); */
+    
+}
+
+select{
+    border-radius: 5px;
+    margin-bottom: 5px;
+    width: 25%;
+    height: 30px;
+    font-size: 15px;
+    margin: 2px;
+
+}
+input,select,textarea,label{
+    margin:8px 3px;
+}
+textarea{
+    width: 92%;
+    padding:1em 2em;
+    border:1px solid #999;
+    border-radius: 10px;
+    height:200px;
+}
+button.button {
+    text-align: center;
+    background: blue;
+    color:#fff;
+    padding:.5em 2em;
+    border:none;
+    border-radius: 5px;
+    vertical-align: center;
+    font-family: 'IRANSans';
+}
+.label{
+    display: inline;
+    width: 10%;
+}

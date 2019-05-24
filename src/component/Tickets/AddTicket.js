@@ -98,29 +98,34 @@ class AddTicket extends React.Component {
         {this.state.descriptionError && <p>{this.state.descriptionError}</p>}
         <form className="addTicket" onSubmit={(event) => this.onSubmit(event)}>
           {/* input for title  */}
+          <div class="label">
+          <label htmlFor="title">عنوان :  </label></div>
           <input placeholder="عنوان" type="text" name="title" value={this.state.title} onChange={(event) => this.onFormChange(event)} />
-          {/* dropdown for product */}
-          <select name="product" value={this.state.product} onChange={(event) => this.onFormChange(event)} >
+          <br></br>{/* dropdown for product */}
+          <label htmlFor="product">محصول :  </label>
+          <select name="product" id="product" value={this.state.product} onChange={(event) => this.onFormChange(event)} >
             {
               products.map((product) => <option key={product.id} value={product.id}>{product.name}</option>)
             }
           </select>
+          <label htmlFor="dept">ساختمان : </label>
           {/* dropdown for department */}
-          <select name="department" value={this.state.department} onChange={(event) => this.onFormChange(event)}>
+          <select name="department" id="dept" value={this.state.department} onChange={(event) => this.onFormChange(event)}>
             {
               departments.map((department) => <option key={department.id} value={department.id}>{department.name}</option>)
             }
           </select>
           {/* dropdown for priority */}
-          <label htmlFor="priority">Priority</label>
+          <label htmlFor="priority">اولویت</label>
           <select name="priority" id="priority" value={this.state.priority} onChange={(event) => this.onFormChange(event)}>
-            <option value="HIGH">High</option>
-            <option value="MEDIUM">Medium</option>
-            <option value="LOW">Low</option>
+            <option value="HIGH">زیاد</option>
+            <option value="MEDIUM">متوسط</option>
+            <option value="LOW">کم</option>
           </select>
           {/* textArea for description */}
           <textarea placeholder="توضیحات" name="description" cols="30" rows="10" value={this.state.description} onChange={(event) => this.onFormChange(event)}></textarea>
-          <button>ثبت</button>
+          <br></br>
+                  <button class="button submit" type="submit"> ثبت </button>
         </form>
       </React.Fragment>
     )
