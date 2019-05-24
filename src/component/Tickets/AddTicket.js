@@ -16,7 +16,8 @@ class AddTicket extends React.Component {
     answerStatus: false,
     submissionDateTime: 'not-set',
     titleError: '',
-    descriptionError: ''
+    descriptionError: '',
+    successMessage: ''
   }
 
   onFormChange = (event) => {
@@ -25,7 +26,7 @@ class AddTicket extends React.Component {
       case 'title':
         this.setState(() => ({
           title: value,
-          titleError: ''
+          titleError: '',
         }));
         break;
       case 'product':
@@ -73,11 +74,11 @@ class AddTicket extends React.Component {
     }
     if (description.trim() !== '' && title.trim() !== '') {
       this.setState(() => ({
-        error: ''
+        error: '',
+        successMessage: 'درخواست با موفقیت ثبت شد'
       }));
-      console.log(`درخواست با موفقیت ثبت شد`,
-        `
-    costumer:${costumer},
+      console.log(
+        `costumer:${costumer},
     title:${title.trim()},
     product:${product},
     department:${department},
@@ -94,12 +95,12 @@ class AddTicket extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.titleError && <p>{this.state.titleError}</p>}
-        {this.state.descriptionError && <p>{this.state.descriptionError}</p>}
+        {this.state.titleError && <p className="addTicket__message addTicket__message--error">{this.state.titleError}</p>}
+        {this.state.descriptionError && <p className="addTicket__message addTicket__message--error">{this.state.descriptionError}</p>}
         <form className="addTicket" onSubmit={(event) => this.onSubmit(event)}>
           {/* input for title  */}
           <div class="label">
-          <label htmlFor="title">عنوان :  </label></div>
+            <label htmlFor="title">عنوان :  </label></div>
           <input placeholder="عنوان" type="text" name="title" value={this.state.title} onChange={(event) => this.onFormChange(event)} />
           <br></br>{/* dropdown for product */}
           <label htmlFor="product">محصول :  </label>
@@ -125,8 +126,9 @@ class AddTicket extends React.Component {
           {/* textArea for description */}
           <textarea placeholder="توضیحات" name="description" cols="30" rows="10" value={this.state.description} onChange={(event) => this.onFormChange(event)}></textarea>
           <br></br>
-                  <button class="button submit" type="submit"> ثبت </button>
+          <button class="button submit" type="submit"> ثبت </button>
         </form>
+        {this.state.successMessage && <p className="addTicket__message addTicket__message--success">{this.state.successMessage}</p>}
       </React.Fragment>
     )
   }
