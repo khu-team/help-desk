@@ -2,6 +2,7 @@ import React from 'react';
 import ProductRenderer from './ProductRenderer';
 import CostumerRenderer from './CostumerRenderer';
 import DepartmentRenderer from './DepartmentRenderer';
+import Like from './like';
 
 const TicketItem = (props) => (
 	<tr>
@@ -13,6 +14,7 @@ const TicketItem = (props) => (
 		<DepartmentRenderer departmentId={props.ticket.department} />
 		<td className="column7">{props.ticket.answerStatus}</td>
 		<td className="column82">{props.ticket.submissionDateTime}</td>
+		<Like/>
 	</tr>
 );
 

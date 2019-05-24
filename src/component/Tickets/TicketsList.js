@@ -1,12 +1,17 @@
 import React from 'react';
 import {tickets} from '../../mockData/tickets';
 import TicketItem from './TicketItem';
+import Like from './like';
+
+
 
 const TicketsList = () => (
+
+	
 	<React.Fragment>
 		<div>
 
-
+	
 		<header>
         <a href="#" className="logo11">Tickets</a>
 
@@ -29,7 +34,6 @@ const TicketsList = () => (
 
     </header>
 
-	
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -46,6 +50,7 @@ const TicketsList = () => (
 					<th className="column6">Department</th>
 					<th className="column7">AnswerStatus</th>
 					<th className="column8">SubmissionDateTime</th>
+					<th className="column9">Likes</th>
 				</tr>
 				</thead>
 				<tbody>
