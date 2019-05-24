@@ -29,20 +29,38 @@ const TicketsList = () => (
 
     </header>
 
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
 
-			<table border="2" cellPadding="10">
-				<tr>
-					<th>ID</th>
-					<th>Title</th>
-					<th>Priority</th>
-					<th>Costumer</th>
-					<th>Product</th>
-					<th>Department</th>
-					<th>AnswerStatus</th>
-					<th>SubmissionDateTime</th>
+			<table>
+				<thead>
+				<tr className="table100-head">
+					<th className="column1">ID</th>
+					<th className="column2">Title</th>
+					<th className="column3">Priority</th>
+					<th className="column4">Costumer</th>
+					<th className="column5">Product</th>
+					<th className="column6">Department</th>
+					<th className="column7">AnswerStatus</th>
+					<th className="column8">SubmissionDateTime</th>
 				</tr>
+				</thead>
+				<tbody>
 				{tickets.map((item) => (<TicketItem ticket={item} key={item.id} />))}
+				</tbody>
 			</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
 		</div>
 	</React.Fragment>
 );
