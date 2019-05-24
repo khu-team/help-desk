@@ -99,7 +99,7 @@ class AddTicket extends React.Component {
         {this.state.descriptionError && <p className="addTicket__message addTicket__message--error">{this.state.descriptionError}</p>}
         <form className="addTicket" onSubmit={(event) => this.onSubmit(event)}>
           {/* input for title  */}
-          <div class="label">
+          <div className="label">
             <label htmlFor="title">عنوان :  </label></div>
           <input placeholder="عنوان" type="text" name="title" value={this.state.title} onChange={(event) => this.onFormChange(event)} />
           <br></br>{/* dropdown for product */}
@@ -126,7 +126,7 @@ class AddTicket extends React.Component {
           {/* textArea for description */}
           <textarea placeholder="توضیحات" name="description" cols="30" rows="10" value={this.state.description} onChange={(event) => this.onFormChange(event)}></textarea>
           <br></br>
-          <button class="button submit" type="submit"> ثبت </button>
+          <button className="button submit" type="submit"> ثبت </button>
         </form>
         {this.state.successMessage && <p className="addTicket__message addTicket__message--success">{this.state.successMessage}</p>}
       </React.Fragment>
