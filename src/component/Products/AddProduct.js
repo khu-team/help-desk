@@ -6,8 +6,8 @@ import {categories} from '../../mockData/categories';
 class AddProduct extends Component {
     state = { 
         id: '',    
-        category: '',
-        categoryId: '',
+        category: 'وب سایت و پرتال',
+        categoryId: 1,
         error: '',
         mobileState: {
             customerId: '',
