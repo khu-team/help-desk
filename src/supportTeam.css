@@ -1,4 +1,26 @@
 
+table.Table  {
+
+    table-layout:fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-width: 1px;
+    border-style: solid;
+    text-align: right;
+
+}
+
+table.Table th{
+      border-width: 1px;
+      text-align: right;
+      border-style: solid;
+      border-color: lightskyblue;
+
+
+  }
+
+
+
 .row{
      display: flex;
      width:100%;
