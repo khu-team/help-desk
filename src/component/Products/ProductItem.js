@@ -19,13 +19,11 @@ class ProductItem extends React.Component{
 
                
                     <tr key={id}>
-                    <td>{id}</td>
-                    <td>{name}</td>
-                    <td>{num}__</td>
-                    <td>{discountPercentage}___</td>
-                    <td>{newprice}</td>
-
-
+                    <td> {id} </td>
+                    <td> {name} </td>
+                    <td> {num}__ </td>
+                    <td> {discountPercentage}___ </td>
+                    <td> {newprice} </td>
 
                 </tr>
 
