@@ -3,6 +3,7 @@ import Server from './Server';
 import Website from './Website';
 import MobileApp from './MobileApp'
 import {categories} from '../../mockData/categories';
+import '../../styeles/addproduct.css'
 class AddProduct extends Component {
     state = { 
         id: '',    
@@ -233,7 +234,7 @@ getCategoryFields = (categoryId)=>{
         e.preventDefault()
         if(this.state.categoryId === 2) {
             if(this.state.mobileState.customerId === '' || this.state.id === ''){
-                this.setState({error: 'please enter id and customer id'})
+                this.setState({error: 'لطفن ورودی های خود را اصلاح کنید'})
             }else{
                 let {mobileState, products} = this.state
                 const {id, categoryId,category} = this.state
@@ -254,7 +255,7 @@ getCategoryFields = (categoryId)=>{
             }
         }else if(this.state.categoryId === 1) {
             if(Object.values(this.state.websiteState).some(arg => arg === '')) {
-                this.setState({error: 'please check your inputs'})
+                this.setState({error: 'لطفن ورودی های خود را اصلاح کنید'})
             }else{
                 let {websiteState, products} = this.state
                 const {id, category, categoryId} = this.state
@@ -279,7 +280,7 @@ getCategoryFields = (categoryId)=>{
             }
         }else if(this.state.categoryId === 3) {
             if(Object.values(this.state.serverState).some(arg => arg === '')) {
-                this.setState({error: 'please check your inputs'})
+                this.setState({error: 'لطفن ورودی های خود را اصلاح کنید'})
             }else{
                 let {serverState, products} = this.state
                 const {id, category, categoryId} = this.state
@@ -308,14 +309,15 @@ getCategoryFields = (categoryId)=>{
     }
 
     render() { 
-        return (    
+        return ( 
+            <div className="form-div">   
             <form className="welcome">
-            <div>{this.state.error ? <p>{this.state.error}</p> : true}</div>
-            <div>
+            <div>{this.state.error ? <p className="error">{this.state.error}</p> : true}</div>
+            <div className="form-item">
              <label>ID:</label>   
             <input type="number" value={this.state.id} onChange={this.handleIdChange}></input>
             </div>
-            <div>
+            <div className="form-item">
             <label>Category: </label>                
             <select value={this.state.category} onChange={this.handelCategory}>
                 {categories.map((category=>(<option key={category.id} value={category.name} >{category.name}</option>)))}
@@ -325,9 +327,10 @@ getCategoryFields = (categoryId)=>{
             {this.getCategoryFields(this.state.categoryId)}
             </div>
             <div>
-            <button onClick={this.handleSubmit}>Submit</button>
+            <button className="add-product-button" onClick={this.handleSubmit}>ثبت</button>
            </div>
-            </form>    
+            </form> 
+            </div>   
             
          );
     }

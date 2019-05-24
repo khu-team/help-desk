@@ -2,13 +2,13 @@ import React from 'react'
 const MobileApp = (props) => {
     return ( 
        <React.Fragment>
-        <div>
+        <div className="form-item">
         <label>
             CustomerId: 
         </label>
         <input type="text" onChange={props.handleId} value={props.localState.customerId} />
         </div>
-       <div>
+       <div className="form-item">
         <label>
             Platform: 
         </label>
