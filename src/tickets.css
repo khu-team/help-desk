@@ -1,0 +1,114 @@
+
+header{
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    background: rgb(182, 230, 127);
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo11{
+    color: #069370;
+    height: 60px;
+    font-size: 36px;
+    line-height: 60px;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.navf{
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
+
+.navf ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navf ul li {
+    list-style: none;
+}
+
+.navf ul li a{
+    display: block;
+    margin: 10px 0 ;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #262626;
+}
+
+.navf ul li a.action,
+.navf ul li a:hover{
+    background: #069370;
+    color: #fff;
+    transition: 0.5s;
+}
+
+
+@media (max-width: 1200px)
+{
+    header{
+        margin: 20px;
+    }
+}
+
+
+@media (max-width: 760px)
+{
+    .menuuu{
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+        float: right;
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        color: #069370;
+    }
+
+    .menuuu::before{
+        
+        font-family: fontAwesome;
+        line-height: 40px;
+
+    }
+
+    .menuuu.active::before{
+        
+        font-family: fontAwesome;
+        line-height: 40px;
+
+    }
+
+
+    .navf{
+        display: none;
+    }
+
+    .navf.active{
+        display: block;
+        width: 100%;
+    }
+
+    .navf.active ul{
+        display: block;
+    }
+
+    .navf.active ul li a{
+        margin: 0;
+    }
+
+}
