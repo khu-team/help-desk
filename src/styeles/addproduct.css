@@ -53,3 +53,35 @@
 button:hover{
     cursor: pointer;
 }
+
+body{
+    back-ground-color:#205D76;
+    font-family:'Open Sans',sans-serif;
+}
+
+
+
+
+
+.Button-Submit{
+  font-family :sans-serif;
+  font-size:1.3rem;
+  border:none;
+  padding:6px 9px;
+  background: rgb(0, 128, 128);
+  color:#fff;
+  
+
+
+
+
+}
+
+.welcom{
+    font-size:50px;
+
+}
+
+
+
+ 
