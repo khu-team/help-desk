@@ -20,7 +20,7 @@ class PlatformRenderer extends Component {
         return (
             <div>
               <div>
-            <select  onChange={this.handleChange('Platform') }>
+            <select  className='select-show-renderer font-iran-sans'  onChange={this.handleChange('Platform') }>
                 <option selected hidden >نوع پلتفرم</option>
                 {platforms.map((plat)=>(<option value={plat.id}>{plat.name}</option>))}
             </select>

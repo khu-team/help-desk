@@ -3,7 +3,6 @@ import {categories} from "../../mockData/categories";
 import {products} from "../../mockData/products";
 import PlatformRenderer from './PlatformRenderer';
 import TypeRenderer from "./TypeRenderer";
-import ProductTable from "./ProductTable";
 import ProductItem from "./ProductItem";
 
 
@@ -25,7 +24,7 @@ class CategoryRenderer extends React.Component{
     render() {
         return (
             <div>
-                <select value={this.state.category} onChange={this.handleChange('category')}>
+                <select value={this.state.category} onChange={this.handleChange('category')} className='select-show font-iran-sans'>
                     <option key={5} selected hidden >نوع محصول</option>
                     {categories.map((cat)=>(<option key={cat.id} value={cat.id}>{cat.name}</option>))}
                 </select>

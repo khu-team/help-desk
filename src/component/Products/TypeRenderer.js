@@ -1,6 +1,5 @@
 import React from 'react';
 import {serverTypes} from "../../mockData/serverTypes";
-import ProductTable from "./ProductTable";
 import ProductItem from "./ProductItem";
 
 
@@ -18,7 +17,7 @@ class TypeRenderer extends React.Component {
         return (
             <div>
                 <div>
-                    <select onChange={this.handleChange('type')}>
+                    <select onChange={this.handleChange('type')} className='font-iran-sans select-show-renderer'>
                         <option selected hidden>انتخاب</option>
                         {serverTypes.map((type)=>(<option value={type.id}>{type.name}</option>))}
                     </select>
