@@ -9,7 +9,7 @@ class ProductItem extends React.Component{
 
     Show=()=> {
         var numeral = require('numeral');
-        const newproducts=this.state.products;
+        const newproducts=[];
 
         this.props.data.map((product) => {
 
