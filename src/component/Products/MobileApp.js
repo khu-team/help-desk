@@ -3,19 +3,20 @@ const MobileApp = (props) => {
     return ( 
        <React.Fragment>
         <div className="form-item">
-        <label>
-            CustomerId: 
-        </label>
         <input type="text" onChange={props.handleId} value={props.localState.customerId} />
+        <label>
+            :شناسه مشتری 
+        </label>
         </div>
        <div className="form-item">
-        <label>
-            Platform: 
-        </label>
+        
         <select onChange={props.handlePlatform} value={props.localState.platform}>
-            <option value="Android">Android</option>
+            <option value="Android">اندروید</option>
             <option value="IOS">IOS</option>
         </select>
+        <label>
+            :پلتفرم
+        </label>
         </div>
         </React.Fragment>
      );

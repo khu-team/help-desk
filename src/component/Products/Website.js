@@ -1,45 +1,45 @@
 import React from 'react'
 const Website = (props) => {
-    return ( <React.Fragment>
-        
-          <div className="form-item">
-                <label>
-                    CustomerId: 
-                </label>
-                <input type="text" value={props.localState.customerId} onChange={props.handleCustomerIdChange}></input>
-        </div>
+    return (<React.Fragment>
+
         <div className="form-item">
+            <input type="text" value={props.localState.customerId} onChange={props.handleCustomerIdChange}></input>
             <label>
-               Title: 
+                :شناسه مشتری
+                </label>
+        </div>
+        <div className="form-item">
+            <input type="text" value={props.localState.title} onChange={props.handleTitleChange}></input>
+            <label>
+                :عنوان
             </label>
-            <input type="Title" value={props.localState.title} onChange={props.handleTitleChange}></input>
         </div>
         <div className="form-item">
-                <label>
-                    WebsiteType: 
+            <input type="text" value={props.localState.websiteType} onChange={props.handleWebsiteTypeChange}></input>
+            <label>
+                :نوع وبسایت
                 </label>
-                <input type="text" value={props.localState.websiteType} onChange={props.handleWebsiteTypeChange}></input>
         </div>
         <div className="form-item">
-                <label>
-                    Support Duration: 
+            <input type="number" value={props.localState.supportDuration} onChange={props.handleSupportDurationChange}></input>
+            <label>
+           :مدت زمان پشتیبانی 
                 </label>
-                <input type="number" value={props.localState.supportDuration} onChange={props.handleSupportDurationChange}></input>
         </div>
         <div className="form-item">
-                <label>
-                    Front-end language: 
+            <input type="text" value={props.localState.frontEndLanguage} onChange={props.handleFrontEndLanguageChange}></input>
+            <label>
+               :زبان فرانت اند
                 </label>
-                <input type="text" value={props.localState.frontEndLanguage} onChange={props.handleFrontEndLanguageChange}></input>
         </div>
         <div className="form-item">
-                <label>
-                    Back-end language: 
+            <input type="text" value={props.localState.backEndLanguage} onChange={props.handleBackEndLanguageChange}></input>
+            <label>
+               زبان بک اند
                 </label>
-                <input type="text" value={props.localState.backEndLanguage} onChange={props.handleBackEndLanguageChange}></input>
         </div>
-        </React.Fragment>
-     );
+    </React.Fragment>
+    );
 }
- 
+
 export default Website;

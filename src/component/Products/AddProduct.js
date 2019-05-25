@@ -311,23 +311,28 @@ getCategoryFields = (categoryId)=>{
     render() { 
         return ( 
             <div className="form-div">   
-            <form className="welcome">
-            <div >{this.state.error ? <p className="error">{this.state.error}</p> : true}</div>
-            <div className="form-item">
-             <label>ID:</label>   
+            <form className="font-iran-sans">
+                <div className="form-head">
+                    <h2>
+                        افزودن محصول
+                    </h2>
+                </div>
+            <div className="error">{this.state.error ? <h4>{this.state.error}</h4> : true}</div>
+            <div className="form-item">   
             <input type="number" value={this.state.id} onChange={this.handleIdChange}></input>
+            <label>:شناسه محصول</label>
             </div>
-            <div className="form-item">
-            <label>Category: </label>                
+            <div className="form-item">       
             <select value={this.state.category} onChange={this.handelCategory}>
                 {categories.map((category=>(<option key={category.id} value={category.name} >{category.name}</option>)))}
             </select>
+            <label>:دسته بندی </label>
             </div>
             <div>
             {this.getCategoryFields(this.state.categoryId)}
             </div>
-            <div>
-            <button className="add-product-button" onClick={this.handleSubmit}>ثبت</button>
+            <div className="button-wrappr">
+            <button className="add-product-button" onClick={this.handleSubmit}>ثبت محصول</button>
            </div>
             </form> 
             </div>   

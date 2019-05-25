@@ -1,52 +1,54 @@
 import React from 'react'
 const Server = (props) => {
-    return ( 
+    return (
         <React.Fragment>
-        <div className="form-item">
-        <label>
-            CustomerId : 
+            <div className="form-item">
+                <input type="text" onChange={props.handleId} value={props.localState.customerId}></input>
+                <label>
+                    :شناسه مشتری
         </label>
-        <input type="text" onChange={props.handleId} value={props.localState.customerId}></input>
-        </div>
-        <div className="form-item">
-        <label>
-            Server Country : 
+            </div>
+            <div className="form-item">
+                <input type="text" value={props.localState.serverCountry} onChange={props.handleServerCountryChange}></input>
+                <label>
+                    :کشور سرور
         </label>
-        <input type="text" value={props.localState.serverCountry} onChange={props.handleServerCountryChange}></input>
-        </div>
-        <div className="form-item">
-        <label>
-            Ram: 
+            </div>
+            <div className="form-item">
+                <input type="number" value={props.localState.ram} onChange={props.handleRamChange}></input>
+                <label>
+                    :RAMمقدار
         </label>
-        <input type="number" value={props.localState.ram} onChange={props.handleRamChange}></input>
-        </div>
-        <div className="form-item">
-        <label>
-            CPU: 
+            </div>
+            <div className="form-item">
+                <input type="number" value={props.localState.cpu} onChange={props.handleCpuChange}></input>
+                <label>
+                    :CPUمقدار
         </label>
-        <input type="number" value={props.localState.cpu} onChange={props.handleCpuChange}></input>
-        </div>
-        <div className="form-item">
-        <label>
-            Hard: 
+            </div>
+            <div className="form-item">
+                <input type="number" value={props.localState.hard} onChange={props.handleHardChange}></input>
+                <label>
+                    :Hardمقدار
         </label>
-        <input type="number" value={props.localState.hard} onChange={props.handleHardChange}></input>
-        </div>
-        <div className="form-item">
-        <label>
-            Support: 
+            </div>
+            <div className="form-item">
+                <input type="number" value={props.localState.support} onChange={props.handleSupportChange}></input>
+                <label>
+                    :مدت زمان پشتیبانی
         </label>
-        <input type="number" value={props.localState.support} onChange={props.handleSupportChange}></input>
-        </div>
-        <div className="form-item">
-        <label>
-            Server Status: 
+            </div>
+            <div className="form-item">
+                <label>
+                    وضعیت سرور
         </label>
-        actiove<input type="radio" name="status" value={true} onChange={props.handleServerStatusChange}></input>
-        diactive<input type="radio" name="status" value={false} onChange={props.handleServerStatusChange}></input>
-        </div>
+        <span className="server-status">
+                <label><span>فعال</span><input className="form-radio " type="radio" name="status" value={true} onChange={props.handleServerStatusChange} /></label>
+                <label><span>غیرفعال</span><input  className="form-radio " type="radio" name="status" value={false} onChange={props.handleServerStatusChange} /></label>
+                </span>
+            </div>
         </React.Fragment>
-     );
+    );
 }
- 
+
 export default Server;
