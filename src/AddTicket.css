@@ -1,0 +1,125 @@
+input {
+  display: inline-block;
+  width: 66%;
+  font-family: inherit;
+  font-weight: inherit;
+  border-radius: 0.4rem;
+  border: 1px solid #999;
+  padding: 0.5em 2em;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0.2rem 0.8rem 1.6rem var(--colorPrimary600);
+}
+
+.addTicket {
+  margin: 50px auto;
+  width: 70%;
+  /* height: 350px; */
+  padding: 20px 50px 50px 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: linear-gradient(to bottom right,rgb(19, 113, 255),rgb(6, 240, 189));
+
+}
+
+.addTicket__message {
+  border-radius: 0.4rem;
+  margin: 20px auto 0 auto;
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+
+.addTicket__message--error {
+  background-color: #f84541;
+}
+
+.addTicket__message--success {
+  background-color: #34b41c;
+}
+
+select {
+  display: inline-block;
+  padding: 2px;
+  margin: 2px;
+  font-family: inherit;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  width: 76%;
+  height: 40px;
+  font-size: 15px;
+  margin: 2px;
+  outline: none;
+}
+.input-group {
+  display: inline-block;
+  width: 30%;
+}
+.input-group:first-child{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addTicket span{
+  margin-left: 5px;
+}
+label {
+  display: inline-block;
+  width: 74px;
+}
+
+input,
+select,
+textarea,
+label {
+  margin: 8px 3px;
+}
+textarea {
+  width: 92%;
+  padding: 1em 2em;
+  border: 1px solid #999;
+  border-radius: 10px;
+  height: 200px;
+  resize: none;
+}
+textarea:focus {
+  outline: none;
+}
+button.button {
+  text-align: center;
+  background: blue;
+  color: #fff;
+  padding: 0.5em 2em;
+  border: none;
+  border-radius: 5px;
+  vertical-align: center;
+  font-family: "IRANSans";
+}
+
+@media screen and (max-width: 1095px) {
+  select {
+    margin-bottom: 5px;
+    width: 65%;
+    height: 50px;
+    font-size: 15px;
+  }
+  .input-group {
+    display: flex!important;
+    flex-direction: row!important;
+    align-items: center!important;
+    justify-content: center!important;
+    width: 100%;
+  }
+  input{
+    width: 50%;
+  }
+  .addTicket{
+    padding-top: 20px;
+    padding-left: 60px;
+  }
+  textarea{
+    margin-top: 15px;
+  }
+}
