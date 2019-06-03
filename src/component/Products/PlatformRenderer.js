@@ -26,10 +26,10 @@ class PlatformRenderer extends Component {
                   {this.state.products.length > 0 && <ProductItem data={this.state.products}/>}
                 </div>
         </div>
+
+
          );
     }
 }
-
-
 
 export default PlatformRenderer;
