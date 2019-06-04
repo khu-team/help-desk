@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductTable from "./ProductTable";
+import '../../products.css';
 
 class ProductItem extends React.Component{
 

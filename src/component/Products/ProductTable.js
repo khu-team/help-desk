@@ -1,4 +1,6 @@
 import React from 'react';
+import '../../products.css';
+
 class ProductTable extends React.Component{
 
     renderTableData() {

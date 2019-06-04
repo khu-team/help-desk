@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {platforms} from '../../mockData/platforms';
 import ProductItem from "./ProductItem";
-
-
+import '../../products.css';
 class PlatformRenderer extends Component {
     state = {
         products:[]

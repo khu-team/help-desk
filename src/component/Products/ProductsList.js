@@ -1,5 +1,6 @@
 import React from 'react';
 import CategoryRenderer from './CategoryRenderer';
+import '../../products.css';
 
 
 class ProductsList extends React.Component{
