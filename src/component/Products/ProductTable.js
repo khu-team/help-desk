@@ -7,7 +7,7 @@ class ProductTable extends React.Component{
         return this.props.data.map((product,index) => {
             const { id, name, price , discountPercentage , newprice } = product ;
             return (
-                <tr key={id} className='product-table-tr'>
+                <tr key={id} >
                     <td>{id}</td>
                     <td>{name}</td>
                     <td> {price} تومان </td>

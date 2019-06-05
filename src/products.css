@@ -3,7 +3,8 @@
     font-size: 18px;
     border-collapse: collapse;
     width: 70%;
-    margin: 15%;
+    margin-right: 15%;
+    top:20px;
 }
 
 .customers td, .customers th {
@@ -39,9 +40,6 @@
     background-color: white;
     color: black;
     border: 2px solid #4CAF50;
-    position: relative;
-   
-    right: 403px;
 }
 
 .button-show:hover{
@@ -50,12 +48,9 @@
 }
 
 .select-show {
-    position: relative;
-    
-    left: 43%;
     direction: rtl;
     border: 0;
-    margin-bottom: 10px ;
+    margin-bottom: 10px;
     background: transparent;
     font-size: 15px;
     font-weight: bold;
@@ -63,7 +58,7 @@
     *background: #ffffff;
     -webkit-appearance: none;
     overflow:hidden;
-    width: 150px;
+    width:150px;
     -moz-border-radius: 9px 9px 9px 9px;
     -webkit-border-radius: 9px 9px 9px 9px;
     border-radius: 9px 9px 9px 9px;
@@ -90,8 +85,4 @@
     box-shadow: 1px 1px 11px #19331c;
     background-color: #acffa5;
     color: black;
-    position: relative;
-   
-    left: 32%;
-    top: 97px;
 }
