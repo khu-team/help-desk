@@ -1,17 +1,37 @@
 import React from 'react';
 import CategoryRenderer from './CategoryRenderer';
 import '../../products.css';
-
+import {products} from "../../mockData/products";
+import ProductTable from "./ProductTable";
+import '../../products.css';
 
 class ProductsList extends React.Component{
+    state={
+     
+     fproducts:products ,
+     show:true ,
+     showcat:false
+    };
 
-
+    show =()=>{
+      this.setState({show:false , showcat:true})
+    }
+ 
     render() {
         return (
             <div>
                 <div className="welcome">
-                    <CategoryRenderer/>
+                   
+                    
+                    <button  className='filter font-iran-sans' onClick={this.show}>فیلتر</button>
+                    {this.state.show && <ProductTable data={this.state.fproducts}/>}
+                    {this.state.showcat && <CategoryRenderer/> }
+                    
+
                 </div>
+           
+                
+
             </div>
         );
     }

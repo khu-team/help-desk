@@ -26,7 +26,7 @@ class CategoryRenderer extends React.Component{
         return (
             <div>
                 <select value={this.state.category} onChange={this.handleChange('category')} className='select-show font-iran-sans'>
-                    <option className='center-text' key={5} selected hidden > نوع محصول </option>
+                    <option className='center-text' key={5} selected hidden >محصولات </option>
                     {categories.map((cat)=>(<option key={cat.id} value={cat.id}>{cat.name}</option>))}
                 </select>
                 {this.state.category==1 && this.state.products.length > 0 && <ProductItem data={this.state.products}/>}
