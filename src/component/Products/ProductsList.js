@@ -2,7 +2,7 @@ import React from 'react';
 import CategoryRenderer from './CategoryRenderer';
 import '../../products.css';
 import {products} from "../../mockData/products";
-import ProductTable from "./ProductTable";
+import ProductItem from "./ProductItem";
 import '../../products.css';
 
 class ProductsList extends React.Component{
@@ -24,7 +24,7 @@ class ProductsList extends React.Component{
                    
                     
                     <button  className='filter font-iran-sans' onClick={this.show}>فیلتر</button>
-                    {this.state.show && <ProductTable data={this.state.fproducts}/>}
+                    {this.state.show && <ProductItem data={this.state.fproducts}/>}
                     {this.state.showcat && <CategoryRenderer/> }
                     
 
