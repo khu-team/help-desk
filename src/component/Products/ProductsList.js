@@ -20,7 +20,7 @@ class ProductsList extends React.Component{
     render() {
         return (
             <div>
-                <div className="welcome">
+                <div >
                    
                     
                     <button  className='filter font-iran-sans' onClick={this.show}>فیلتر</button>
