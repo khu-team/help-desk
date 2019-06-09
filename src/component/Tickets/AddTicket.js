@@ -1,8 +1,7 @@
 import React from 'react';
 import { products } from '../../mockData/products';
 import { departments } from '../../mockData/departments';
-
-
+import '../../AddTicket.css';
 
 class AddTicket extends React.Component {
 
