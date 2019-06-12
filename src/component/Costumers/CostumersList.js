@@ -1,16 +1,16 @@
 import React from 'react';
 import { costumers } from '../../mockData/costumers';
 import {CostumerItem} from '../../component/Costumers/CostumerItem'
-
+import '../Costumers/style/costumers.css';
 const CostumersList = () => (
-    <div className="welcome ">
-    <table class="GeneratedTable">
-    <thead>
-      <tr>
+    <div className="welcome">
+    <table className="GentedTab" >
+    <thead className="GentedTab-header">
+      <tr  >
       
-      <th> وضعیت&nbsp;&nbsp;&nbsp;&nbsp;</th>
-      <th>شهر&nbsp;&nbsp;&nbsp;&nbsp;</th>
-      <th>نام مشتری&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th> وضعیت</th>
+      <th>شهر</th>
+      <th>نام مشتری</th>
       
         
       </tr>
@@ -18,9 +18,6 @@ const CostumersList = () => (
     </table>
         {costumers.map((costumer) => (
             <CostumerItem key={costumer.id} {...costumer} />
-          /*  <ul key={costumer.id}>
-            <li>name: {costumer.fullName} city:{cities.name}</li>
-            </ul>*/
         ))}
     </div>
 );
