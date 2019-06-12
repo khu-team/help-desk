@@ -1,7 +1,7 @@
 import React from 'react';
 import { products } from '../../mockData/products';
 import { departments } from '../../mockData/departments';
-
+import TicketForm from './TicketForm'
 
 
 class AddTicket extends React.Component {
@@ -139,7 +139,8 @@ class AddTicket extends React.Component {
           <button className="button submit" type="submit"> ثبت </button>
           {this.state.successMessage && <p className="addTicket__message addTicket__message--success">{this.state.successMessage}</p>}
         </form>
-      </React.Fragment>
+                <TicketForm></TicketForm>
+      </React.Fragment>      
     )
   }
 }
