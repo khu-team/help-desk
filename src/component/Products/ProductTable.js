@@ -29,7 +29,7 @@ class ProductTable extends React.Component{
                         <th>نام محصول</th>
                         <th>قیمت</th>
                         <th>تخفیف</th>
-                        <th onClick={this.SortPrice}>قیمت با تخفیف</th>
+                        <th>قیمت با تخفیف</th>
                     </tr>
                     { this.renderTableData()}
                     </tbody>

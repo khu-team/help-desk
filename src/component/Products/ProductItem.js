@@ -5,7 +5,7 @@ import '../../products.css';
 class ProductItem extends React.Component{
 
     state={
-        products:this.props.products
+        products:[]
     };
 
     Show=()=> {
@@ -34,7 +34,7 @@ render() {
     return(
         <div>
             <button onClick={this.Show} className='font-iran-sans button-show'>نمایش</button>
-            <ProductTable products={this.state.products}/>
+            {this.state.products.length > 0 && <ProductTable products={this.state.products}/>}
         </div>
     )
 }

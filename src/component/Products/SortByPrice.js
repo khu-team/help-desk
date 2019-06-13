@@ -11,13 +11,11 @@ class SortByPrice extends React.Component{
     SortAsc=()=> {
            const newproducts=this.props.products;
            this.setState({products: newproducts.sort((a, b) => (a.price - b.price))})
-           console.log(this.state.products)
     };
 
     SortDesc=()=>{
         const newproducts=this.props.products;
         this.setState({products: newproducts.sort((a, b) => (b.price - a.price))})
-        console.log(this.state.products)
     };
 
     render() {
