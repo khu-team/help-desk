@@ -2,17 +2,12 @@ import React from 'react';
 import TicketForm from './TicketForm';
 import AnswerForm from '../AnswerSubmission/AnswerForm';
 
-class SubmitTicket extends React.Component {
+const SubmitTicket = () => (
+  <React.Fragment>
+    <TicketForm />
+    <AnswerForm />
+  </React.Fragment>
+);
 
-  render() {
-    return (
-      <React.Fragment>
-        <TicketForm />
-        <AnswerForm />
-      </React.Fragment>
-    )
-  }
-}
-;
 
 export default SubmitTicket;

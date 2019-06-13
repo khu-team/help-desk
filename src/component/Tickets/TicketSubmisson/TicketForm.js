@@ -6,17 +6,18 @@ import './TicketForm.css';
 class TicketForm extends Component {
 
     state = {
-        costumer: 1,
-        title: '',
-        product: 1,
-        department: 1,
-        priority: 'MEDIUM',
-        description: '',
         answerStatus: false,
-        submissionDateTime: 'not-set',
-        titleError: '',
+        costumer: 1,
+        department: 1,
         descriptionError: '',
-        successMessage: ''
+        description: '',
+        product: 1,
+        priority: 'MEDIUM',
+        submissionDateTime: 'not-set',
+        successMessage: '',
+        titleError: '',
+        ticketID: 1,
+        title: '',
     }
 
     onFormChange = (event) => {
@@ -56,7 +57,7 @@ class TicketForm extends Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        const { costumer, title, product, department, priority, description, answerStatus, submissionDateTime } = this.state;
+        const { costumer, title, product, department, priority, description, answerStatus, submissionDateTime, ticketID } = this.state;
         if (title.trim() === '') {
             this.setState(() => ({
                 titleError: 'عنوان نمیتواند خالی باشد',
@@ -77,7 +78,10 @@ class TicketForm extends Component {
                 successMessage: 'درخواست با موفقیت ثبت شد'
             }));
             console.log(
-                `costumer:${costumer},
+
+                `
+        ID:${ticketID},
+        costumer:${costumer},
         title:${title.trim()},
         product:${product},
         department:${department},
