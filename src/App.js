@@ -7,7 +7,7 @@ import CostumersList from "./component/Costumers/CostumersList";
 import ProductsList from "./component/Products/ProductsList";
 import TicketsList from "./component/Tickets/TicketsList";
 import AddProduct from "./component/Products/AddProduct";
-import AddTicket from "./component/Tickets/AddTicket";
+import SubmitTicket from "./component/Tickets/TicketSubmisson/SubmitTicket";
 
 
 class App extends React.Component {
@@ -24,7 +24,7 @@ class App extends React.Component {
                     <Route path="/products" component={ProductsList}/>
                     <Route path="/add-product" component={AddProduct}/>
                     <Route path="/tickets" component={TicketsList}/>
-                    <Route path="/add-ticket" component={AddTicket}/>
+                    <Route path="/add-ticket" component={SubmitTicket}/>
                 </Switch>
             </BrowserRouter>
         );
