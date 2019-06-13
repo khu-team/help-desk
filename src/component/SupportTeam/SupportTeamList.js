@@ -1,6 +1,9 @@
 import React from 'react';
 import {SupportTeamItem} from '../../component/SupportTeam/SupportTeamItem'
 import { supportTeamUsers } from '../../mockData/supportTeamUsers'
+import AddSupportUser from '../../component/SupportTeam/AddSupportForm'
+
+
 
 
 const SupportTeamList = () => (
@@ -23,6 +26,9 @@ const SupportTeamList = () => (
             <SupportTeamItem  {...supporters} />
 
         ))}
+
+    <AddSupportUser/>
+
     </div>
 );
 
