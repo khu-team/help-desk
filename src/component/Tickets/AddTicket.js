@@ -1,12 +1,8 @@
 import React from 'react';
 import { products } from '../../mockData/products';
 import { departments } from '../../mockData/departments';
-<<<<<<< HEAD
-import TicketForm from './TicketForm'
 
-=======
-import '../../AddTicket.css';
->>>>>>> f820d81c47c8889361da8330ccce96b47ca13fa2
+
 
 class AddTicket extends React.Component {
 
@@ -143,8 +139,7 @@ class AddTicket extends React.Component {
           <button className="button submit" type="submit"> ثبت </button>
           {this.state.successMessage && <p className="addTicket__message addTicket__message--success">{this.state.successMessage}</p>}
         </form>
-                <TicketForm></TicketForm>
-      </React.Fragment>      
+      </React.Fragment>
     )
   }
 }
