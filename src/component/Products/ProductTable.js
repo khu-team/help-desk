@@ -3,7 +3,8 @@ import '../../products.css';
 
 class ProductTable extends React.Component{
 
-    renderTableData() {
+
+    renderTableData=()=> {
         return this.props.data.map((product,index) => {
             const { id, name, price , discountPercentage , newprice } = product ;
             return (
@@ -28,9 +29,9 @@ class ProductTable extends React.Component{
                         <th>نام محصول</th>
                         <th>قیمت</th>
                         <th>تخفیف</th>
-                        <th>قیمت با تخفیف</th>
+                        <th onClick={this.SortPrice}>قیمت با تخفیف</th>
                     </tr>
-                    {this.renderTableData()}
+                    { this.renderTableData()}
                     </tbody>
                 </table>
             </div>
