@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {platforms} from '../../mockData/platforms';
-import ProductItem from "./ProductItem";
 import '../../products.css';
+import SortByPrice from "./SortByPrice";
 class PlatformRenderer extends Component {
     state = {
-        products:[]
+        products:this.props.products
      };
 
     handleChange = name => event => {
@@ -22,7 +22,7 @@ class PlatformRenderer extends Component {
                 <option selected hidden >نوع پلتفرم</option>
                 {platforms.map((plat)=>(<option value={plat.id}>{plat.name}</option>))}
             </select>
-                  {this.state.products.length > 0 && <ProductItem data={this.state.products}/>}
+                  <SortByPrice products={this.state.products}/>
                 </div>
         </div>
 

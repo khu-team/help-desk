@@ -5,14 +5,14 @@ import '../../products.css';
 class ProductItem extends React.Component{
 
     state={
-        products:[]
-    }
+        products:this.props.products
+    };
 
     Show=()=> {
         var numeral = require('numeral');
         const newproducts=[];
 
-        this.props.data.map((product) => {
+        this.props.products.map((product) => {
 
             const num = numeral(product.price).format('0,0');
             const persent= product.discountPercentage/100;
@@ -34,7 +34,7 @@ render() {
     return(
         <div>
             <button onClick={this.Show} className='font-iran-sans button-show'>نمایش</button>
-            {this.state.products.length > 0 && <ProductTable data={this.state.products}/>}
+            <ProductTable products={this.state.products}/>
         </div>
     )
 }

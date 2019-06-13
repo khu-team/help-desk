@@ -24,9 +24,9 @@ class ProductsList extends React.Component{
                 <div >
 
                     <button  className='filter font-iran-sans' onClick={this.show}>فیلتر</button>
-                    {this.state.show && <ProductItem data={this.state.fproducts}/>}
+                    {this.state.show && <SortByPrice products={this.state.fproducts}/>}
                     {this.state.showcat && <CategoryRenderer/> }
-                    {this.state.showcat && <SortByPrice products={products}/> }
+
 
                 </div>
            

@@ -1,11 +1,11 @@
 import React from 'react';
 import {serverTypes} from "../../mockData/serverTypes";
-import ProductItem from "./ProductItem";
+import SortByPrice from "./SortByPrice";
 
 
 class TypeRenderer extends React.Component {
     state = {
-        products:[]
+        products: this.props.products
     };
 
     handleChange = name => event => {
@@ -21,7 +21,7 @@ class TypeRenderer extends React.Component {
                         <option selected hidden>انتخاب</option>
                         {serverTypes.map((type)=>(<option value={type.id}>{type.name}</option>))}
                     </select>
-                    {this.state.products.length > 0 && <ProductItem data={this.state.products}/>}
+                    <SortByPrice products={this.state.products}/>
                 </div>
             </div>
 
