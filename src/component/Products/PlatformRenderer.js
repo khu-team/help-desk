@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {platforms} from '../../mockData/platforms';
 import '../../products.css';
-import SortByPrice from "./SortByPrice";
+import ProductItem from "./ProductItem";
 class PlatformRenderer extends Component {
     state = {
         products:this.props.products
@@ -22,7 +22,7 @@ class PlatformRenderer extends Component {
                 <option selected hidden >نوع پلتفرم</option>
                 {platforms.map((plat)=>(<option value={plat.id}>{plat.name}</option>))}
             </select>
-                  <SortByPrice products={this.state.products}/>
+                  <ProductItem products={this.state.products}/>
                 </div>
         </div>
 

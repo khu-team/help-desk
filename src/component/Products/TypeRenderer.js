@@ -1,6 +1,6 @@
 import React from 'react';
 import {serverTypes} from "../../mockData/serverTypes";
-import SortByPrice from "./SortByPrice";
+import ProductItem from "./ProductItem";
 
 
 class TypeRenderer extends React.Component {
@@ -21,7 +21,7 @@ class TypeRenderer extends React.Component {
                         <option selected hidden>انتخاب</option>
                         {serverTypes.map((type)=>(<option value={type.id}>{type.name}</option>))}
                     </select>
-                    <SortByPrice products={this.state.products}/>
+                    <ProductItem products={this.state.products}/>
                 </div>
             </div>
 

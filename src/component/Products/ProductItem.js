@@ -23,7 +23,7 @@ class ProductItem extends React.Component{
                  name:product.name,
                  price:num,
                  discountPercentage:product.discountPercentage,
-                 newprice : numeral(nprice).format('0,0')
+                 newprice : nprice
               };
               newproducts.push(nproducts);
         });

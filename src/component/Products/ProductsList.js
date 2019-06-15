@@ -4,7 +4,6 @@ import '../../products.css';
 import {products} from "../../mockData/products";
 import ProductItem from "./ProductItem";
 import '../../products.css';
-import SortByPrice from './SortByPrice'
 
 class ProductsList extends React.Component{
     state={
@@ -24,7 +23,7 @@ class ProductsList extends React.Component{
                 <div >
 
                     <button  className='filter font-iran-sans' onClick={this.show}>فیلتر</button>
-                    {this.state.show && <SortByPrice products={this.state.fproducts}/>}
+                    {this.state.show && <ProductItem products={this.state.fproducts}/>}
                     {this.state.showcat && <CategoryRenderer/> }
 
 

@@ -3,9 +3,8 @@ import {categories} from "../../mockData/categories";
 import {products} from "../../mockData/products";
 import PlatformRenderer from './PlatformRenderer';
 import TypeRenderer from "./TypeRenderer";
-
 import '../../products.css';
-import SortByPrice from "./SortByPrice";
+import ProductItem from "./ProductItem";
 
 class CategoryRenderer extends React.Component{
 
@@ -29,7 +28,7 @@ class CategoryRenderer extends React.Component{
                     <option className='center-text' key={5} selected hidden >محصولات </option>
                     {categories.map((cat)=>(<option key={cat.id} value={cat.id}>{cat.name}</option>))}
                 </select>
-                {this.state.category==1 && <SortByPrice products={this.state.products}/>}
+                {this.state.category==1 && <ProductItem products={this.state.products}/>}
                 {this.state.category==2 && <PlatformRenderer products={this.state.products}/>}
                 {this.state.category==3 && <TypeRenderer products={this.state.products}/>}
             </div>
