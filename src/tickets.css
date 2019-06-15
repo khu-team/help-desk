@@ -18,6 +18,7 @@ header{
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 2;
+    margin-top: 5%;
 }
 
 .logo11{
@@ -34,36 +35,16 @@ header{
 }
 
 .navf{
-    float: right;
-}
-
-.clear{
-    clear: both;
-}
-
-.navf ul{
-    margin: 0;
-    padding: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);   
     display: flex;
 }
 
-.navf ul li {
-    list-style: none;
-}
 
-.navf ul li a{
-    display: block;
-    margin: 10px 0 ;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #262626;
-}
-
-.navf ul li a.action,
-.navf ul li a:hover{
-    background: #069370;
-    color: #fff;
-    transition: 0.5s;
+.clear{
+    clear: both;
 }
 
 
@@ -77,6 +58,12 @@ header{
 
 @media (max-width: 760px)
 {
+
+    .navf{
+        left: 75%;
+    }
+
+
     .menuuu{
         display: block;
         width: 40px;
@@ -104,22 +91,6 @@ header{
     }
 
 
-    .navf{
-        display: none;
-    }
-
-    .navf.active{
-        display: block;
-        width: 100%;
-    }
-
-    .navf.active ul{
-        display: block;
-    }
-
-    .navf.active ul li a{
-        margin: 0;
-    }
 
 }
 

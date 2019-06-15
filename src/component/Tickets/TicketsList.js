@@ -116,6 +116,33 @@ class TicketsList extends React.Component{
 		return(
 			<React.Fragment>
 		<div>
+
+
+			<header>
+				<a href="#" className="logo11"><p> : Filter by </p></a>
+
+				<div className="menuuu"></div>
+
+				<nav className="navf">
+
+				<select value={this.state.filter} onChange={this.onFilterChange}>
+					{this.state.filters.map((fil) => (<option key={fil}>{fil}</option>))}
+				</select>
+				{this.state.showFilter && this.filterTable()}
+					
+				</nav>
+
+				<div className="clear"></div>
+
+
+			</header>
+
+
+
+
+
+
+
 		<div class="limiter">
 			<div class="container-table100">
 				<div class="wrap-table100">
@@ -132,17 +159,13 @@ class TicketsList extends React.Component{
 						<th className="column6">Department</th>
 						<th className="column7">AnswerStatus</th>
 						<th className="column8">SubmissionDateTime</th>
+						<th className="column9">Likes</th>
 					</tr>
 					</thead>
 					<tbody>
 					{this.state.ticketss.map((item) => (<TicketItem ticket={item} key={item.id} />))}
 					</tbody>
 				</table>
-				<p>Filter by</p>
-				<select value={this.state.filter} onChange={this.onFilterChange}>
-					{this.state.filters.map((fil) => (<option key={fil}>{fil}</option>))}
-				</select>
-				{this.state.showFilter && this.filterTable()}
 						</div>
 					</div>
 					<p>{this.state.error}</p>
