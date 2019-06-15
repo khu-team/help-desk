@@ -26,6 +26,17 @@ class TicketsList extends React.Component{
 		this.setState(() => ({filter,showFilter:true,ticketss:tickets}));
 	};
 
+	onDeptProductFilter = (filterr) => {
+		if(this.state.filter === 'Department'){
+			const department = (departments.find((department) => department.name === filterr));
+			return department.id;
+		}
+		else if(this.state.filter === 'Product Category'){
+			const product = (products.find((product) => product.name === filterr));
+			return product.id;
+		}
+	}
+
 	render(){
 		return(
 			<React.Fragment>
