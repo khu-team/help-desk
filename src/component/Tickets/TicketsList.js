@@ -84,6 +84,32 @@ class TicketsList extends React.Component{
 		}
 	};
 
+
+
+
+	filterTable = () => {
+		const filter = this.state.filter;
+		if(filter === 'Department'){
+			return <select value={this.state.department} onChange={this.onChange}>
+			{this.state.departments.map((dep) => (<option key={dep}>{dep}</option>))}
+		</select>;
+		}
+		else if(filter === 'Priority'){
+			return <select value={this.state.priority} onChange={this.onChange}>
+			{this.state.priorities.map((pir) => (<option key={pir}>{pir}</option>))}
+		</select>;
+		}
+		else{
+			return <select value={this.state.productCategory} onChange={this.onChange}>
+			{this.state.productCategories.map((pro) => (<option key={pro}>{pro}</option>))}
+		</select>;
+		}
+	};
+
+	
+
+
+
 	render(){
 		return(
 			<React.Fragment>
