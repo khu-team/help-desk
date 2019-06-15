@@ -37,6 +37,53 @@ class TicketsList extends React.Component{
 		}
 	}
 
+	onChange = (e) => {
+		const filter = this.state.filter;
+		const filterr = e.target.value;
+		this.setState(() => ({filterr}));
+		if(filterr != ''){
+			if(filter === 'Department'){
+				const fticekts = tickets.filter(
+					(ticket) => ticket.department === this.onDeptProductFilter(filterr)
+				);
+				this.setState(() => ({ticketss: fticekts}));
+				if(fticekts.length >0){
+					this.setState(() => ({error: ''}));
+				}
+				else{
+					this.setState(() => ({error: 'ticket does not exist'}));
+				}
+			}
+			else if(filter === 'Product Category'){
+				const fticekts = tickets.filter(
+					(ticket) => ticket.product === this.onDeptProductFilter(filterr)
+				);
+				this.setState(() => ({ticketss: fticekts}));
+				if(fticekts.length> 0){
+					this.setState(() => ({error: ''}));
+				}
+				else{
+					this.setState(() => ({error: 'ticket does not exist'}));
+				}
+			}
+			else if(filter === 'Priority'){
+				const fticekts = tickets.filter(
+					(ticket) => ticket.priority === filterr
+				);
+				this.setState(() => ({ticketss: fticekts}));
+				if(fticekts.length> 0){
+					this.setState(() => ({error: ''}));
+				}
+				else{
+					this.setState(() => ({error: 'ticket does not exist'}));
+				}
+			}
+		}
+		else{
+			this.setState(() => ({ticketss: tickets}));
+		}
+	};
+
 	render(){
 		return(
 			<React.Fragment>
