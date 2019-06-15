@@ -1,7 +1,6 @@
 import React from 'react';
 import {tickets} from '../../mockData/tickets';
 import TicketItem from './TicketItem';
-import Like from './like';
 const productCategories = products.map((product) => product.name);
 productCategories.splice(0,0,'');
 const departmentss = departments.map((department) => department.name);
@@ -21,6 +20,11 @@ class TicketsList extends React.Component{
 		error: ''
 
 	}
+
+	onFilterChange = (e) => {
+		const filter = e.target.value;
+		this.setState(() => ({filter,showFilter:true,ticketss:tickets}));
+	};
 
 	render(){
 		return(
