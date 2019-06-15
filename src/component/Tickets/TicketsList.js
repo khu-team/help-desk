@@ -1,5 +1,7 @@
 import React from 'react';
 import {tickets} from '../../mockData/tickets';
+import {departments} from '../../mockData/departments';
+import {products} from '../../mockData/products';
 import TicketItem from './TicketItem';
 const productCategories = products.map((product) => product.name);
 productCategories.splice(0,0,'');
