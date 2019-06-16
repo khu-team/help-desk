@@ -5,9 +5,7 @@ import CostumersList from "./CostumersList";
 import Addcustomer from "./Add customer"
 import editcustomer from "./edit customer"
 import showcustomer from"./show customer"
-class mainpage extends React.Component {
-
-
+class Mainpage extends React.Component {
     render() {
         return (
             <BrowserRouter>
@@ -17,11 +15,10 @@ class mainpage extends React.Component {
                     <Route path="/addcustomer" component={Addcustomer}/>
                     <Route path="/editcustomer" component={editcustomer}/>
                     <Route path="/showcustomer" component={CostumersList}/>
-                    
                 </Switch>
             </BrowserRouter>
         );
     }
 }
 
-export default mainpage;
+export default Mainpage;

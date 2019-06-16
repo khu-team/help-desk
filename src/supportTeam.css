@@ -1,0 +1,50 @@
+
+table.Table  {
+
+    table-layout:fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-width: 1px;
+    border-style: solid;
+    text-align: right;
+
+}
+
+table.Table th{
+      border-width: 1px;
+      text-align: right;
+      border-style: solid;
+      border-color: lightskyblue;
+
+
+  }
+
+
+
+.row{
+     display: flex;
+     width:100%;
+ } 
+  .app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:  10vh;
+    width: 100%;
+  }
+  
+  .fullName{
+  font-weight: bolder;
+    color:rgb(43, 255, 0);
+
+  }
+  .vaz{
+     
+    color:rgb(0, 81, 255);
+    font-size: 27px;
+    font-style: unset;
+  }
+.khat{
+    background-color:white; 
+    color:white;
+}
