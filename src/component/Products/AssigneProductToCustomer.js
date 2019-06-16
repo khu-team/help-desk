@@ -6,8 +6,8 @@ import ProductsInAssigne from './ProductsInAssigne'
 class AssigneProductToCustomer extends Component {
     state = { 
         products:[],
-        product:"سایت وردپرس",
-        custumer:''
+        product:products[0].name,
+        costumer:costumers[0].fullName
 
      }
 
@@ -41,7 +41,11 @@ class AssigneProductToCustomer extends Component {
     handleAssigne = (e)=>{
     e.preventDefault();
     //SOMETHING FOR SENDING DATA TO SERVER FOR ASSIGNING PRODUCTS WITH CUSTOMER    
+    }
 
+    handelCostumerChange = (e) =>{
+        const costumer = e.target.value;
+        this.setState({costumer});
     }
 
     render() { 
@@ -54,15 +58,15 @@ class AssigneProductToCustomer extends Component {
                 {products.map((product=>(<option  key={product.id} value={product.name} >{product.name}</option>)))}
             </select>
             </div>
+            <button onClick={this.handleAddProduct} className="">Add</button>
 
+<br></br>
+</form>
 <ProductsInAssigne handleDeleteProduct={this.handleDeleteProduct} products={this.state.products}/>
 
-<button onClick={this.handleAddProduct} className="">Add</button>
-
-</form>
 <br></br>
 <form>
-    <select>
+    <select value={this.state.costumer} onChange={this.handelCostumerChange}>
     {costumers.map((costumer=>(<option  key={costumer.id} value={costumer.fullName} >{costumer.fullName}</option>)))}
     </select>
     <button onClick={this.handleAssigne}>Assigne</button>
