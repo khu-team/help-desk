@@ -1,0 +1,17 @@
+.assign-button{
+    background-color: rgb(204, 67, 67);
+    width: 60px;
+    color: aliceblue;
+    border: none;
+    border-radius: 3%;
+    height: 35px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.assign-select-customer{
+    font-size: 20px;
+}
+.assign-main-select{
+    background-color: rgb(212, 155, 79);
+    height: fit-content;
+}

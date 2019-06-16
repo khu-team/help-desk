@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {products} from '../../mockData/products';
 import {costumers} from '../../mockData/costumers';
+import '../../styeles/assignProduct.css'
 
 import ProductsInAssigne from './ProductsInAssigne'
 class AssigneProductToCustomer extends Component {
@@ -50,26 +51,26 @@ class AssigneProductToCustomer extends Component {
 
     render() { 
         return ( 
-<div>
+<div className="assign-main-select">
 <form>
     
-<div className="">       
+<div className="assign-select-customer">       
             <select  value={this.state.product} onChange={this.handelProductChange}>
                 {products.map((product=>(<option  key={product.id} value={product.name} >{product.name}</option>)))}
             </select>
             </div>
-            <button onClick={this.handleAddProduct} className="">Add</button>
+            <button onClick={this.handleAddProduct} className="assign-button">Add</button>
 
 <br></br>
 </form>
 <ProductsInAssigne handleDeleteProduct={this.handleDeleteProduct} products={this.state.products}/>
 
 <br></br>
-<form>
+<form className="assign-select-customer">
     <select value={this.state.costumer} onChange={this.handelCostumerChange}>
     {costumers.map((costumer=>(<option  key={costumer.id} value={costumer.fullName} >{costumer.fullName}</option>)))}
     </select>
-    <button onClick={this.handleAssigne}>Assigne</button>
+    <button onClick={this.handleAssigne} className="assign-button">Assigne</button>
 </form>
 </div>
          );
