@@ -1,9 +1,8 @@
 import React from 'react';
-import AssigneProductToCustomer from './Products/AssigneProductToCustomer';
 
 const Dashboard = () => (
     <div className="welcome">
-        <AssigneProductToCustomer />
+        Navigate to Your Part And Start...
     </div>
 );
 

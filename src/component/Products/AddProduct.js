@@ -3,6 +3,7 @@ import Server from './Server';
 import Website from './Website';
 import MobileApp from './MobileApp'
 import {categories} from '../../mockData/categories';
+import AssigneProductToCustomer from './AssigneProductToCustomer';
 import '../../styeles/addproduct.css'
 class AddProduct extends Component {
     state = { 
@@ -335,7 +336,12 @@ getCategoryFields = (categoryId)=>{
             <button className="add-product-button" onClick={this.handleSubmit}>ثبت محصول</button>
            </div>
             </form> 
-            </div>   
+
+
+            <AssigneProductToCustomer />
+
+            </div>  
+
             
          );
     }
