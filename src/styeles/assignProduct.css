@@ -15,3 +15,13 @@
     background-color: rgb(212, 155, 79);
     height: fit-content;
 }
+.assign-delete-button{
+    background-color: rgb(189,102,51);
+    color: aliceblue;
+    width: 45px;
+    height: 30px;
+    border: none;
+    border-radius: 2%;
+
+
+}
