@@ -99,8 +99,7 @@ class TicketForm extends Component {
         return (
             <React.Fragment>
                 <form className="addTicket" onSubmit={(event) => this.onSubmit(event)}>
-                    {this.state.titleError && <p className="addTicket__message addTicket__message--error">{this.state.titleError}</p>}
-                    {this.state.descriptionError && <p className="addTicket__message addTicket__message--error">{this.state.descriptionError}</p>}
+                <h3>ثبت تیکت</h3>
                     {/* input for title  */}
                     <div className="input-group">
                         <label htmlFor="title">عنوان :</label>
@@ -139,8 +138,10 @@ class TicketForm extends Component {
                     {/* textArea for description */}
                     <textarea placeholder="توضیحات" name="description" cols="30" rows="10" value={this.state.description} onChange={(event) => this.onFormChange(event)}></textarea>
                     <br></br>
-                    <button className="button submit" type="submit"> ثبت </button>
-                    {this.state.successMessage && <p className="addTicket__message addTicket__message--success">{this.state.successMessage}</p>}
+                    <button class="material-icons"> send</button>
+                    {this.state.titleError && <p className="addTicket__message addTicket__message--error">{this.state.titleError}</p>}
+                    {this.state.descriptionError && <p className="addTicket__message addTicket__message--error">{this.state.descriptionError}</p>}
+                    {this.state.successMessage &&<p className="addTicket__message addTicket__message--success">{this.state.successMessage}</p>}
                 </form>
             </React.Fragment>
         )
