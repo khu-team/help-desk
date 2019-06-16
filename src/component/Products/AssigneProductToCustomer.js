@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {products} from '../../mockData/products';
+import {costumers} from '../../mockData/costumers';
+
 import ProductsInAssigne from './ProductsInAssigne'
 class AssigneProductToCustomer extends Component {
     state = { 
@@ -29,12 +31,18 @@ class AssigneProductToCustomer extends Component {
            }
      }
     
-    handleDeleteProduct = (e,product)=>{
+     handleDeleteProduct = (e,product)=>{
     e.preventDefault();
     const prevproducts = this.state.products;
     const products = prevproducts.filter(p=>p !==product);
     this.setState({products});
 }
+
+    handleAssigne = (e)=>{
+    e.preventDefault();
+    //SOMETHING FOR SENDING DATA TO SERVER FOR ASSIGNING PRODUCTS WITH CUSTOMER    
+
+    }
 
     render() { 
         return ( 
@@ -52,7 +60,13 @@ class AssigneProductToCustomer extends Component {
 <button onClick={this.handleAddProduct} className="">Add</button>
 
 </form>
-
+<br></br>
+<form>
+    <select>
+    {costumers.map((costumer=>(<option  key={costumer.id} value={costumer.fullName} >{costumer.fullName}</option>)))}
+    </select>
+    <button onClick={this.handleAssigne}>Assigne</button>
+</form>
 </div>
          );
     }
