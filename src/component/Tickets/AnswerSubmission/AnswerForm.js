@@ -24,14 +24,20 @@ class AnswerForm extends Component {
 
         return (
             <React.Fragment>
-               <form className="answerForm" onSubmit={this.onSubmit}>
-                    <h3>فرم پاسخ</h3>
-                    <textarea onChange={this.onFormChange} placeholder="توضیحات" value={this.state.answerDescription}></textarea>
-                    <button type="submit" className="material-icons">send</button>
-                    <button type="button" className="material-icons">attachment</button>     
-                </form>
-                
-            </React.Fragment>
+            <form className="answerForm" onSubmit={this.onSubmit}>
+                <h3>فرم پاسخ</h3>
+                <textarea onChange={this.onFormChange} placeholder="توضیحات" value={this.state.answerDescription}></textarea>
+                <button type="submit" className="material-icons">send</button>
+                <button type="button" className="material-icons">attachment</button>
+                {(this.state.answerDescription && this.state.answerNotification) ?
+                    <React.Fragment>
+                        <p className="answerForm--message__success">{this.state.answerNotification}</p>
+                        <p>{this.state.answerSubmissionTime}</p>
+                    </React.Fragment>
+                    :
+                    <p className="answerForm--message__error">{this.state.answerNotification}</p>}
+            </form>
+        </React.Fragment>
 
         );
     }
