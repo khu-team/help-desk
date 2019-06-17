@@ -6,7 +6,16 @@ button{
     border-radius: 5px;
     margin: 2px;
 }
-.TicketForm{
+h3{
+    text-align: center;
+}
+h4{
+    color:rgba(0, 0, 0, 0.582);
+}
+a{
+    color: red;
+}
+.answerForm{
     margin: 50px auto;
   width: 70%;
   /* height: 350px; */
@@ -16,29 +25,10 @@ button{
   background: linear-gradient(to bottom right,rgb(19, 113, 255),rgb(6, 240, 189));
   font-family:'IRANSans';
 }
-h3{
-    text-align: center;
+.answerForm--message__success{
+    color: green!important;
 }
-.TicketInfo{
-    margin: 50px auto;
-    width: 70%;
-background: #fff;
-border-radius: 10px;
-padding: 20px 50px 50px 50px;
-text-align: center;
-}
-h4{
-    color:rgba(0, 0, 0, 0.582);
-}
-a{
-    color: red;
-}
-.RecentReply{
-    margin: 50px auto;
-    width: 70%;
-background: #fff;
-border-radius: 10px;
-padding: 20px 50px 50px 50px;
-text-align: center;
 
+.answerForm--message__error{
+    color: red!important;
 }
