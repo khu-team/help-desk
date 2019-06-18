@@ -38,6 +38,15 @@ class AddSupportUser extends Component {
         this.setState({email})
     }
     
+       handleSubmit = (e)=>{
+        e.preventDefault();
+        const number = this.state.phone;
+        if(number.toString().length !== 10){
+            this.setState({error:'phone number is invalid'})
+        }        
+        
+        }
+    
     
         render() {
         return (
