@@ -18,7 +18,7 @@ table.Table1 {
   table-layout:fixed;
   width:50%;
   border-collapse:separate;
-  border-width: 10px;
+  border-width: 5px;
   border-style:ridge;
   text-align: right;
   border-color:  #34b41c;
@@ -37,15 +37,15 @@ table.Table2 {
   border-style: ridge;
   text-align: center;
   border-color:  #34b41c;
-  background:linear-gradient(#2b58d6,#46d041 );
+  background:linear-gradient(#0099FF,#46d041 );
 }
 table.Table th{
-      border-width: 10px;
+      border-width: 5px;
       border-collapse: separate;
       text-align: center;
       border-style: ridge;
-      border-color: rgb(20, 91, 224);
-          background-color: rgb(21, 91, 243)
+      border-color:  #0099FF;
+          background-color: #33CCFF
 
 
 
