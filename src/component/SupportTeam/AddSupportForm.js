@@ -42,51 +42,64 @@ class AddSupportUser extends Component {
         render() {
         return (
 
-            <div >
-                <form >
-                    <div >
+            <div>
+                <form  >
+                    <div className="font2">
+                    <table className="Table2">
+
+                        
                         <h2>
-                            افزودن پشتیبان
+                       پشتیبان افزودن
                         </h2>
+                       
+                        </table>
                     </div>
                     <div >{this.state.error ? <h4>{this.state.error}</h4> : true}</div>
 
                     <div >
-                        <label> نام کامل: </label>
+                        
+                        <table className="Table1">
+                        <label className="font">نام کامل: </label>
                         <input type="text" value={this.state.name} onChange={this.handleNameChange}></input>
+</table>
 
                     </div>
 
                     <div >
-                        <label>نقش:</label>
+                    <table className="Table1">
+                        <label className="font" >نقش:</label>
                         <select value={this.state.category} onChange={this.handelRole}>
                             {roles.map((role=>(<option key={role.id} value={role.name} >{role.name}</option>)))}
                         </select>
-
+</table>
                     </div>
 
                     <div >
-                        <label>دپارتمان:</label>
+                    <table className="Table1">
+                        <label className="font" >دپارتمان:</label>
                         <select value={this.state.category} onChange={this.handelDepartment}>
                             {departments.map((dept=>(<option key={dept.id} value={dept.name} >{dept.name}</option>)))}
                         </select>
+                        </table>
 
                     </div>
 
 
                     <div >
-                        <label> شمارهءتلفن: </label>
+                    <table className="Table1">
+                        <label className="font"> شماره موبایل: </label>
                         <input type="number" value={this.state.phone} onChange={this.handlePhoneChange}></input>
-
+</table>
                     </div>
                     <div >
-                        <label> ایمیل: </label>
+                    <table className="Table1">
+                        <label className="font"> ایمیل: </label>
                         <input type="email" value={this.state.email} onChange={this.handleEmailChange}></input>
-
+</table>
                     </div>
 
                     <div >
-                        <button  onClick={this.handleSubmit}>ثبت پشتیبان</button>
+                        <button className="button" onClick={this.handleSubmit}>ثبت پشتیبان</button>
                     </div>
                 </form>
             </div>
