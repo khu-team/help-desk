@@ -4,14 +4,17 @@ import {roles} from "../../mockData/roles";
 
 class AddSupportUser extends Component {
     state = {
-        id: '',
-        role: 'سرپرست',
+        name:'',
+        role: '',
         roleId: 1,
         error: '',
         deptId: 1,
-        dept:'فنی'
-    }
+        dept:'',
+        status:'',
+        phone:'',
+        email:''
 
+    }
 
     handelRole = (e)=> {
         const role = e.target.value;
@@ -38,13 +41,42 @@ class AddSupportUser extends Component {
         this.setState({email})
     }
     
+        handleSupportStatusChange = (e) => {
+        const status = e.currentTarget.value
+        this.setState({status})
+    }
+    
        handleSubmit = (e)=>{
         e.preventDefault();
         const number = this.state.phone;
         if(number.toString().length !== 10){
             this.setState({error:'phone number is invalid'})
-        }        
-        
+        }
+           if(this.state.name === '' || this.state.phone === ''||this.state.status === ''||this.state.email === ''){
+               this.setState({error: 'لطفا همه فیلد ها را کامل کنید'})
+           }
+
+          else if(number.toString().length !== 11){
+               this.setState({error:'شماره موبایل وارد شده صحیح نیست'})
+           }
+
+           else{
+
+               let refreshState = this.state
+               refreshState = {...refreshState,
+                   name:'',
+                   role: '',
+                   roleId: 1,
+                   deptId: 1,
+                   dept:'',
+                   status:'',
+                   phone:'',
+                   email:''
+               }
+
+               this.setState({...refreshState})
+               this.setState({error:'با موفقیت ثبت شد'})
+                   }
         }
     
     
@@ -105,6 +137,18 @@ class AddSupportUser extends Component {
                         <label className="font"> ایمیل: </label>
                         <input type="email" value={this.state.email} onChange={this.handleEmailChange}></input>
 </table>
+                    </div>
+            
+            <div>
+                        <table className="Table1">
+                        <label className="font">
+                            وضعیت سرور
+                        </label>
+                        <span >
+                <label className="font"><span>فعال</span><input  type="radio" name="status" value={true} onChange={this.handleSupportStatusChange} /></label>
+                <label className="font">غیرفعال<input   type="radio" name="status" value={false} onChange={this.handleSupportStatusChange}/></label>
+                </span>
+                        </table>
                     </div>
 
                     <div >
