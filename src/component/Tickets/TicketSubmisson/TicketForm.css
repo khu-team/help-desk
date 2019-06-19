@@ -14,7 +14,7 @@ input,select{
 label{
   float: right;
 }
-.input-group{
+.ticketForm__input-group{
   width: 46% !important;
   margin:0 2%;
 }
@@ -67,7 +67,7 @@ select {
   margin: 2px;
   outline: none;
 }
-.input-group {
+.ticketForm__input-group {
   display: inline-block;
   width: 30%;
 }
@@ -75,7 +75,8 @@ input{
   width: 76% !important;
   margin-left:inherit;
 }
-.input-group:first-child{
+
+.ticketForm__input-group:first-child{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,7 +107,7 @@ textarea {
 textarea:focus {
   outline: none;
 }
-button.button {
+button {
   text-align: center;
   background: blue;
   color: #fff;
@@ -124,7 +125,7 @@ button.button {
     height: 50px;
     font-size: 15px;
   }
-  .input-group {
+  .ticketForm__input-group {
     display: flex!important;
     flex-direction: row!important;
     align-items: center!important;

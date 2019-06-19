@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import moment from 'moment-jalaali';
 import { products } from '../../../mockData/products';
 import { departments } from '../../../mockData/departments';
+// import 'bootstrap/dist/css/bootstrap.css';
 import './TicketForm.css';
 
 class TicketForm extends Component {
@@ -13,7 +15,7 @@ class TicketForm extends Component {
         description: '',
         product: 1,
         priority: 'MEDIUM',
-        submissionDateTime: 'not-set',
+        submissionDateTime: '',
         successMessage: '',
         titleError: '',
         ticketID: 1,
@@ -57,7 +59,7 @@ class TicketForm extends Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        const { costumer, title, product, department, priority, description, answerStatus, submissionDateTime, ticketID } = this.state;
+        let { costumer, title, product, department, priority, description, answerStatus, submissionDateTime, ticketID } = this.state;
         if (title.trim() === '') {
             this.setState(() => ({
                 titleError: 'عنوان نمیتواند خالی باشد',
@@ -75,22 +77,28 @@ class TicketForm extends Component {
         if (description.trim() !== '' && title.trim() !== '') {
             this.setState(() => ({
                 error: '',
-                successMessage: 'درخواست با موفقیت ثبت شد'
-            }));
-            console.log(
+                successMessage: 'درخواست با موفقیت ثبت شد',
+                submissionDateTime: moment().format('jYYYY jMM jDD  H:m:s')
+            }),
+                () => {
+                    submissionDateTime = this.state.submissionDateTime;
+                    console.log(
 
-                `
-        ID:${ticketID},
-        costumer:${costumer},
-        title:${title.trim()},
-        product:${product},
-        department:${department},
-        priority:${priority},
-        description:${description.trim()},
-        answerStatus:${answerStatus},
-        submissionDateTime:${submissionDateTime},
-        `
+                        `TICKETFORM
+            ID:${ticketID},
+            costumer:${costumer},
+            title:${title.trim()},
+            product:${product},
+            department:${department},
+            priority:${priority},
+            description:${description.trim()},
+            answerStatus:${answerStatus},
+            submissionDateTime:${submissionDateTime},
+            `
+                    );
+                }
             );
+
         }
 
     }
@@ -99,14 +107,14 @@ class TicketForm extends Component {
         return (
             <React.Fragment>
                 <form className="addTicket" onSubmit={(event) => this.onSubmit(event)}>
-                <h3>ثبت تیکت</h3>
+                    <h3>ثبت تیکت</h3>
                     {/* input for title  */}
-                    <div className="input-group">
+                    <div className="ticketForm__input-group">
                         <label htmlFor="title">عنوان :</label>
                         <input placeholder="عنوان" type="text" name="title" value={this.state.title} onChange={(event) => this.onFormChange(event)} />
                     </div>
                     {/* dropdown for product */}
-                    <div className="input-group">
+                    <div className="ticketForm__input-group">
                         <label htmlFor="product">محصول :</label>
                         <select name="product" id="product" value={this.state.product} onChange={(event) => this.onFormChange(event)} >
                             {
@@ -114,7 +122,7 @@ class TicketForm extends Component {
                             }
                         </select>
                     </div>
-                    <div className="input-group">
+                    <div className="ticketForm__input-group">
                         <label htmlFor="dept">ساختمان :</label>
                         {/* dropdown for department */}
                         <select name="department" id="dept" value={this.state.department} onChange={(event) => this.onFormChange(event)}>
@@ -123,7 +131,7 @@ class TicketForm extends Component {
                             }
                         </select>
                     </div>
-                    <div className="input-group">
+                    <div className="ticketForm__input-group">
                         {/* dropdown for priority */}
                         <label htmlFor="priority">اولویت :</label>
                         <select name="priority" id="priority" value={this.state.priority} onChange={(event) => this.onFormChange(event)}>
@@ -138,10 +146,11 @@ class TicketForm extends Component {
                     {/* textArea for description */}
                     <textarea placeholder="توضیحات" name="description" cols="30" rows="10" value={this.state.description} onChange={(event) => this.onFormChange(event)}></textarea>
                     <br></br>
-                    <button class="material-icons"> send</button>
+                    <button className="material-icons"> send</button>
                     {this.state.titleError && <p className="addTicket__message addTicket__message--error">{this.state.titleError}</p>}
                     {this.state.descriptionError && <p className="addTicket__message addTicket__message--error">{this.state.descriptionError}</p>}
-                    {this.state.successMessage &&<p className="addTicket__message addTicket__message--success">{this.state.successMessage}</p>}
+                    {this.state.successMessage && <p className="addTicket__message addTicket__message--success">{this.state.successMessage}</p>}
+                    {this.state.submissionDateTime && <p>{this.state.submissionDateTime}</p>}
                 </form>
             </React.Fragment>
         )
