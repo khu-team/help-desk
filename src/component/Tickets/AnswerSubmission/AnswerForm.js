@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment-jalaali';
 import './AnswerForm.css';
 
 class AnswerForm extends Component {
@@ -18,6 +19,35 @@ class AnswerForm extends Component {
             answerDescription: event.target.value,
             answerNotification: ''
         }));
+    }
+
+    onSubmit = (event) => {
+        event.preventDefault();
+        let { answerID, answerDescription, userID, ticketID, answerSubmissionTime } = this.state;
+        if (answerDescription.trim()) {
+            this.setState(() => ({
+                answerNotification: 'عملیات با موفقیت انجام شد',
+                answerSubmissionTime: moment().format('jYYYY jMM jDD  H:m:s')
+            }),
+                () => {
+                    answerSubmissionTime = this.state.answerSubmissionTime;
+                    console.log(`ANSWERFORM
+                    answerID:${answerID},
+                    userID:${userID},
+                    ticketID:${ticketID},
+                    answerDescription:${answerDescription},
+                    answerSubmissionTime:${answerSubmissionTime}
+    
+                `)
+                });
+
+
+        } else {
+            this.setState(() => ({
+                answerDescription: '',
+                answerNotification: 'توضیحات نمیتواند خالی باشد',
+            }));
+        }
     }
 
     render() {
