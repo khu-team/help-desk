@@ -16,7 +16,7 @@ table.Table  {
 table.Table1 {
 
   table-layout:fixed;
-  width:50%;
+  width:40%;
   border-collapse:separate;
   border-width: 5px;
   border-style:ridge;
@@ -65,15 +65,14 @@ table.Table th{
   }
 .font{
   font-style:inherit;
-font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-font-size: 21px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', IRANSans , sans-serif;
+font-size: 18px;
 display: inline-block;
--webkit-text-fill-color: rgb(85, 165, 54);
-
+-webkit-text-fill-color: #444444;
 }
 .font2{
   font-style:inherit;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', IRANSans, sans-serif;
   font-size: 25px;
   display: inline-block;
     color: #0b9306;
