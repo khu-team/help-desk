@@ -7,7 +7,7 @@ export const SupportTeamItem = ({fullName,email,phoneNumber,status,department,ro
     <div >
         <table className="Table" >
             <tbody>
-            <tr>
+            <tr className="font-iran-sans">
                 <th>{(status===true) ? 'فعال':'غیرفعال'}</th>
                 <th>{phoneNumber}</th>
                 <th>{email} </th>
