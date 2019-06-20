@@ -10,13 +10,13 @@ const SupportTeamList = () => (
     <div className="welcome">
         <table  className="Table" >
             <thead>
-            <tr>
-                <th className="vaz"> وضعیت</th>
-                <th className="vaz"> تلفن تماس</th>
-                <th className="vaz">ایمیل</th>
-                <th className="vaz">دپارتمان</th>
-                <th className="vaz">نقش</th>
-                <th className="vaz">نام کامل</th>
+              <tr className="font-iran-sans">
+                <th > وضعیت</th>
+                <th > تلفن تماس</th>
+                <th >ایمیل</th>
+                <th >دپارتمان</th>
+                <th >نقش</th>
+                <th>نام کامل</th>
 
 
             </tr>
