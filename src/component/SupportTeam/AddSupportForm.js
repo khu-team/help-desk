@@ -69,7 +69,6 @@ class AddSupportUser extends Component {
                    roleId: 1,
                    deptId: 1,
                    dept:'',
-                   status:'',
                    phone:'',
                    email:''
                }
