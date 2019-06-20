@@ -80,16 +80,16 @@ class AddSupportUser extends Component {
         }
     
     
-        render() {
+render() {
         return (
 
-            <div>
-                <form  >
+            <div >
+                <form className="font">
                     <div className="font2">
                     <table className="Table2">
 
                         
-                        <h2>
+                        <h2 className="font-iran-sans">
                        پشتیبان افزودن
                         </h2>
                        
@@ -100,15 +100,15 @@ class AddSupportUser extends Component {
                     <div >
                         
                         <table className="Table1">
-                        <label className="font">نام کامل: </label>
-                        <input type="text" value={this.state.name} onChange={this.handleNameChange}></input>
+                        <label >نام کامل: </label>
+                        <input  type="text" value={this.state.name} onChange={this.handleNameChange}/>
 </table>
 
                     </div>
 
                     <div >
                     <table className="Table1">
-                        <label className="font" >نقش:</label>
+                        <label  >نقش:</label>
                         <select value={this.state.category} onChange={this.handelRole}>
                             {roles.map((role=>(<option key={role.id} value={role.name} >{role.name}</option>)))}
                         </select>
@@ -117,8 +117,8 @@ class AddSupportUser extends Component {
 
                     <div >
                     <table className="Table1">
-                        <label className="font" >دپارتمان:</label>
-                        <select value={this.state.category} onChange={this.handelDepartment}>
+                        <label >دپارتمان:</label>
+                        <select  value={this.state.category} onChange={this.handelDepartment}>
                             {departments.map((dept=>(<option key={dept.id} value={dept.name} >{dept.name}</option>)))}
                         </select>
                         </table>
@@ -128,25 +128,25 @@ class AddSupportUser extends Component {
 
                     <div >
                     <table className="Table1">
-                        <label className="font"> شماره موبایل: </label>
-                        <input type="number" value={this.state.phone} onChange={this.handlePhoneChange}></input>
+                        <label > شماره موبایل: </label>
+                        <input type="number" value={this.state.phone} onChange={this.handlePhoneChange}/>
 </table>
                     </div>
                     <div >
                     <table className="Table1">
-                        <label className="font"> ایمیل: </label>
-                        <input type="email" value={this.state.email} onChange={this.handleEmailChange}></input>
+                        <label > ایمیل: </label>
+                        <input type="email" value={this.state.email} onChange={this.handleEmailChange}/>
 </table>
                     </div>
             
             <div>
                         <table className="Table1">
-                        <label className="font">
-                            وضعیت سرور
+                        <label >
+                            وضعیت پشتیبان
                         </label>
                         <span >
-                <label className="font"><span>فعال</span><input  type="radio" name="status" value={true} onChange={this.handleSupportStatusChange} /></label>
-                <label className="font">غیرفعال<input   type="radio" name="status" value={false} onChange={this.handleSupportStatusChange}/></label>
+                <label ><span>فعال</span><input  type="radio" name="status" value={true} onChange={this.handleSupportStatusChange} /></label>
+                <label >غیرفعال<input   type="radio" name="status" value={false} onChange={this.handleSupportStatusChange}/></label>
                 </span>
                         </table>
                     </div>
