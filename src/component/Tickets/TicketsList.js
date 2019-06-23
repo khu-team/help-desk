@@ -20,7 +20,6 @@ class TicketsList extends React.Component{
 		showFilter: false,
 		ticketss: tickets,
 		error: ''
-
 	}
 
 	onFilterChange = (e) => {
@@ -43,7 +42,7 @@ class TicketsList extends React.Component{
 		const filter = this.state.filter;
 		const filterr = e.target.value;
 		this.setState(() => ({filterr}));
-		if(filterr != ''){
+		if(filterr !== ''){
 			if(filter === 'Department'){
 				const fticekts = tickets.filter(
 					(ticket) => ticket.department === this.onDeptProductFilter(filterr)
@@ -86,9 +85,6 @@ class TicketsList extends React.Component{
 		}
 	};
 
-
-
-
 	filterTable = () => {
 		const filter = this.state.filter;
 		if(filter === 'Department'){
@@ -108,75 +104,64 @@ class TicketsList extends React.Component{
 		}
 	};
 
-	
-
-
-
-	render(){
+	render() {
 		return(
 			<React.Fragment>
-		<div>
+				<div>
 
+					<header>
+						<a href="#" className="logo11"><p> : Filter by </p></a>
 
-			<header>
-				<a href="#" className="logo11"><p> : Filter by </p></a>
+						<div className="menuuu"></div>
 
-				<div className="menuuu"></div>
+						<nav className="navf">
 
-				<nav className="navf">
+						<select value={this.state.filter} onChange={this.onFilterChange}>
+							{this.state.filters.map((fil) => (<option key={fil}>{fil}</option>))}
+						</select>
 
-				<select value={this.state.filter} onChange={this.onFilterChange}>
-					{this.state.filters.map((fil) => (<option key={fil}>{fil}</option>))}
-				</select>
-				{this.state.showFilter && this.filterTable()}
-					
-				</nav>
+						{this.state.showFilter && this.filterTable()}
+							
+						</nav>
 
-				<div className="clear"></div>
+						<div className="clear"></div>
 
+					</header>
 
-			</header>
-
-
-
-
-
-
-
-		<div class="limiter">
-			<div class="container-table100">
-				<div class="wrap-table100">
+					<div class="limiter">
+					<div class="container-table100">
+					<div class="wrap-table100">
 					<div class="table100">
 
-				<table>
-					<thead>
-					<tr className="table100-head">
-						<th className="column1">ID</th>
-						<th className="column2">Title</th>
-						<th className="column3">Priority</th>
-						<th className="column4">Costumer</th>
-						<th className="column5">Product</th>
-						<th className="column6">Department</th>
-						<th className="column7">AnswerStatus</th>
-						<th className="column8">SubmissionDateTime</th>
-						<th className="column9">Likes</th>
-					</tr>
-					</thead>
-					<tbody>
-					{this.state.ticketss.map((item) => (<TicketItem ticket={item} key={item.id} />))}
-					</tbody>
-				</table>
-						</div>
+					<table>
+						<thead>
+							<tr className="table100-head">
+								<th className="column1">ID</th>
+								<th className="column2">Title</th>
+								<th className="column3">Priority</th>
+								<th className="column4">Costumer</th>
+								<th className="column5">Product</th>
+								<th className="column6">Department</th>
+								<th className="column7">AnswerStatus</th>
+								<th className="column8">SubmissionDateTime</th>
+								<th>Details</th>
+							</tr>
+						</thead>
+						<tbody>
+							{this.state.ticketss.map((item) => (<TicketItem ticket={item} key={item.id} />))}
+						</tbody>
+					</table>
+
+					</div>
 					</div>
 					<p>{this.state.error}</p>
-				</div>
-			</div>
+					</div>
+					</div>
 
-			</div>
-		</React.Fragment>
+				</div>
+			</React.Fragment>
 		);
 	}
 }
-
 
 export default TicketsList;
