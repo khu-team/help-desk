@@ -5,7 +5,6 @@ import AnswerForm from '../AnswerSubmission/AnswerForm';
 const SubmitTicket = () => (
   <React.Fragment>
     <TicketForm />
-    <AnswerForm />
   </React.Fragment>
 );
 
