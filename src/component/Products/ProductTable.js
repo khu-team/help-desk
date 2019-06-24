@@ -29,9 +29,10 @@ class ProductTable extends React.Component{
                     <td> {price} تومان </td>
                     <td>{discountPercentage}%</td>
                     <td> {numeral(newprice).format('0,0')} تومان </td>
-                    <td><NavLink to = {'/product/${id}'}> جزییات </NavLink></td>
-                    <td><NavLink to = {'/edit-product/${id}'}> Edit </NavLink></td>
+                    <td><NavLink to = {`/product/${id}`}> جزییات </NavLink></td>
+                    <td><NavLink to = {`/edit-product/${id}`}> Edit </NavLink></td>
                 </tr>
+
             )
         })
     };
