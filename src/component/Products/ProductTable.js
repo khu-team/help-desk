@@ -30,6 +30,7 @@ class ProductTable extends React.Component{
                     <td>{discountPercentage}%</td>
                     <td> {numeral(newprice).format('0,0')} تومان </td>
                     <td><NavLink to = {'/product/${id}'}> جزییات </NavLink></td>
+                    <td><NavLink to = {'/edit-product/${id}'}> Edit </NavLink></td>
                 </tr>
             )
         })
@@ -54,6 +55,8 @@ class ProductTable extends React.Component{
                         <th>قیمت</th>
                         <th>تخفیف</th>
                         <th onClick={this.Sort}  className='price'>قیمت با تخفیف</th>
+                        <th>جزییات</th>
+                        <th>اعمال تغییرات</th>
                     </tr>
                     { this.renderTableData()}
                     </tbody>
