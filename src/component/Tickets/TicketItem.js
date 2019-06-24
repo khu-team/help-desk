@@ -14,7 +14,7 @@ const TicketItem = (props) => (
 		<DepartmentRenderer departmentId={props.ticket.department} />
 		<td className="column7">{props.ticket.answerStatus ? "True" : "False"}</td>
 		<td className="column82">{props.ticket.submissionDateTime}</td>
-		<NavLink to = {`/ticket/${props.ticket.id}`}> <td className="column9"> بیشتر </td> </NavLink>
+		<td className="column9"> <NavLink to = {`/ticket/${props.ticket.id}`}>بیشتر</NavLink> </td>
 	</tr>
 );
 
