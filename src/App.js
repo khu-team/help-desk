@@ -8,7 +8,7 @@ import ProductsList from "./component/Products/ProductsList";
 import TicketsList from "./component/Tickets/TicketsList";
 import AddProduct from "./component/Products/AddProduct";
 import SubmitTicket from "./component/Tickets/TicketSubmisson/SubmitTicket";
-import TicketDetail from "./component/Tickets/TicketDetail/TicketDetail";
+import TicketDetails from "./component/Tickets/TicketDetail/TicketDetails";
 import EditProduct from "./component/Edit/EditProduct";
 import EditCostumer from "./component/Edit/EditCostumer";
 import EditSupportTeamUser from "./component/Edit/EditSupportTeamUser";
@@ -33,7 +33,7 @@ class App extends React.Component {
                     <Route path="/edit-product/:id" component={EditProduct}/>
                     <Route path="/product/:id" component={ProductDetail}/>
                     <Route path="/costumer/:id" component={EditCostumer}/>
-                    <Route path="/ticket/:id" component={TicketDetail}/>
+                    <Route path="/ticket/:id" component={TicketDetails}/>
                     <Route path="/support-team/:id" component={EditSupportTeamUser}/>
                 </Switch>
             </BrowserRouter>
