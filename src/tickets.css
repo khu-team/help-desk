@@ -333,3 +333,51 @@ header{
         padding-right: 15px;
     }
     }
+
+    .flex{
+        position: absolute;
+        top: 14.5%;
+        right: 14%;
+    }
+
+    .buttoon{
+        background:#1AAB8A;
+        border-radius: 50px;
+        color:rgb(0, 0, 0);
+        position:relative;
+        height:60px;
+        font-size:1.6em;
+        padding:0 2em;
+        cursor:pointer;
+        transition:800ms ease all;
+        outline:none;
+        z-index: 10;
+      }
+      .buttoon:hover{
+        background:rgb(148, 209, 219);
+        color:rgb(0, 0, 0);
+        border-radius: 50px;
+      }
+      .buttoon:before,.buttoon:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: rgb(1, 24, 18);
+        transition:400ms ease all;
+        border-radius: 50px;
+      }
+      .buttoon:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+        border-radius: 50px;
+      }
+      .buttoon:hover:before,.buttoon:hover:after{
+        width:100%;
+        transition:800ms ease all;
+        border-radius: 50px;
+      }

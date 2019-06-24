@@ -21,12 +21,13 @@ class TicketsList extends React.Component{
 			<React.Fragment>
 
 			<div>
-				<AppBar>
+				<div className="flex">
 					<Tabs value={this.state.tabValue} onChange={this.onTabChange}>
-			  			<Tab label="Open Tickets" />
-			  			<Tab label="Closed Tickets" />
+			  			<Tab label="Open Tickets"  className="buttoon" />
+			  			<Tab label="Closed Tickets"  className="buttoon" />
 					</Tabs>
-				</AppBar>
+				</div>
+				
 				{this.state.tabValue === 0 && <OpenTickets />}
 				{this.state.tabValue === 1 && <ClosedTickets />}
 			</div>
