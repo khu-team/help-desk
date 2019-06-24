@@ -34,7 +34,16 @@ class TicketDetail extends Component {
         const ticketDetails = tickets.find((ticket) => ticket.id === ticketId);
         return ticketDetails;
     }
-
+    onRateChange = (event) => {
+        event.preventDefault();
+        event.persist();
+        this.setState((prevState) => ({
+            ticketDetails: {
+                ...prevState.ticketDetails,
+                rate: event.target.rate.value
+            }
+        }));
+    }
     onStatusChange = () => {
         this.setState((prevState) => ({
             ticketDetails: {
@@ -60,8 +69,8 @@ class TicketDetail extends Component {
                     productDetails={this.state.productDetails}
                 />
                 {
-                    (this.state.ticketDetails.answerStatus) ?
-                        <RateForm /> :
+                    (this.state.ticketDetails.answerStatus ) ?
+                        <RateForm onRateChange={this.onRateChange} /> :
                         <AnswerForm />
                 }
                 <FirstTicketDetails

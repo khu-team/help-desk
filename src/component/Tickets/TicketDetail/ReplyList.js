@@ -9,6 +9,7 @@ class ReplyList extends Component {
     }
 
     // sorting date arrays by descending or ascending order
+    //this is just for testing and it may change when the real data comes in
     sortByDate = (type, replies) => {
         switch (type) {
             case 'ascending':
@@ -23,12 +24,13 @@ class ReplyList extends Component {
         // this part will be changed in future when API calls get arrived
         event.persist();
         this.setState((prevState) => {
-            repliesDetails: this.sortByDate(event.target.value, this.state.repliesDetails)
+            repliesDetails: this.sortByDate(event.target.value, prevState.repliesDetails)
         });
     }
 
     componentWillMount() {
         //this part will be changed with API calls
+        //it will fetch data from API and update state based on the received data
 
     }
 
@@ -36,6 +38,7 @@ class ReplyList extends Component {
         return (
             <React.Fragment>
                 <div className="replyList">
+                    {/* conditional rendering for whether an empty or filled list of replies */}
                     {
                         this.state.repliesDetails ?
                             <React.Fragment>

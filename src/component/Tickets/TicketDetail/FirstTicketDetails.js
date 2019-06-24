@@ -5,7 +5,8 @@ const FirstTicketDetails = (props) => {
         priority,
         answerStatus,
         submissionDateTime,
-        description
+        description,
+        rate
     } = props.ticketDetails;
     return (
         <React.Fragment>
@@ -14,7 +15,21 @@ const FirstTicketDetails = (props) => {
                 <div>{priority}</div>
                 <div>{submissionDateTime}</div>
                 <div>{description}</div>
-                <div>{answerStatus} <button onClick={props.onStatusChange}>toggle</button></div>
+                {rate && <div>امتیاز : {rate}</div>}
+                <div>
+                    {answerStatus ?
+                        <React.Fragment>
+                            <div>وضعیت تیکت : بسته</div>
+                            <div>{rate}:امتیاز</div>
+                            <button onClick={props.onStatusChange}>تغییر وضعیت و باز کردن دوباره تیکت</button>
+                        </React.Fragment>
+                        :
+                        <React.Fragment>
+                            <div>وضعیت تیکت : باز</div>
+                            <button onClick={props.onStatusChange}>ثبت امتیاز و بستن تیکت</button>
+                        </React.Fragment>
+                    }
+                </div>
             </div>
         </React.Fragment>
     )
