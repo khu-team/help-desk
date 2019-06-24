@@ -10,7 +10,7 @@ class editcustomer extends React.Component {
         city: 1,
         status: true
     }
-   
+  
 
     handleInputChange = (event) => {
         const target = event.target;
@@ -20,8 +20,7 @@ class editcustomer extends React.Component {
             [name]: value,
         });
     }
-    
-
+ 
     handelSubmit = (event) => {
         event.preventDefault();
         let selectCost;
@@ -42,6 +41,7 @@ class editcustomer extends React.Component {
 
     }
 
+  
 
     chengingHandelSubmit = (event) => {
         event.preventDefault();
@@ -51,7 +51,7 @@ class editcustomer extends React.Component {
             id: +this.state.editId,
             fullName: this.state.name,
             city: +this.state.city,
-            status: this.state.status
+            status: JSON.parse(this.state.status)
         }
 
         alert("ویرایش اطلاعات مشتری انجام شد...")
@@ -61,12 +61,10 @@ class editcustomer extends React.Component {
     render() {
         return (
             <div className="welcome">
-                
-                <h1 >:ویرایش اطلاعات مشتری</h1>
-                
+                <h1>:ویرایش اطلاعات مشتری</h1>
                 <div className="editForm">
                     <form className="marginForm">
-                       
+                     
                         <label>
                             <select
                                 name="editId"
@@ -81,7 +79,7 @@ class editcustomer extends React.Component {
                         </label><br></br>
                         <button onClick={this.handelSubmit} className="costumerButton">ویرایش اطلاعات</button><br></br>
                     </form>
-                    
+                   
                     {this.state.showEditingForm && costumers.map((costumer) => {
                         if (costumer.id == this.state.editId) {
                             return (
@@ -110,9 +108,7 @@ class editcustomer extends React.Component {
                                             <option value={3}>اصفهان</option>
                                             <option value={4}>یزد</option>
                                             <option value={5}>شیراز </option>
-
                                         </select> : شهر
-
                                     </label><br></br>
 
                                     <label className="labels">
@@ -127,7 +123,6 @@ class editcustomer extends React.Component {
                                     </label><br></br>
 
                                     <button onClick={this.chengingHandelSubmit} className="costumerButton"> اعمال تغییرات</button>
-
                                 </form>
 
                             )
