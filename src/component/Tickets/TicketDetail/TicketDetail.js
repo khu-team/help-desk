@@ -1,18 +1,20 @@
 import React from 'react';
 import AnswerForm from '../AnswerSubmission/AnswerForm';
-import FirstTicketDetail from '../TicketDetail/FirstTicketDetail';
-import ReplyList from '../TicketDetail/ReplyList';
-import CostumerSummary from '../TicketDetail/CostumerSummary';
-import './TicketDetail.css';
+import FirstTicketDetails from './FirstTicketDetails';
+import ReplyList from './ReplyList';
+import CostumerSummary from './CostumerSummary';
+import './TicketDetails.css';
 
-const TicketDetail = (props) => (
-    <React.Fragment>
-        {props.match.params.id}
-        <CostumerSummary />
-        <AnswerForm />
-        <FirstTicketDetail />
-        <ReplyList />
-    </React.Fragment>
-);
+const TicketDetail = (props) => {
+    const ticketId = props.match.params.id;
+    return (
+        <React.Fragment>
+            <CostumerSummary ticketId={ticketId} />
+            <AnswerForm />
+            <FirstTicketDetails />
+            <ReplyList />
+        </React.Fragment>
+    )
+};
 
 export default TicketDetail;
