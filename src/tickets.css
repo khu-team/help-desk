@@ -292,6 +292,9 @@ header{
     table tbody tr td:nth-child(5):before {
         content: "Product";
     }
+    table tbody tr td:nth-child(7):before {
+        content: "AnswerStatus";
+    }
     table tbody tr td:nth-child(6):before {
         content: "Department";
     }
@@ -299,12 +302,13 @@ header{
         content: "SubmissionDateTime";
     }
     table tbody tr td:nth-child(9):before {
-        content: "Likes";
+        content: "Details";
     }
 
     .column4,
     .column5,
     .column6,
+    .column7,
     .column8,
     .column82,
     .column9 {
@@ -312,6 +316,7 @@ header{
     }
 
     .column4,
+    .column7,
     .column5,
     .column6,
     .column1,

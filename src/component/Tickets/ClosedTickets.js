@@ -149,7 +149,7 @@ class ClosedTickets extends React.Component{
 						<th className="column6">Department</th>
 						<th className="column7">AnswerStatus</th>
 						<th className="column8">SubmissionDateTime</th>
-						<th >Details</th>
+						<th className="column9">Details</th>
 					</tr>
 					</thead>
 					<tbody>
