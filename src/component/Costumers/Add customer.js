@@ -11,12 +11,11 @@ class addcustomer extends React.Component {
     }
     
     handelSubmit = (event) => {
-        
         event.preventDefault();
         
         let costumer = {};
 
-        if (this.state.status === 1) {
+        if (this.state.status == 1) {
             costumer = {
                 id: this.state.id,
                 fullName: this.state.name,
@@ -31,15 +30,14 @@ class addcustomer extends React.Component {
                 status: false
             }
         }
-    
-        if (this.state.id === this.state.data.length + 1) {
+        
+        if (this.state.id == this.state.data.length + 1) {
             this.setState({
                 data: [...this.state.data, costumer],
             })
         }
         costumers.push(costumer);
 
-        
         alert("مشتری اضافه شد")
     }
 
@@ -47,7 +45,7 @@ class addcustomer extends React.Component {
     handleInputChange = (event) => {
         event.preventDefault();
         const target = event.target;
-        const value = target.name === 'city' ? +target.value : target.value;
+        const value = target.name == 'city' ? +target.value : target.value;
         const name = target.name;
         this.setState({
             id: costumers.length
@@ -67,7 +65,7 @@ class addcustomer extends React.Component {
                 <div className="costumerForm">
 
                     <form>
-                       
+                      
                         <label className="labels">
                             <input
                                 className="inputName"
@@ -78,7 +76,7 @@ class addcustomer extends React.Component {
                                 value={this.state.name}></input> : نام مشتری
                         </label> <br></br>
 
-                       
+                    
                         <label className="labels">
                             <select
                                 name="city"
