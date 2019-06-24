@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../products.css';
+import {NavLink} from "react-router-dom";
 
 
 class ProductTable extends React.Component{
@@ -28,6 +29,7 @@ class ProductTable extends React.Component{
                     <td> {price} تومان </td>
                     <td>{discountPercentage}%</td>
                     <td> {numeral(newprice).format('0,0')} تومان </td>
+                    <td><NavLink to = {'/product/${id}'}> جزییات </NavLink></td>
                 </tr>
             )
         })
