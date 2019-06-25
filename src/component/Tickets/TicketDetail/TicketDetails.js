@@ -9,6 +9,7 @@ import { tickets } from '../../../mockData/tickets';
 import { costumers } from '../../../mockData/costumers';
 import { products } from '../../../mockData/products';
 import { replies } from '../../../mockData/replies';
+import 'bootstrap/dist/css/bootstrap.css';
 import './TicketDetails.css';
 
 
@@ -39,9 +40,7 @@ class TicketDetail extends Component {
     }
     repliesRenderer = (ticketId) => {
         const filteredReplies = replies.filter((reply) => reply.ticketId === ticketId);
-        this.setState(() => ({
-            repliesDetails: filteredReplies
-        }))
+        return filteredReplies;
     }
     ticketRenderer = (ticketId) => {
         const ticketDetails = tickets.find((ticket) => ticket.id === ticketId);
@@ -137,34 +136,42 @@ class TicketDetail extends Component {
     render() {
         return (
             <React.Fragment>
-                <CostumerSummary
-                    costumerDetails={this.state.costumerDetails}
-                    productDetails={this.state.productDetails}
-                />
-                {
-                    (this.state.ticketDetails.answerStatus) ?
-                        <RateForm
-                            onRateChange={this.onRateChange}
-                            onRateCommentChange={this.onRateCommentChange}
-                            rate={this.state.ticketDetails.rate}
-                            rateFormError={this.state.rateFormError}
-                        />
-                        :
-                        <AnswerForm
-                            onReplySubmit={this.onReplySubmit}
-                            ticketDetails={this.state.ticketDetails}
-                            repliesDetails={this.state.repliesDetails}
-                            supportTeamUserId={this.state.supportTeamUserId}
-                        />
-                }
-                <FirstTicketDetails
-                    ticketDetails={this.state.ticketDetails}
-                    onStatusChange={this.onStatusChange}
-                />
-                <ReplyList
-                    repliesDetails={this.state.repliesDetails}
-                    onRepliesSortChange={this.onRepliesSortChange}
-                />
+                <div className="container font-iran-sans">
+                    <div className="row">
+                        <div className="col-md-7">
+                            <CostumerSummary
+                                costumerDetails={this.state.costumerDetails}
+                                productDetails={this.state.productDetails}
+                            />
+                            {
+                                (this.state.ticketDetails.answerStatus) ?
+                                    <RateForm
+                                        onRateChange={this.onRateChange}
+                                        onRateCommentChange={this.onRateCommentChange}
+                                        rate={this.state.ticketDetails.rate}
+                                        rateFormError={this.state.rateFormError}
+                                    />
+                                    :
+                                    <AnswerForm
+                                        onReplySubmit={this.onReplySubmit}
+                                        ticketDetails={this.state.ticketDetails}
+                                        repliesDetails={this.state.repliesDetails}
+                                        supportTeamUserId={this.state.supportTeamUserId}
+                                    />
+                            }
+                        </div>
+                        <div className="col-md-5">
+                            <FirstTicketDetails
+                                ticketDetails={this.state.ticketDetails}
+                                onStatusChange={this.onStatusChange}
+                            />
+                            <ReplyList
+                                repliesDetails={this.state.repliesDetails}
+                                onRepliesSortChange={this.onRepliesSortChange}
+                            />
+                        </div>
+                    </div>
+                </div>
             </React.Fragment>
         )
     }

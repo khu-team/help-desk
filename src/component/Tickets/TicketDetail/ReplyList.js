@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 import ReplyItem from './ReplyItem';
 
 class ReplyList extends Component {
@@ -23,24 +28,42 @@ class ReplyList extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="replyList">
-                    {/* conditional rendering for whether an empty or filled list of replies */}
-                    {
-                        this.props.repliesDetails ?
-                            <React.Fragment>
-                                <div>
-                                    <label htmlFor="sortByDate"> : مرتب کردن پاسخ ها بر اساس</label>
-                                    <select name="sortByDate" id="sortByDate" value={this.state.sortByOrder} onChange={this.onRepliesSortChange}>
-                                        <option value="ascending" >قدیمی ترین</option>
-                                        <option value="descending" >جدید ترین</option>
-                                    </select>
-                                </div>
-                                {this.props.repliesDetails.map((reply) => <ReplyItem {...reply} />)}
-                            </React.Fragment>
-                            :
-                            <div className="replyList__emptyListMessage">هیچ پاسخی تاکنون برای این تیکت ثبت نشده است</div>
-                    }
-                </div>
+                {
+                    this.props.repliesDetails ?
+                        <React.Fragment>
+                            <div className="replyList">
+                                <label htmlFor="sortByDate"> : مرتب کردن پاسخ ها بر اساس</label>
+                                <select name="sortByDate" id="sortByDate" value={this.state.sortByOrder} onChange={this.onRepliesSortChange}>
+                                    <option value="ascending" >قدیمی ترین</option>
+                                    <option value="descending" >جدید ترین</option>
+                                </select>
+                            </div>
+                            <Table classes={{root:'replyList__table'}}>
+                                <TableHead classes={{root:'replyList__table-head'}}>
+                                    <TableRow classes={{root:'replyList__table-head'}}>
+                                        <TableCell>توضیحات</TableCell>
+                                        <TableCell >پتیبان پاسخ دهنده</TableCell>
+                                        <TableCell >زمان ثبت</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {this.props.repliesDetails.map((reply) => <ReplyItem key={reply.id} {...reply} />)}
+                                </TableBody>
+                            </Table>
+                        </React.Fragment>
+                        :
+                        //conditional rendering for whether an empty or filled list of replies
+                        <div className="replyList__emptyListMessage">هیچ پاسخی تاکنون برای این تیکت ثبت نشده است</div>
+                }
+
+
+
+                
+
+
+
+
+
             </React.Fragment>
         )
     }

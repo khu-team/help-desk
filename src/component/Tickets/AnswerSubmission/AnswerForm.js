@@ -53,15 +53,17 @@ class AnswerForm extends Component {
 
         return (
             <React.Fragment>
-                <form className="answerForm" onSubmit={this.onSubmit}>
+                <form className="answerForm form-group" onSubmit={this.onSubmit}>
                     <h3>فرم پاسخ</h3>
-                    <textarea onChange={this.onFormChange} placeholder="توضیحات" value={this.state.description}></textarea>
-                    <button type="submit" className="material-icons">send</button>
-                    <button type="button" className="material-icons">attachment</button>
+                    <textarea className="form-control answerform__commentArea" onChange={this.onFormChange} placeholder="توضیحات" value={this.state.description}></textarea>
+                    <div className="answerForm__buttonGroup">
+                        <button type="submit" className="material-icons">send</button>
+                        <button type="button" className="material-icons">attachment</button>
+                    </div>
                     {(this.state.answerSuccessMessage) ?
-                        <p className="answerForm--message__success">{this.state.answerSuccessMessage}</p>
+                        <p className="answerForm__message--success">{this.state.answerSuccessMessage}</p>
                         :
-                        <p className="answerForm--message__error">{this.state.answerError}</p>}
+                        <p className="answerForm__message--error">{this.state.answerError}</p>}
                 </form>
             </React.Fragment>
 
