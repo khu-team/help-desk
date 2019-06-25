@@ -18,6 +18,7 @@ class TicketDetail extends Component {
         ticketDetails: undefined,
         costumerDetails: undefined,
         productDetails: undefined,
+        rateFormError: undefined,
         ticketId: Number(this.props.match.params.id)
     }
     costumerRenderer = (ticketId) => {
@@ -37,18 +38,34 @@ class TicketDetail extends Component {
     onRateChange = (event) => {
         event.preventDefault();
         event.persist();
-        this.setState((prevState) => ({
-            ticketDetails: {
-                ...prevState.ticketDetails,
-                rate: event.target.rate.value
-            }
-        }));
+        if (event.target.rateComment.value) {
+            this.setState((prevState) => ({
+                ticketDetails: {
+                    ...prevState.ticketDetails,
+                    rate: event.target.rate.value,
+                    comment:event.target.rateComment.value
+                },
+                rateFormError: undefined
+            }))
+        } else {
+            this.setState((prevState) => ({
+                rateFormError: 'نظر نمیتواند خالی باشد'
+            }))
+        }
+    }
+    onRateCommentChange = (event) =>{
+        event.persist();
+        this.setState((prevState)=>({
+            rateFormError:undefined
+        }))
     }
     onStatusChange = () => {
         this.setState((prevState) => ({
             ticketDetails: {
                 ...prevState.ticketDetails,
-                answerStatus: !prevState.ticketDetails.answerStatus
+                answerStatus: !prevState.ticketDetails.answerStatus,
+                rate: undefined,
+                comment:undefined
             }
         }));
     }
@@ -69,8 +86,14 @@ class TicketDetail extends Component {
                     productDetails={this.state.productDetails}
                 />
                 {
-                    (this.state.ticketDetails.answerStatus ) ?
-                        <RateForm onRateChange={this.onRateChange} /> :
+                    (this.state.ticketDetails.answerStatus) ?
+                        <RateForm
+                            onRateChange={this.onRateChange}
+                            onRateCommentChange={this.onRateCommentChange}
+                            rate={this.state.ticketDetails.rate}
+                            rateFormError={this.state.rateFormError}
+                        />
+                        :
                         <AnswerForm />
                 }
                 <FirstTicketDetails

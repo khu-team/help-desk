@@ -4,6 +4,7 @@ const FirstTicketDetails = (props) => {
     const { title,
         priority,
         answerStatus,
+        comment,
         submissionDateTime,
         description,
         rate
@@ -20,7 +21,12 @@ const FirstTicketDetails = (props) => {
                     {answerStatus ?
                         <React.Fragment>
                             <div>وضعیت تیکت : بسته</div>
-                            <div>{rate}:امتیاز</div>
+                            {
+                                rate ?
+                                    <div>{rate}:امتیاز</div> :
+                                    <div>امتیاز: در حال محاسبه</div>
+                            }
+                            {comment && <div>نظر شما در باره تیکت :{comment}</div>}
                             <button onClick={props.onStatusChange}>تغییر وضعیت و باز کردن دوباره تیکت</button>
                         </React.Fragment>
                         :
