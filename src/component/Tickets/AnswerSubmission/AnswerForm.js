@@ -7,7 +7,7 @@ class AnswerForm extends Component {
 
     state = {
         answerSuccessMessage: '',
-        answerError:'',
+        answerError: '',
         id: this.props.repliesDetails[this.props.repliesDetails.length - 1].id + 1,
         description: '',
         submissionTime: undefined,
@@ -20,13 +20,13 @@ class AnswerForm extends Component {
         this.setState(() => ({
             description: event.target.value,
             answerSuccessMessage: '',
-            answerError:''
+            answerError: ''
         }));
     }
     messageSetter = () => {
         this.setState(() => ({
             answerSuccessMessage: 'عملیات با موفقیت انجام شد',
-            description:''
+            description: ''
         }));
     }
     onSubmit = (event) => {
@@ -44,6 +44,7 @@ class AnswerForm extends Component {
             this.setState(() => ({
                 description: '',
                 answerError: 'توضیحات نمیتواند خالی باشد',
+                answerSuccessMessage: ''
             }));
         }
     }
