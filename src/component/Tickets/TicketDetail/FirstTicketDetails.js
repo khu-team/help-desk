@@ -26,7 +26,7 @@ const FirstTicketDetails = (props) => {
                                     <div>{rate}:امتیاز</div> :
                                     <div>امتیاز: در حال محاسبه</div>
                             }
-                            {comment && <div>نظر شما در باره تیکت :{comment}</div>}
+                            {comment && <div>نظر شما در باره  وضعیت پاسخگویی تیکت :{comment}</div>}
                             <button onClick={props.onStatusChange}>تغییر وضعیت و باز کردن دوباره تیکت</button>
                         </React.Fragment>
                         :
