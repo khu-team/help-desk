@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment-jalaali';
 import AnswerForm from '../AnswerSubmission/AnswerForm';
 import FirstTicketDetails from './FirstTicketDetails';
 import ReplyList from './ReplyList';
@@ -7,6 +8,7 @@ import CostumerSummary from './CostumerSummary';
 import { tickets } from '../../../mockData/tickets';
 import { costumers } from '../../../mockData/costumers';
 import { products } from '../../../mockData/products';
+import { replies } from '../../../mockData/replies';
 import './TicketDetails.css';
 
 
@@ -18,7 +20,11 @@ class TicketDetail extends Component {
         ticketDetails: undefined,
         costumerDetails: undefined,
         productDetails: undefined,
+        repliesDetails: undefined,
         rateFormError: undefined,
+        //this is temporary
+        supportTeamUserId: 2,
+        sortByOrder: undefined,
         ticketId: Number(this.props.match.params.id)
     }
     costumerRenderer = (ticketId) => {
@@ -30,6 +36,12 @@ class TicketDetail extends Component {
         const productId = tickets.find((ticket) => ticket.id === ticketId).product;
         const product = products.find((product) => (product.id === productId));
         return product;
+    }
+    repliesRenderer = (ticketId) => {
+        const filteredReplies = replies.filter((reply) => reply.ticketId === ticketId);
+        this.setState(() => ({
+            repliesDetails: filteredReplies
+        }))
     }
     ticketRenderer = (ticketId) => {
         const ticketDetails = tickets.find((ticket) => ticket.id === ticketId);
@@ -43,7 +55,7 @@ class TicketDetail extends Component {
                 ticketDetails: {
                     ...prevState.ticketDetails,
                     rate: event.target.rate.value,
-                    comment:event.target.rateComment.value
+                    comment: event.target.rateComment.value
                 },
                 rateFormError: undefined
             }))
@@ -53,10 +65,53 @@ class TicketDetail extends Component {
             }))
         }
     }
-    onRateCommentChange = (event) =>{
+    onReplySubmit = (event, replyDetails, messageSetter) => {
         event.persist();
-        this.setState((prevState)=>({
-            rateFormError:undefined
+        this.setState((prevState) => ({
+            repliesDetails: [
+                ...prevState.repliesDetails,
+                {
+                    ...replyDetails,
+                    submissionTime: moment().valueOf()
+                }
+            ]
+        }), () => {
+            messageSetter();
+            this.onRepliesSortChange(this.state.sortByOrder)
+        }
+        );
+
+
+    }
+    onRepliesSortChange = (type) => {
+        switch (type) {
+            case 'ascending':
+                this.setState(prevState => {
+                    const ascendingReplies = prevState.repliesDetails.sort((a, b) => a.submissionTime - b.submissionTime);
+                    return {
+                        repliesDetails: ascendingReplies,
+                        sortByOrder: 'ascending'
+                    }
+                });
+                break;
+            case 'descending':
+                this.setState(prevState => {
+                    const descendingReplies = prevState.repliesDetails.sort((a, b) => b.submissionTime - a.submissionTime);
+                    return {
+                        repliesDetails: descendingReplies,
+                        sortByOrder: 'descending'
+                    }
+                });
+                break;
+            default:
+                return undefined;
+        }
+    }
+
+    onRateCommentChange = (event) => {
+        event.persist();
+        this.setState((prevState) => ({
+            rateFormError: undefined
         }))
     }
     onStatusChange = () => {
@@ -65,7 +120,7 @@ class TicketDetail extends Component {
                 ...prevState.ticketDetails,
                 answerStatus: !prevState.ticketDetails.answerStatus,
                 rate: undefined,
-                comment:undefined
+                comment: undefined
             }
         }));
     }
@@ -75,6 +130,7 @@ class TicketDetail extends Component {
         this.setState(() => ({
             costumerDetails: this.costumerRenderer(this.state.ticketId),
             productDetails: this.productRenderer(this.state.ticketId),
+            repliesDetails: this.repliesRenderer(this.state.ticketId),
             ticketDetails: this.ticketRenderer(this.state.ticketId)
         }))
     }
@@ -94,13 +150,21 @@ class TicketDetail extends Component {
                             rateFormError={this.state.rateFormError}
                         />
                         :
-                        <AnswerForm />
+                        <AnswerForm
+                            onReplySubmit={this.onReplySubmit}
+                            ticketDetails={this.state.ticketDetails}
+                            repliesDetails={this.state.repliesDetails}
+                            supportTeamUserId={this.state.supportTeamUserId}
+                        />
                 }
                 <FirstTicketDetails
                     ticketDetails={this.state.ticketDetails}
                     onStatusChange={this.onStatusChange}
                 />
-                <ReplyList />
+                <ReplyList
+                    repliesDetails={this.state.repliesDetails}
+                    onRepliesSortChange={this.onRepliesSortChange}
+                />
             </React.Fragment>
         )
     }
