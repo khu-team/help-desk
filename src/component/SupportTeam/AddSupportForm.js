@@ -16,6 +16,9 @@ class AddSupportUser extends Component {
 
     }
 
+
+
+
     handelRole = (e)=> {
         const role = e.target.value;
         const roleId = roles.find(arg => arg.name === role).id
@@ -44,6 +47,28 @@ class AddSupportUser extends Component {
         handleSupportStatusChange = (e) => {
         const status = e.currentTarget.value
         this.setState({status})
+    }
+        
+        
+            handelEdit = (e) => {
+        e.preventDefault();
+
+        let select=null;
+        supportTeamUsers.map((support) => {
+                if (support.id === this.state.editId) {
+                    select = support
+                }
+            }
+        )
+        this.setState({
+            Select: select,
+            name: select.fullName,
+            role:select.role,
+            dept:select.department,
+            phone: select.phoneNumber,
+            email: select.email,
+        })
+
     }
     
        handleSubmit = (e)=>{
@@ -77,6 +102,9 @@ class AddSupportUser extends Component {
                this.setState({error:'با موفقیت ثبت شد'})
                    }
         }
+       
+       
+       
     
     
 render() {
@@ -96,13 +124,13 @@ render() {
                     </div>
                     <div >{this.state.error ? <h4>{this.state.error}</h4> : true}</div>
 
-                    <div >
-                        
-                        <table className="Table1">
-                        <label >نام کامل: </label>
-                        <input  type="text" value={this.state.name} onChange={this.handleNameChange}/>
+                    <div   >
+                    <table className="Table1">
+                        <label  >نقش:</label>
+                        <select  value={this.state.role} onChange={this.handelRole}>
+                            {roles.map((role=>(<option key={role.id} value={role.id} >{role.name}</option>)))}
+                        </select>
 </table>
-
                     </div>
 
                     <div >
@@ -117,8 +145,8 @@ render() {
                     <div >
                     <table className="Table1">
                         <label >دپارتمان:</label>
-                        <select  value={this.state.category} onChange={this.handelDepartment}>
-                            {departments.map((dept=>(<option key={dept.id} value={dept.name} >{dept.name}</option>)))}
+                        <select   value={this.state.dept} onChange={this.handelDepartment}>
+                            {departments.map((dept=>(<option key={dept.id} value={dept.id} >{dept.name}</option>)))}
                         </select>
                         </table>
 
@@ -152,6 +180,8 @@ render() {
 
                     <div >
                         <button className="button" onClick={this.handleSubmit}>ثبت پشتیبان</button>
+                        <button class="btn btn-success" onClick={this.handelEdit}>ادیت</button>
+
                     </div>
                 </form>
             </div>
