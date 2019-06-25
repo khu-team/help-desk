@@ -5,15 +5,14 @@ import {roles} from "../../mockData/roles";
 class AddSupportUser extends Component {
     state = {
         name:'',
-        role: '',
         roleId: 1,
         error: '',
         deptId: 1,
-        dept:'',
         status:'',
         phone:'',
-        email:''
-
+        email:'',
+        Select:null,
+        editId: 1
     }
 
 
