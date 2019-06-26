@@ -1,9 +1,19 @@
 import React from 'react';
+import CategoryRenderer from './CategoryRenderer';
 
-const ProductsList = () => (
-    <div className="welcome">
-        Start From Here...
-    </div>
-);
+
+class ProductsList extends React.Component{
+
+
+    render() {
+        return (
+            <div>
+                <div className="welcome">
+                    <CategoryRenderer/>
+                </div>
+            </div>
+        );
+    }
+}
 
 export default ProductsList;
