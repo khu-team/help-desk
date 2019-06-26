@@ -19,17 +19,21 @@ class AddSupportUser extends Component {
         showEdit:false,
         tittle:'',
         showAdd:false
+
+
     }
 
      showForm=[1]
 
-       handelEditButton = (e) => {
+    handelEditButton = (e) => {
         e.preventDefault()
         this.setState({
             showEdit:true,
             tittle:'ویرایش پشتیبان',
             showAdd:false,
             error:''
+
+
         })
 
     }
@@ -47,9 +51,12 @@ class AddSupportUser extends Component {
             phone:'',
             email:''
 
+
         })
 
     }
+
+
 
     handelEdit = (e) => {
         e.preventDefault();
@@ -153,7 +160,7 @@ class AddSupportUser extends Component {
         return (
 
             <div >
-                <button type="button" className="btn btn-default btn-lg btn-block" onClick={this.handelAddButton}>افزودن پشتیبان جدید</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" onClick={this.handelAddButton}>افزودن پشتیبان جدید</button>
 
                 <button type="button" class="btn btn-primary btn-lg btn-block"  onClick={this.handelEditButton}>ویرایش مشخصات پشتیبانان</button>
 
@@ -260,10 +267,13 @@ class AddSupportUser extends Component {
                         <label >
                             وضعیت پشتیبان
                         </label>
+						
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <span >
-                <label ><span>فعال</span>< input type="radio" name="status" value={true} onChange={this.handleSupportStatusChange} required /></label>
-                <label >غیرفعال<input   type="radio" name="status" value={false} onChange={this.handleSupportStatusChange} required/></label>
+                <label class="btn btn-secondary"><span>فعال</span>< input  type="radio" name="status" value={true} onChange={this.handleSupportStatusChange} checked /></label>
+                <label class="btn btn-secondary">غیرفعال<input  type="radio" name="status" value={false} onChange={this.handleSupportStatusChange} required/></label>
                 </span>
+				</div>
                         </table>
                     </div>
 
