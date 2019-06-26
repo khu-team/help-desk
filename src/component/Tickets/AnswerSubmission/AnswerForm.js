@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import moment from 'moment-jalaali';
 import './AnswerForm.css';
 
 
@@ -8,7 +7,6 @@ class AnswerForm extends Component {
     state = {
         answerSuccessMessage: '',
         answerError: '',
-        id: this.props.repliesDetails[this.props.repliesDetails.length - 1].id + 1,
         description: '',
         submissionTime: undefined,
         userId: this.props.supportTeamUserId,
@@ -31,14 +29,10 @@ class AnswerForm extends Component {
     }
     onSubmit = (event) => {
         event.preventDefault();
-        let { id, description, userId, ticketId, submissionTime } = this.state;
+        let { description } = this.state;
         if (description.trim()) {
 
             this.props.onReplySubmit(event, this.state, this.messageSetter);
-            //    this.setState(() => ({
-            //     answerSuccessMessage: 'عملیات با موفقیت انجام شد',
-            //     submissionTime: moment().format('jYYYY jMM jDD  H:m:s')
-            // }));
         }
         else {
             this.setState(() => ({
@@ -48,7 +42,6 @@ class AnswerForm extends Component {
             }));
         }
     }
-
     render() {
 
         return (

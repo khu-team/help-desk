@@ -72,14 +72,35 @@
 
 /*replyList  */
 .replyList{
-  margin: 50px 0;
+  margin: 50px 0!important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  background-color: antiquewhite
 }
-.replyList__table{
-  width: 80%!important;
-  background: rgb(148, 158, 148);
+.replyList select{
+  background-color: aquamarine;
+  width: 25%;
+  margin-left: 30px;
 }
-.replyList__table-head{
-  background: none!important;
+.replyList label{ 
+  display:flex;
+  width: 50%;
+  background-color: aquamarine;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  
+}
+/* replyItem */
+.replyItem{
+  border: 1px solid black;
+}
+.replyItem div{
+  border: 1px solid black;
 }
 /* firstTicketDetails */
 .firstTicketDetails{
