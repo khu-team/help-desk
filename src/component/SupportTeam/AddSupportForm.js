@@ -11,7 +11,7 @@ class AddSupportUser extends Component {
         roleId: 1,
         error: '',
         deptId: 1,
-        status:'',
+        status:true,
         phone:'',
         email:'',
         Select:null,
