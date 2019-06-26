@@ -17,28 +17,45 @@ class AddSupportUser extends Component {
         Select:null,
         editId: null,
         showEdit:false,
-        tittle:'پشتیبان افزودن',
-        showAdd:true
+        tittle:'',
+        showAdd:false
 
 
     }
 
-
      showForm=[1]
 
-
-    handelTable = (e) => {
+    handelEditButton = (e) => {
         e.preventDefault()
         this.setState({
             showEdit:true,
             tittle:'ویرایش پشتیبان',
-            showAdd:false
-
+            showAdd:false,
+            name:'',
+            role:'',
+            dept:'',
+            phone:'',
+            email:'',
+            error:''
 
 
         })
 
     }
+
+    handelAddButton = (e) => {
+        e.preventDefault()
+        this.setState({
+            showEdit:false,
+            tittle:'افزودن پشتیبان',
+            showAdd:true,
+            error:''
+
+
+        })
+
+    }
+
 
 
     handelEdit = (e) => {
@@ -77,10 +94,7 @@ class AddSupportUser extends Component {
         }
         )
 
-
-
     }
-
 
     handleIdChange = (e) => {
         const editId = e.target.value
@@ -129,9 +143,7 @@ class AddSupportUser extends Component {
                this.setState({error:'شماره موبایل وارد شده صحیح نیست'})
            }
 
-
            else{
-
                let refreshState = this.state
                refreshState = {...refreshState,
                    name:'',
@@ -139,37 +151,22 @@ class AddSupportUser extends Component {
                    email:''
                }
 
-
                this.setState({...refreshState})
                this.setState({error:'با موفقیت ثبت شد'})
                    }
         }
     
-    
         render() {
         return (
 
             <div >
+                <button type="button" className="btn btn-default btn-lg btn-block" onClick={this.handelAddButton}>افزودن پشتیبان جدید</button>
 
-
-
-
-                <button type="button" class="btn btn-primary btn-lg btn-block"  onClick={this.handelTable}>ویرایش مشخصات پشتیبانان</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block"  onClick={this.handelEditButton}>ویرایش مشخصات پشتیبانان</button>
 
 
                 <form className="font">
-                    <div className="font2">
-                    <table className="Table2">
 
-
-
-
-                            <h2 className="font-iran-sans">
-                                {this.state.tittle}
-                        </h2>
-                       
-                        </table>
-                    </div>
 
                     <div >{this.state.error ? <h4>{this.state.error}</h4> : true}</div>
 
@@ -179,12 +176,24 @@ class AddSupportUser extends Component {
                             if (this.state.showEdit==true) {
                             return (
                                 <div>
+                                    <div className="font2">
+                                        <table className="Table2">
+
+
+                                            <h2 className="font-iran-sans">
+                                                {this.state.tittle}
+                                            </h2>
+
+                                        </table>
+                                    </div>
 
                                     <table className="Table1">
                                         <label>آیدی پشتیبان: </label>
                                         <input className="form-control" type="text" value={this.state.editId}
                                                onChange={this.handleIdChange}/>
                                     </table>
+
+
                                     <button type="button" className="btn btn-success" onClick={this.handelEdit}>جستوجوی پشتیبان</button>
 
 
@@ -199,7 +208,18 @@ class AddSupportUser extends Component {
                     {this.state.showAdd && this.showForm.map(() => {
                         if (this.state.showAdd===true) {
                             return (
+
                                 <div>
+                                    <div className="font2">
+                                        <table className="Table2">
+
+
+                                            <h2 className="font-iran-sans">
+                                                {this.state.tittle}
+                                            </h2>
+
+                                        </table>
+                                    </div>
                     <div >
 
                         <table className="Table1">
