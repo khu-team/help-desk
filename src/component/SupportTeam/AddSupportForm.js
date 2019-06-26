@@ -19,26 +19,17 @@ class AddSupportUser extends Component {
         showEdit:false,
         tittle:'',
         showAdd:false
-
-
     }
 
      showForm=[1]
 
-    handelEditButton = (e) => {
+       handelEditButton = (e) => {
         e.preventDefault()
         this.setState({
             showEdit:true,
             tittle:'ویرایش پشتیبان',
             showAdd:false,
-            name:'',
-            role:'',
-            dept:'',
-            phone:'',
-            email:'',
             error:''
-
-
         })
 
     }
@@ -49,14 +40,16 @@ class AddSupportUser extends Component {
             showEdit:false,
             tittle:'افزودن پشتیبان',
             showAdd:true,
-            error:''
-
+            error:'',
+            name:'',
+            role:'',
+            dept:'',
+            phone:'',
+            email:''
 
         })
 
     }
-
-
 
     handelEdit = (e) => {
         e.preventDefault();
