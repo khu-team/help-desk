@@ -1,25 +1,25 @@
+
 import React from 'react';
-import { costumers } from '../../mockData/costumers';
-import {CostumerItem} from '../../component/Costumers/CostumerItem'
-import '../Costumers/style/costumers.css';
-const CostumersList = () => (
-    <div className="welcome">
-    <table className="GentedTab" >
-    <thead className="GentedTab-header">
-      <tr  >
-      
-      <th> وضعیت</th>
-      <th>شهر</th>
-      <th>نام مشتری</th>
-      
-        
-      </tr>
-    </thead>
-    </table>
-        {costumers.map((costumer) => (
-            <CostumerItem key={costumer.id} {...costumer} />
-        ))}
-    </div>
-);
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import Navbar from "./navbar";
+import ShowList from "./ShowList";
+import Addcustomer from "./Add customer"
+import editcustomer from '../Edit/EditCostumer'
+import showcustomer from"./show customer"
+class CostumersList extends React.Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <Navbar/>
+                <Switch>
+                    <Route path="/costumers"   component={showcustomer}/>
+                    <Route path="/addcustomer" component={Addcustomer}/>
+                    <Route path="/editcustomer" component={editcustomer}/>
+                    <Route path="/showcustomer" component={ShowList}/>
+                </Switch>
+            </BrowserRouter>
+        );
+    }
+}
 
 export default CostumersList;

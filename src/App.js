@@ -6,10 +6,7 @@ import SupportTeamList from "./component/SupportTeam/SupportTeamList";
 import ProductsList from "./component/Products/ProductsList";
 import TicketsList from "./component/Tickets/TicketsList";
 import AddProduct from "./component/Products/AddProduct";
-import MainPageCostumer from './component/Costumers/mainpage';
-// import { Provider } from 'react-redux';
-// import { configStore } from 'store';
-// const store = configStore();
+import CostumersList from "./component/Costumers/CostumersList";
 import SubmitTicket from "./component/Tickets/TicketSubmisson/SubmitTicket";
 import TicketDetails from "./component/Tickets/TicketDetail/TicketDetails";
 import EditProduct from "./component/Edit/EditProduct";
@@ -28,7 +25,7 @@ class App extends React.Component {
                 <Switch>
                     <Route path="/" exact={true} component={Dashboard}/>
                     <Route path="/support-team" component={SupportTeamList}/>
-                    <Route path="/costumers" component={MainPageCostumer}/>
+                    <Route path="/costumers" component={CostumersList}/>
                     <Route path="/products" component={ProductsList}/>
                     <Route path="/add-product" component={AddProduct}/>
                     <Route path="/tickets" component={TicketsList}/>

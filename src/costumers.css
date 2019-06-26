@@ -1,0 +1,32 @@
+h1{
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #13857E, #6B4DA8);
+  }
+  table.GentedTab {
+  
+    width:100%;
+    table-layout: fixed;
+    background: -webkit-linear-gradient(left, #13857E, #6B4DA8);
+    background: linear-gradient(to right, #13857E, #6B4DA8);
+    font-family: 'iransans';
+  }
+   table.GentedTab th{
+    padding: 20px 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .GentedTab-header{
+    background-color: rgba(255, 255, 255, 0.24);
+   }
+   .GentedTab-Item{
+    background-color: rgba(255, 255, 255, 0.034);
+   }
