@@ -1,16 +1,30 @@
 input {
   display: inline-block;
-  width: 66%;
+  width: 50%;
   font-family: inherit;
   font-weight: inherit;
   border-radius: 0.4rem;
   border: 1px solid #999;
   padding: 0.5em 2em;
 }
+input,select{
+  display: inline-block;
+  float:left;
+}
+label{
+  float: right;
+}
+.ticketForm__input-group{
+  width: 46% !important;
+  margin:0 2%;
+}
 
 input:focus {
   outline: none;
   box-shadow: 0.2rem 0.8rem 1.6rem var(--colorPrimary600);
+}
+input[type="text"]{
+  margin-left:0px;
 }
 
 .addTicket {
@@ -21,7 +35,7 @@ input:focus {
   border: 1px solid black;
   border-radius: 10px;
   background: linear-gradient(to bottom right,rgb(19, 113, 255),rgb(6, 240, 189));
-
+  font-family:'IRANSans';
 }
 
 .addTicket__message {
@@ -33,11 +47,11 @@ input:focus {
 }
 
 .addTicket__message--error {
-  background-color: #f84541;
+  color:#dc3545;
 }
 
 .addTicket__message--success {
-  background-color: #34b41c;
+color:#28a745;
 }
 
 select {
@@ -53,11 +67,16 @@ select {
   margin: 2px;
   outline: none;
 }
-.input-group {
+.ticketForm__input-group {
   display: inline-block;
   width: 30%;
 }
-.input-group:first-child{
+input{
+  width: 76% !important;
+  margin-left:inherit;
+}
+
+.ticketForm__input-group:first-child{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +96,8 @@ label {
   margin: 8px 3px;
 }
 textarea {
-  width: 92%;
+  font-family: IRANSans;
+  width: 100%;
   padding: 1em 2em;
   border: 1px solid #999;
   border-radius: 10px;
@@ -87,7 +107,7 @@ textarea {
 textarea:focus {
   outline: none;
 }
-button.button {
+button {
   text-align: center;
   background: blue;
   color: #fff;
@@ -105,7 +125,7 @@ button.button {
     height: 50px;
     font-size: 15px;
   }
-  .input-group {
+  .ticketForm__input-group {
     display: flex!important;
     flex-direction: row!important;
     align-items: center!important;
@@ -122,4 +142,7 @@ button.button {
   textarea{
     margin-top: 15px;
   }
+}
+h3{
+  text-align: center;
 }

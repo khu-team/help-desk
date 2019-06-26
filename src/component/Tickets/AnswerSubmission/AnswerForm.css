@@ -1,0 +1,55 @@
+button {
+  background: blue;
+  color: #fff;
+  padding: 0.25em 0.25em;
+  border: none;
+  border-radius: 5px;
+  margin: 15px 10px 0 10px !important;
+}
+h3 {
+  text-align: center;
+  margin: 0 0 20px 0 !important;
+}
+h4 {
+  color: rgba(0, 0, 0, 0.582);
+}
+a {
+  color: red;
+}
+.answerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px auto !important;
+  /* height: 350px; */
+  padding: 20px 50px 10px 50px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  background: linear-gradient(
+    to bottom right,
+    rgba(28, 101, 211, 0.726),
+    rgb(39, 201, 168)
+  );
+  font-family: "IRANSans";
+}
+.answerform__commentArea {
+  height: 300px !important;
+  resize: none;
+}
+.answerForm__buttonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+.answerForm__message--success {
+  color: rgb(0, 121, 40) !important;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.answerForm__message--error {
+  color: rgb(151, 11, 11) !important;
+  text-align: center;
+  margin-top: 15px;
+}

@@ -1,0 +1,101 @@
+/* CostumerSummary */
+.costumerSummary {
+  background: linear-gradient(
+    to bottom right,
+    rgba(17, 107, 243, 0.705),
+    rgb(39, 201, 168)
+  );
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  margin-top: 25px !important;
+}
+
+/* rateForm */
+.rateForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    to bottom right,
+    rgba(17, 107, 243, 0.705),
+    rgb(39, 201, 168)
+  );
+  -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  margin-top: 65px;
+  border-radius: 5px;
+}
+.rateForm__commentArea {
+  width: 80%;
+  margin-top: 35px;
+}
+.rateForm__submissionSection {
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 35px;
+}
+.rateForm__submiissionSection__dropDown {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 25%;
+}
+.rateForm__submiissionSection__dropDown select {
+  width: 60px;
+  height: 40px;
+}
+.rateForm__submiissionSection__button {
+  border-radius: 5px;
+  width: 12%;
+  margin-left: 10px;
+}
+.rateForm__successMessage {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: center;
+  color: white;
+  width: 50%;
+  height: 50px;
+  margin: 50px auto;
+  background-color: rgb(87, 117, 87);
+}
+.rateForm__message--error {
+  color: rgb(151, 11, 11) !important;
+  margin-top: 15px;
+}
+
+/*replyList  */
+.replyList{
+  margin: 50px 0;
+}
+.replyList__table{
+  width: 80%!important;
+  background: rgb(148, 158, 148);
+}
+.replyList__table-head{
+  background: none!important;
+}
+/* firstTicketDetails */
+.firstTicketDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.firstTicketDetails__title{
+  background-color: rgb(83, 207, 207);
+}
+.firstTicketDetails div{
+ border:1px solid black;
+ width: 50%;
+ text-align: center;
+}
+.firstTicketDetails button{
+ border:none;
+}
