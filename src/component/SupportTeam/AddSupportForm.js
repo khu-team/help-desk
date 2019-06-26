@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {departments} from "../../mockData/departments";
 import {roles} from "../../mockData/roles";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {supportTeamUsers} from "../../mockData/supportTeamUsers";
+
 
 class AddSupportUser extends Component {
     state = {
@@ -12,20 +15,86 @@ class AddSupportUser extends Component {
         phone:'',
         email:'',
         Select:null,
-        editId: 1
+        editId: null,
+        showEdit:false,
+        tittle:'پشتیبان افزودن',
+        showAdd:true
+
+
     }
 
 
+     showForm=[1]
 
+
+    handelTable = (e) => {
+        e.preventDefault()
+        this.setState({
+            showEdit:true,
+            tittle:'ویرایش پشتیبان',
+            showAdd:false
+
+
+
+        })
+
+    }
+
+
+    handelEdit = (e) => {
+        e.preventDefault();
+
+        let select='';
+        supportTeamUsers.some((support) => {
+                if (support.id == this.state.editId) {
+                    this.setState({
+                        showAdd:true,
+                        showEdit:false
+                    })
+                    select = support
+
+                    this.setState({
+                        Select: select,
+                        name: select.fullName,
+                        role:select.role,
+                        dept:select.department,
+                        phone: select.phoneNumber,
+                        email: select.email,
+                        error:''
+
+                    })
+
+                }
+                else if(select==='')  {
+                    this.setState({error:'آی دی وارد شده صحیح نیست',
+                        name:'',
+                        role:'',
+                        dept:'',
+                        phone:'',
+                        email:'',
+                    }  )
+                }
+        }
+        )
+
+
+
+    }
+
+
+    handleIdChange = (e) => {
+        const editId = e.target.value
+        this.setState({editId})
+    }
 
     handelRole = (e)=> {
         const role = e.target.value;
-        const roleId = roles.find(arg => arg.name === role).id
+        const roleId = roles.find(arg => arg.name === role)
         this.setState({ role , roleId })
     }
     handelDepartment = (e)=> {
         const dept = e.target.value;
-        const deptId = departments.find(arg => arg.name === dept).id
+        const deptId = departments.find(arg => arg.name === dept)
         this.setState({ dept , deptId })
     }
 
@@ -47,35 +116,11 @@ class AddSupportUser extends Component {
         const status = e.currentTarget.value
         this.setState({status})
     }
-        
-        
-            handelEdit = (e) => {
-        e.preventDefault();
-
-        let select=null;
-        supportTeamUsers.map((support) => {
-                if (support.id === this.state.editId) {
-                    select = support
-                }
-            }
-        )
-        this.setState({
-            Select: select,
-            name: select.fullName,
-            role:select.role,
-            dept:select.department,
-            phone: select.phoneNumber,
-            email: select.email,
-        })
-
-    }
     
        handleSubmit = (e)=>{
         e.preventDefault();
         const number = this.state.phone;
-        if(number.toString().length !== 10){
-            this.setState({error:'phone number is invalid'})
-        }
+
            if(this.state.name === '' || this.state.phone === ''||this.state.status === ''||this.state.email === ''){
                this.setState({error: 'لطفا همه فیلد ها را کامل کنید'})
            }
@@ -84,59 +129,91 @@ class AddSupportUser extends Component {
                this.setState({error:'شماره موبایل وارد شده صحیح نیست'})
            }
 
+
            else{
 
                let refreshState = this.state
                refreshState = {...refreshState,
                    name:'',
-                   role: '',
-                   roleId: 1,
-                   deptId: 1,
-                   dept:'',
                    phone:'',
                    email:''
                }
+
 
                this.setState({...refreshState})
                this.setState({error:'با موفقیت ثبت شد'})
                    }
         }
-       
-       
-       
     
     
-render() {
+        render() {
         return (
 
             <div >
+
+
+
+
+                <button type="button" class="btn btn-primary btn-lg btn-block"  onClick={this.handelTable}>ویرایش مشخصات پشتیبانان</button>
+
+
                 <form className="font">
                     <div className="font2">
                     <table className="Table2">
 
-                        
-                        <h2 className="font-iran-sans">
-                       پشتیبان افزودن
+
+
+
+                            <h2 className="font-iran-sans">
+                                {this.state.tittle}
                         </h2>
                        
                         </table>
                     </div>
+
                     <div >{this.state.error ? <h4>{this.state.error}</h4> : true}</div>
+
+
+
+                    {this.state.showEdit && this.showForm.map(() => {
+                            if (this.state.showEdit==true) {
+                            return (
+                                <div>
+
+                                    <table className="Table1">
+                                        <label>آیدی پشتیبان: </label>
+                                        <input className="form-control" type="text" value={this.state.editId}
+                                               onChange={this.handleIdChange}/>
+                                    </table>
+                                    <button type="button" className="btn btn-success" onClick={this.handelEdit}>جستوجوی پشتیبان</button>
+
+
+                                </div>
+                            )
+                        }
+
+                    }
+                        )
+                    }
+
+                    {this.state.showAdd && this.showForm.map(() => {
+                        if (this.state.showAdd===true) {
+                            return (
+                                <div>
+                    <div >
+
+                        <table className="Table1">
+                        <label >نام کامل: </label>
+                        <input class="form-control" type="text" value={this.state.name} onChange={this.handleNameChange}/>
+</table>
+
+                    </div>
 
                     <div   >
                     <table className="Table1">
                         <label  >نقش:</label>
                         <select  value={this.state.role} onChange={this.handelRole}>
                             {roles.map((role=>(<option key={role.id} value={role.id} >{role.name}</option>)))}
-                        </select>
-</table>
-                    </div>
-
-                    <div >
-                    <table className="Table1">
-                        <label  >نقش:</label>
-                        <select value={this.state.category} onChange={this.handelRole}>
-                            {roles.map((role=>(<option key={role.id} value={role.name} >{role.name}</option>)))}
                         </select>
 </table>
                     </div>
@@ -152,16 +229,16 @@ render() {
                     </div>
 
 
-                    <div >
+                    <div  >
                     <table className="Table1">
-                        <label > شماره موبایل: </label>
-                        <input type="number" value={this.state.phone} onChange={this.handlePhoneChange}/>
-</table>
+                        <label > شماره‌موبایل: </label>
+                        <input class="form-control" type="number" value={this.state.phone} onChange={this.handlePhoneChange}/>
+                    </table>
                     </div>
                     <div >
                     <table className="Table1">
                         <label > ایمیل: </label>
-                        <input type="email" value={this.state.email} onChange={this.handleEmailChange}/>
+                        <input type="email" class="form-control" value={this.state.email} onChange={this.handleEmailChange}/>
 </table>
                     </div>
             
@@ -171,18 +248,27 @@ render() {
                             وضعیت پشتیبان
                         </label>
                         <span >
-                <label ><span>فعال</span><input  type="radio" name="status" value={true} onChange={this.handleSupportStatusChange} /></label>
-                <label >غیرفعال<input   type="radio" name="status" value={false} onChange={this.handleSupportStatusChange}/></label>
+                <label ><span>فعال</span>< input type="radio" name="status" value={true} onChange={this.handleSupportStatusChange} required /></label>
+                <label >غیرفعال<input   type="radio" name="status" value={false} onChange={this.handleSupportStatusChange} required/></label>
                 </span>
                         </table>
                     </div>
 
                     <div >
-                        <button className="button" onClick={this.handleSubmit}>ثبت پشتیبان</button>
-                        <button class="btn btn-success" onClick={this.handelEdit}>ادیت</button>
+                        <button className="btn btn-success" onClick={this.handleSubmit}>ثبت پشتیبان</button>
 
                     </div>
+
+</div>
+                            )
+                        }
+
+                        }
+                    )
+                    }
+
                 </form>
+
             </div>
 
         );
