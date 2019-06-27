@@ -66,18 +66,21 @@ class TicketDetail extends Component {
     }
     onReplySubmit = (event, replyDetails, messageSetter) => {
         event.persist();
-        this.setState((prevState) => (
-            {
-                repliesDetails: [
-                    ...prevState.repliesDetails,
-                    {
-                        ...replyDetails,
-                        id: prevState.repliesDetails.length + 1,
-                        submissionTime: moment().valueOf()
-                    }
-                ]
-            }
-        ), () => {
+        this.setState((prevState) => {
+            const lastReplyId = prevState.repliesDetails.slice(0)[0].id;
+            return (
+                {
+                    repliesDetails: [
+                        ...prevState.repliesDetails,
+                        {
+                            ...replyDetails,
+                            id: lastReplyId + 1,
+                            submissionTime: moment().valueOf()
+                        }
+                    ]
+                }
+            )
+        }, () => {
             messageSetter();
             this.onRepliesSortChange(this.state.sortByOrder)
         }
