@@ -30,28 +30,33 @@ input[type="text"]{
 .addTicket {
   margin: 50px auto;
   width: 70%;
-  /* height: 350px; */
-  padding: 20px 50px 50px 50px;
-  border: 1px solid black;
   border-radius: 10px;
-  background: linear-gradient(to bottom right,rgb(19, 113, 255),rgb(6, 240, 189));
+  padding: 20px 50px 50px 50px;
+  box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  background: linear-gradient(
+    to bottom right,
+    rgba(28, 101, 211, 0.726),
+    rgb(39, 201, 168)
+  );
   font-family:'IRANSans';
 }
 
-.addTicket__message {
-  border-radius: 0.4rem;
-  margin: 20px auto 0 auto;
-  padding: 5px;
-  text-align: center;
-  width: 200px;
-}
-
 .addTicket__message--error {
-  color:#dc3545;
-}
+  color: #fff!important;
+  text-align: center;
+  background-color: #cf4747 !important;
+  float: center;
+  border-radius: 5px;
+  margin:2px;}
 
 .addTicket__message--success {
-color:#28a745;
+  color: black!important;
+  text-align: center;
+  background-color: #47cf73;
+  /* float: center; */
+  border-radius: 5px;
+  width: 60%;
+  margin: 0 auto;
 }
 
 select {
@@ -106,16 +111,6 @@ textarea {
 }
 textarea:focus {
   outline: none;
-}
-button {
-  text-align: center;
-  background: blue;
-  color: #fff;
-  padding: 0.5em 2em;
-  border: none;
-  border-radius: 5px;
-  vertical-align: center;
-  font-family: "IRANSans";
 }
 
 @media screen and (max-width: 1095px) {

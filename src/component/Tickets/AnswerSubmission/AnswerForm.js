@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './AnswerForm.css';
+import moment from 'moment-jalaali';
+
 
 
 class AnswerForm extends Component {
@@ -8,9 +10,10 @@ class AnswerForm extends Component {
         answerSuccessMessage: '',
         answerError: '',
         description: '',
+        formattedSubmissionTime: '',
         submissionTime: undefined,
-        userId: this.props.supportTeamUserId,
         ticketId: this.props.ticketDetails.id,
+        userId: this.props.supportTeamUserId
     }
 
     onFormChange = (event) => {
@@ -21,18 +24,23 @@ class AnswerForm extends Component {
             answerError: ''
         }));
     }
-    messageSetter = () => {
+    messageSetter = (submissionTime) => {
         this.setState(() => ({
-            answerSuccessMessage: 'عملیات با موفقیت انجام شد',
+            answerSuccessMessage: 'درخواست شما در ',
+            formattedSubmissionTime: moment(submissionTime).format("تاریخ:  jYYYY /jMM /jDD  و ساعت:  HH:m:s  ثبت شد"),
             description: ''
         }));
     }
     onSubmit = (event) => {
         event.preventDefault();
-        let { description } = this.state;
+        let { description, ticketId, userId } = this.state;
         if (description.trim()) {
 
-            this.props.onReplySubmit(event, this.state, this.messageSetter);
+            this.props.onReplySubmit(event, {
+                description,
+                ticketId,
+                userId
+            }, this.messageSetter);
         }
         else {
             this.setState(() => ({
@@ -48,13 +56,13 @@ class AnswerForm extends Component {
             <React.Fragment>
                 <form className="answerForm form-group" onSubmit={this.onSubmit}>
                     <h3>فرم پاسخ</h3>
-                    <textarea className="form-control answerform__commentArea" onChange={this.onFormChange} placeholder="توضیحات" value={this.state.description}></textarea>
+                    <textarea className="answerform__commentArea" onChange={this.onFormChange} placeholder="توضیحات" value={this.state.description}></textarea>
                     <div className="answerForm__buttonGroup">
                         <button type="submit" className="material-icons">send</button>
-                        <button type="button" className="material-icons">attachment</button>
+                        <button type="button" className="form-control-file" className="material-icons">attachment</button>
                     </div>
                     {(this.state.answerSuccessMessage) ?
-                        <p className="answerForm__message--success">{this.state.answerSuccessMessage}</p>
+                        <p className="answerForm__message--success">{this.state.answerSuccessMessage}{this.state.formattedSubmissionTime}</p>
                         :
                         <p className="answerForm__message--error">{this.state.answerError}</p>}
                 </form>

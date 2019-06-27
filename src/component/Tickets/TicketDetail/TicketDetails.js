@@ -66,19 +66,27 @@ class TicketDetail extends Component {
     }
     onReplySubmit = (event, replyDetails, messageSetter) => {
         event.persist();
-        this.setState((prevState) => (
-            {
-                repliesDetails: [
-                    ...prevState.repliesDetails,
-                    {
-                        ...replyDetails,
-                        id: prevState.repliesDetails.length + 1,
-                        submissionTime: moment().valueOf()
-                    }
-                ]
+        this.setState((prevState) => {
+            let lastReplyId;
+            if (prevState.sortByOrder === 'descending') {
+                lastReplyId = prevState.repliesDetails.slice(0)[0].id;
+            } else {
+                lastReplyId = prevState.repliesDetails.slice(-1)[0].id;
             }
-        ), () => {
-            messageSetter();
+            return (
+                {
+                    repliesDetails: [
+                        ...prevState.repliesDetails,
+                        {
+                            ...replyDetails,
+                            id: lastReplyId + 1,
+                            submissionTime: moment().valueOf()
+                        }
+                    ]
+                }
+            )
+        }, () => {
+            messageSetter(this.state.repliesDetails[this.state.repliesDetails.length - 1].submissionTime);
             this.onRepliesSortChange(this.state.sortByOrder)
         }
         );
@@ -141,11 +149,19 @@ class TicketDetail extends Component {
             <React.Fragment>
                 <div className="container font-iran-sans">
                     <div className="row">
-                        <div className="col-md-7">
+                        <div className="col-md-5">
                             <CostumerSummary
                                 costumerDetails={this.state.costumerDetails}
                                 productDetails={this.state.productDetails}
                             />
+                            <FirstTicketDetails
+                                ticketDetails={this.state.ticketDetails}
+                                onStatusChange={this.onStatusChange}
+                            />
+
+                        </div>
+                        <div className="col-md-7">
+
                             {
                                 (this.state.ticketDetails.answerStatus) ?
                                     <RateForm
@@ -162,12 +178,9 @@ class TicketDetail extends Component {
                                         supportTeamUserId={this.state.supportTeamUserId}
                                     />
                             }
+
                         </div>
-                        <div className="col-md-5">
-                            <FirstTicketDetails
-                                ticketDetails={this.state.ticketDetails}
-                                onStatusChange={this.onStatusChange}
-                            />
+                        <div className="replyItem">
                             <ReplyList
                                 repliesDetails={this.state.repliesDetails}
                                 onRepliesSortChange={this.onRepliesSortChange}

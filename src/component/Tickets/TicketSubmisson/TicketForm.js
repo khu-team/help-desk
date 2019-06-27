@@ -13,6 +13,7 @@ class TicketForm extends Component {
         department: 1,
         descriptionError: '',
         description: '',
+        formattedSubmissionDateTime: '',
         product: 1,
         priority: 'MEDIUM',
         submissionDateTime: '',
@@ -24,37 +25,44 @@ class TicketForm extends Component {
 
     onFormChange = (event) => {
         const { name, value } = event.target;
-        switch (name) {
-            case 'title':
-                this.setState(() => ({
-                    title: value,
-                    titleError: '',
-                }));
-                break;
-            case 'product':
-                this.setState(() => ({
-                    product: value
-                }));
-                break;
-            case 'department':
-                this.setState(() => ({
-                    department: value
-                }));
-                break;
-            case 'priority':
-                this.setState(() => ({
-                    priority: value
-                }));
-                break;
-            case 'description':
-                this.setState(() => ({
-                    description: value,
-                    descriptionError: ''
-                }));
-                break;
-            default:
-                return undefined;
-        }
+        this.setState(() => ({
+            descriptionError: '',
+            successMessage: '',
+            titleError: ''
+
+        }),
+            () => {
+                switch (name) {
+                    case 'title':
+                        this.setState(() => ({
+                            title: value,
+                        }));
+                        break;
+                    case 'product':
+                        this.setState(() => ({
+                            product: value
+                        }));
+                        break;
+                    case 'department':
+                        this.setState(() => ({
+                            department: value
+                        }));
+                        break;
+                    case 'priority':
+                        this.setState(() => ({
+                            priority: value
+                        }));
+                        break;
+                    case 'description':
+                        this.setState(() => ({
+                            description: value,
+                        }));
+                        break;
+                    default:
+                        return undefined;
+                }
+            })
+
     }
 
     onSubmit = (event) => {
@@ -62,6 +70,7 @@ class TicketForm extends Component {
         let { costumer, title, product, department, priority, description, answerStatus, submissionDateTime, ticketID } = this.state;
         if (title.trim() === '') {
             this.setState(() => ({
+                successMessage: '',
                 titleError: 'عنوان نمیتواند خالی باشد',
                 title: ''
             }));
@@ -70,15 +79,18 @@ class TicketForm extends Component {
             this.setState(() => (
                 {
                     descriptionError: 'توضیحات نمیتواند خالی باشد',
-                    description: ''
+                    description: '',
+                    successMessage: ''
                 }
             ))
         }
         if (description.trim() !== '' && title.trim() !== '') {
             this.setState(() => ({
+                descriptionError: '',
                 error: '',
-                successMessage: 'درخواست با موفقیت ثبت شد',
-                submissionDateTime: moment().format('jYYYY jMM jDD  H:m:s')
+                submissionDateTime: moment().valueOf(),
+                successMessage: ' درخواست شما در ',
+                titleError: ''
             }),
                 () => {
                     submissionDateTime = this.state.submissionDateTime;
@@ -96,6 +108,15 @@ class TicketForm extends Component {
             submissionDateTime:${submissionDateTime},
             `
                     );
+                    this.setState((prevState) => ({
+                        department: 1,
+                        description: '',
+                        product: 1,
+                        priority: 'MEDIUM',
+                        title: '',
+                        formattedSubmissionDateTime: moment(prevState.submissionDateTime).format("تاریخ:  jYYYY /jMM /jDD'  و ساعت:  HH:m:s با موفقیت ثبت شد"),
+                        submissionDateTime: ''
+                    }))
                 }
             );
 
@@ -149,8 +170,7 @@ class TicketForm extends Component {
                     <button className="material-icons"> send</button>
                     {this.state.titleError && <p className="addTicket__message addTicket__message--error">{this.state.titleError}</p>}
                     {this.state.descriptionError && <p className="addTicket__message addTicket__message--error">{this.state.descriptionError}</p>}
-                    {this.state.successMessage && <p className="addTicket__message addTicket__message--success">{this.state.successMessage}</p>}
-                    {this.state.submissionDateTime && <p>{this.state.submissionDateTime}</p>}
+                    {this.state.successMessage && <p className="addTicket__message--success">{this.state.successMessage}{this.state.formattedSubmissionDateTime}</p>}
                 </form>
             </React.Fragment>
         )

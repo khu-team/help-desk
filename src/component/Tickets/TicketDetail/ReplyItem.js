@@ -11,17 +11,21 @@ const supportTeamUserRenderer = (id) => {
     }
 }
 const replySubmissonTimeFormatter = (submissionTime) => {
-    return moment(submissionTime).format('jYYYY jMM jDD  H:m:s');
+    return moment(submissionTime).format('jDD /jMM /jYYYY , HH:m:s');
 }
 //this may change in future when real data comes in
 //showing details of each particular reply
 const ReplyItem = (props) => (
     <React.Fragment>
-        <div className="replyItem">
-            <div>توضیحات:{props.description}</div>
-            <div>پشتیبان پاسخ دهنده:{supportTeamUserRenderer(props.userId)}</div>
-            <div>زمان ثبت:{replySubmissonTimeFormatter(props.submissionTime)}</div>
+
+        <div className="replyDiv">
+            <div><span className="Date">{replySubmissonTimeFormatter(props.submissionTime)}</span><h4>پاسخ شماره {props.id}</h4></div>
+            <div>{props.description}</div>
+            <div>پشتیبان پاسخ دهنده: {supportTeamUserRenderer(props.userId)}</div>
+
         </div>
+
+
     </React.Fragment>
 );
 
