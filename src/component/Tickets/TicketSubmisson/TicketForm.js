@@ -77,8 +77,9 @@ class TicketForm extends Component {
         if (description.trim() !== '' && title.trim() !== '') {
             this.setState(() => ({
                 error: '',
-                successMessage: 'درخواست با موفقیت ثبت شد',
-                submissionDateTime: moment().format('jYYYY jMM jDD  H:m:s')
+                successMessage: ' درخواست شما در ',
+                submissionDateTime: moment().format("تاریخ: "+' jYYYY /jMM /jDD'+" و "+"ساعت: "+' H:m:s'+" با موفقیت ثبت شد")
+
             }),
                 () => {
                     submissionDateTime = this.state.submissionDateTime;
@@ -149,8 +150,7 @@ class TicketForm extends Component {
                     <button className="material-icons"> send</button>
                     {this.state.titleError && <p className="addTicket__message addTicket__message--error">{this.state.titleError}</p>}
                     {this.state.descriptionError && <p className="addTicket__message addTicket__message--error">{this.state.descriptionError}</p>}
-                    {this.state.successMessage && <p className="addTicket__message addTicket__message--success">{this.state.successMessage}</p>}
-                    {this.state.submissionDateTime && <p>{this.state.submissionDateTime}</p>}
+                    {this.state.successMessage && <p className="addTicket__message--success">{this.state.successMessage}{this.state.submissionDateTime}</p>}
                 </form>
             </React.Fragment>
         )

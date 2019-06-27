@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './AnswerForm.css';
+import moment from 'moment-jalaali';
+
 
 
 class AnswerForm extends Component {
@@ -23,8 +25,8 @@ class AnswerForm extends Component {
     }
     messageSetter = () => {
         this.setState(() => ({
-            answerSuccessMessage: 'عملیات با موفقیت انجام شد',
-            description: ''
+            answerNotification: 'درخواست شما در ',
+            answerSubmissionTime: moment().format("تاریخ: "+' jYYYY /jMM /jDD'+" و "+"ساعت: "+' H:m:s'+" ثبت شد")
         }));
     }
     onSubmit = (event) => {
@@ -48,13 +50,13 @@ class AnswerForm extends Component {
             <React.Fragment>
                 <form className="answerForm form-group" onSubmit={this.onSubmit}>
                     <h3>فرم پاسخ</h3>
-                    <textarea className="form-control answerform__commentArea" onChange={this.onFormChange} placeholder="توضیحات" value={this.state.description}></textarea>
+                    <textarea className="answerform__commentArea" onChange={this.onFormChange} placeholder="توضیحات" value={this.state.description}></textarea>
                     <div className="answerForm__buttonGroup">
                         <button type="submit" className="material-icons">send</button>
-                        <button type="button" className="material-icons">attachment</button>
+                        <button type="button" class="form-control-file" className="material-icons">attachment</button>
                     </div>
                     {(this.state.answerSuccessMessage) ?
-                        <p className="answerForm__message--success">{this.state.answerSuccessMessage}</p>
+                        <p className="answerForm--message__success">{this.state.answerNotification}{this.state.answerSubmissionTime}</p>
                         :
                         <p className="answerForm__message--error">{this.state.answerError}</p>}
                 </form>

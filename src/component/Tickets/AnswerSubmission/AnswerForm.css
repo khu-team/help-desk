@@ -20,9 +20,10 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
   margin: 50px auto !important;
-  /* height: 350px; */
-  padding: 20px 50px 10px 50px;
+  height: 457px;
+  padding: 2px 50px 10px 50px !important;
   border-radius: 10px;
   -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
   -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
@@ -41,15 +42,20 @@ a {
 .answerForm__buttonGroup {
   display: flex;
   justify-content: space-between;
+  border-radius: 20px;
 }
 .answerForm__message--success {
-  color: rgb(0, 121, 40) !important;
+  color: black!important;
   text-align: center;
-  margin-top: 15px;
+  background-color: #47cf73;
+  float: center;
+  border-radius: 5px;
 }
 
 .answerForm__message--error {
-  color: rgb(151, 11, 11) !important;
+  color: #fff!important;
   text-align: center;
-  margin-top: 15px;
+  background-color: #cf4747;
+  float: center;
+  border-radius: 5px;
 }

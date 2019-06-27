@@ -141,12 +141,20 @@ class TicketDetail extends Component {
             <React.Fragment>
                 <div className="container font-iran-sans">
                     <div className="row">
-                        <div className="col-md-7">
+                        <div className="col-md-5">
                             <CostumerSummary
                                 costumerDetails={this.state.costumerDetails}
                                 productDetails={this.state.productDetails}
                             />
-                            {
+                             <FirstTicketDetails
+                                ticketDetails={this.state.ticketDetails}
+                                onStatusChange={this.onStatusChange}
+                            />
+     
+                        </div>
+                        <div className="col-md-7">
+                        
+                        {
                                 (this.state.ticketDetails.answerStatus) ?
                                     <RateForm
                                         onRateChange={this.onRateChange}
@@ -162,17 +170,14 @@ class TicketDetail extends Component {
                                         supportTeamUserId={this.state.supportTeamUserId}
                                     />
                             }
+                           
                         </div>
-                        <div className="col-md-5">
-                            <FirstTicketDetails
-                                ticketDetails={this.state.ticketDetails}
-                                onStatusChange={this.onStatusChange}
-                            />
-                            <ReplyList
+                        <div className="replyItem">
+                        <ReplyList
                                 repliesDetails={this.state.repliesDetails}
                                 onRepliesSortChange={this.onRepliesSortChange}
                             />
-                        </div>
+                            </div>
                     </div>
                 </div>
             </React.Fragment>
