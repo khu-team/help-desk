@@ -67,7 +67,12 @@ class TicketDetail extends Component {
     onReplySubmit = (event, replyDetails, messageSetter) => {
         event.persist();
         this.setState((prevState) => {
-            const lastReplyId = prevState.repliesDetails.slice(0)[0].id;
+            let lastReplyId;
+            if (prevState.sortByOrder === 'descending') {
+                lastReplyId = prevState.repliesDetails.slice(0)[0].id;
+            } else {
+                lastReplyId = prevState.repliesDetails.slice(-1)[0].id;
+            }
             return (
                 {
                     repliesDetails: [
@@ -81,7 +86,7 @@ class TicketDetail extends Component {
                 }
             )
         }, () => {
-            messageSetter();
+            messageSetter(this.state.repliesDetails[this.state.repliesDetails.length - 1].submissionTime);
             this.onRepliesSortChange(this.state.sortByOrder)
         }
         );
@@ -149,15 +154,15 @@ class TicketDetail extends Component {
                                 costumerDetails={this.state.costumerDetails}
                                 productDetails={this.state.productDetails}
                             />
-                             <FirstTicketDetails
+                            <FirstTicketDetails
                                 ticketDetails={this.state.ticketDetails}
                                 onStatusChange={this.onStatusChange}
                             />
-     
+
                         </div>
                         <div className="col-md-7">
-                        
-                        {
+
+                            {
                                 (this.state.ticketDetails.answerStatus) ?
                                     <RateForm
                                         onRateChange={this.onRateChange}
@@ -173,14 +178,14 @@ class TicketDetail extends Component {
                                         supportTeamUserId={this.state.supportTeamUserId}
                                     />
                             }
-                           
+
                         </div>
                         <div className="replyItem">
-                        <ReplyList
+                            <ReplyList
                                 repliesDetails={this.state.repliesDetails}
                                 onRepliesSortChange={this.onRepliesSortChange}
                             />
-                            </div>
+                        </div>
                     </div>
                 </div>
             </React.Fragment>

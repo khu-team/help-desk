@@ -23,17 +23,32 @@ class ReplyList extends Component {
     render() {
         return (
             <React.Fragment>
-                
+                {
+                    this.props.repliesDetails ?
+                        <React.Fragment>
+                            <div className="replyList">
+                                <label htmlFor="sortByDate">  مرتب کردن پاسخ ها بر اساس :</label>
+                                <select name="sortByDate" id="sortByDate" value={this.state.sortByOrder} onChange={this.onRepliesSortChange}>
+                                    <option value="ascending" >قدیمی ترین</option>
+                                    <option value="descending" >جدید ترین</option>
+                                </select>
+                            </div>
                             {this.props.repliesDetails.map((reply) => <ReplyItem key={reply.id} {...reply} />)}
-                       
-             </React.Fragment>
+                        </React.Fragment>
+                        :
+                        //conditional rendering for whether an empty or filled list of replies
+                        <div className="replyList__emptyListMessage">هیچ پاسخی تاکنون برای این تیکت ثبت نشده است</div>
+                }
 
 
 
 
 
 
-           
+
+
+
+            </React.Fragment>
         )
     }
 };

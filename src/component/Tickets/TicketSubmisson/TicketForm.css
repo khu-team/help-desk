@@ -53,8 +53,10 @@ input[type="text"]{
   color: black!important;
   text-align: center;
   background-color: #47cf73;
-  float: center;
+  /* float: center; */
   border-radius: 5px;
+  width: 60%;
+  margin: 0 auto;
 }
 
 select {

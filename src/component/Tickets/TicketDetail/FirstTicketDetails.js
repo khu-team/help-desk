@@ -18,7 +18,6 @@ const FirstTicketDetails = (props) => {
                 <div>اولویت: {priority}</div>
                 <div>زمان ثبت تیکت: {submissionDateTime}</div>
                 <div>توضیحات: {description}</div>
-                {rate && <div>امتیاز : {rate}</div>}
                 {answerStatus ?
                     <React.Fragment>
                         <div>وضعیت تیکت: بسته</div>
