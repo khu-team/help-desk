@@ -156,10 +156,15 @@ class AddSupportUser extends Component {
                    }
         }
     
+            
         render() {
         return (
 
             <div >
+
+
+
+
                 <button type="button" class="btn btn-secondary btn-lg btn-block" onClick={this.handelAddButton}>افزودن پشتیبان جدید</button>
 
                 <button type="button" class="btn btn-primary btn-lg btn-block"  onClick={this.handelEditButton}>ویرایش مشخصات پشتیبانان</button>
@@ -187,11 +192,23 @@ class AddSupportUser extends Component {
                                         </table>
                                     </div>
 
-                                    <table className="Table1">
-                                        <label>آیدی پشتیبان: </label>
-                                        <input className="form-control" type="number" value={this.state.editId}
-                                               onChange={this.handleIdChange}/>
-                                    </table>
+
+
+                                    <div>
+
+                                        <table className="Table1">
+                                            <div className="input-group mb-3">
+                                                <div className="input-group-prepend">
+                                                    <span
+                                                        className="input-group-text">آی دی پشتیبان:</span>
+                                                </div>
+                                                <input className="form-control" type="number" value={this.state.editId}
+                                                       onChange={this.handleIdChange}/>
+                                            </div>
+
+                                        </table>
+
+                                    </div>
 
 
                                     <button type="button" className="btn btn-success" onClick={this.handelEdit}>جستوجوی پشتیبان</button>
@@ -223,60 +240,117 @@ class AddSupportUser extends Component {
                     <div >
 
                         <table className="Table1">
-                        <label >نام کامل: </label>
+                            <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" > نام کامل:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </div>
                         <input class="form-control" type="text" value={this.state.name} onChange={this.handleNameChange}/>
-</table>
+                            </div>
 
-                    </div>
-
-                    <div   >
-                    <table className="Table1">
-                        <label  >نقش:</label>
-                        <select class="custom-select"  value={this.state.role} onChange={this.handelRole}>
-                            {roles.map((role=>(<option key={role.id} value={role.id} >{role.name}</option>)))}
-                        </select>
-</table>
-                    </div>
-
-                    <div >
-                    <table className="Table1">
-                        <label >دپارتمان:</label>
-                        <select class="custom-select"   value={this.state.dept} onChange={this.handelDepartment}>
-                            {departments.map((dept=>(<option key={dept.id} value={dept.id} >{dept.name}</option>)))}
-                        </select>
-                        </table>
+                          </table>
 
                     </div>
 
 
 
-                    <div  >
-                    <table className="Table1">
-                        <label > شماره‌موبایل: </label>
-                        <input class="form-control" type="number" value={this.state.phone} onChange={this.handlePhoneChange}/>
-                    </table>
-                    </div>
-                    <div >
-                    <table className="Table1">
-                        <label > ایمیل: </label>
-                        <input type="email" class="form-control" value={this.state.email} onChange={this.handleEmailChange}/>
-</table>
-                    </div>
-            
-            <div>
-                        <table className="Table1">
-                        <label >
-                            وضعیت پشتیبان
-                        </label>
-						
-						<div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <span >
-                <label class="btn btn-secondary"><span>فعال</span>< input  type="radio" name="status" value={true} onChange={this.handleSupportStatusChange} checked /></label>
-                <label class="btn btn-secondary">غیرفعال<input  type="radio" name="status" value={false} onChange={this.handleSupportStatusChange} required/></label>
+
+                                    <div>
+
+                                        <table className="Table1">
+                                            <div className="input-group mb-3">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text" > نقش پشتیبان: </span>
+                                                </div>
+                                                <select className="custom-select" value={this.state.role}
+                                                        onChange={this.handelRole}>
+                                                    {roles.map((role => (
+                                                        <option key={role.id} value={role.id}>{role.name}</option>)))}
+                                                </select>
+                                            </div>
+
+                                        </table>
+
+                                    </div>
+
+
+
+                                    <div>
+
+                                        <table className="Table1">
+                                            <div className="input-group mb-3">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text" >  دپارتمان:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                </div>
+                                                <select className="custom-select" value={this.state.dept}
+                                                        onChange={this.handelDepartment}>
+                                                    {departments.map((dept => (
+                                                        <option key={dept.id} value={dept.id}>{dept.name}</option>)))}
+                                                </select>
+                                            </div>
+
+                                        </table>
+
+                                    </div>
+
+
+
+                                    <div>
+
+                                        <table className="Table1">
+                                            <div className="input-group mb-3">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text" >شماره موبایل:</span>
+                                                </div>
+                                                <input className="form-control" type="number" value={this.state.phone}
+                                                       onChange={this.handlePhoneChange}/>
+                                            </div>
+
+                                        </table>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <table className="Table1">
+                                            <div className="input-group mb-3">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text">ایمیل پشتیبان:</span>
+                                                </div>
+                                                <input type="email" className="form-control" value={this.state.email}
+                                                       onChange={this.handleEmailChange}/>
+
+                                            </div>
+
+                                        </table>
+
+                                    </div>
+
+
+
+
+                                    <div>
+
+                                        <table className="Table1">
+                                            <div className="input-group mb-3">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text" >وضعیت پشتیبان</span>
+                                                </div>
+                                                <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                        <span>
+                <label className="btn btn-secondary"><span>فعال</span>< input type="radio" name="status" value={true}
+                                                                              onChange={this.handleSupportStatusChange}
+                                                                              checked/></label>
+                <label className="btn btn-secondary">غیرفعال<input type="radio" name="status" value={false}
+                                                                   onChange={this.handleSupportStatusChange} required/></label>
                 </span>
-				</div>
-                        </table>
-                    </div>
+                                                </div>
+                                            </div>
+
+                                        </table>
+
+                                    </div>
+
 
                     <div >
                         <button className="btn btn-success" onClick={this.handleSubmit}>ثبت پشتیبان</button>
