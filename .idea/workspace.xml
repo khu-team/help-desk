@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d617be46-7611-4572-9521-b98d1cc10cbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/Products/ProductDeatil.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Products/ProductDeatil.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/Products/ProductTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Products/ProductTable.js" afterDir="false" />
     </list>
+=======
+    <list default="true" id="d617be46-7611-4572-9521-b98d1cc10cbc" name="Default Changelist" comment="" />
+>>>>>>> master
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -120,10 +124,17 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
     <option name="x" value="46" />
     <option name="y" value="34" />
     <option name="width" value="1140" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="77" />
+    <option name="y" value="47" />
+    <option name="width" value="1141" />
+>>>>>>> master
     <option name="height" value="636" />
   </component>
   <component name="ProjectView">
@@ -232,11 +243,15 @@
       <workItem from="1558710459827" duration="1515000" />
       <workItem from="1558712287776" duration="387000" />
       <workItem from="1558759173997" duration="949000" />
+<<<<<<< HEAD
       <workItem from="1559748646690" duration="4630000" />
       <workItem from="1559821705154" duration="1883000" />
       <workItem from="1559986737834" duration="6174000" />
       <workItem from="1560593036738" duration="4867000" />
       <workItem from="1561406084283" duration="1000000" />
+=======
+      <workItem from="1560863645652" duration="886000" />
+>>>>>>> master
     </task>
     <task id="LOCAL-00001" summary="category renderer done">
       <created>1558519535055</created>
@@ -256,6 +271,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="111704000" />
   </component>
   <component name="ToolWindowManager">
@@ -263,6 +279,14 @@
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26497278" />
+=======
+    <option name="totallyTimeSpent" value="69219000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="49" y="25" width="1317" height="743" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26506954" />
+>>>>>>> master
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -276,7 +300,11 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.33598408" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.34166667" />
+>>>>>>> master
       <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.32934928" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
