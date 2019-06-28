@@ -11,7 +11,6 @@ const TicketsList = () => (
 	<React.Fragment>
 		<div>
 
-	
 		<header>
         <a href="#" className="logo11">Tickets</a>
 
