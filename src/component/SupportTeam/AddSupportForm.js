@@ -189,7 +189,7 @@ class AddSupportUser extends Component {
 
                                     <table className="Table1">
                                         <label>آیدی پشتیبان: </label>
-                                        <input className="form-control" type="text" value={this.state.editId}
+                                        <input className="form-control" type="number" value={this.state.editId}
                                                onChange={this.handleIdChange}/>
                                     </table>
 
