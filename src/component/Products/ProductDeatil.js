@@ -1,15 +1,16 @@
 import React from 'react';
 import {products} from "../../mockData/products";
 import {transactions} from "../../mockData/transactions";
+import {costumers} from "../../mockData/costumers";
 import '../../products.css';
 
 class ProductDetail extends React.Component {
 
     ShowDetail=()=> {
         var numeral = require('numeral');
-        const ID = this.props.location.state.ID
-        const ntransaction=transactions.filter((t)=>t.product==ID)
-        const nproduct=products.find((p)=> p.id == ID)
+        const ID = this.props.location.state.ID;
+        const ntransaction=transactions.filter((t)=>t.product==ID);
+        const nproduct=products.find((p)=> p.id == ID);
         const {id,name,price,category,duration,discountPercentage}=nproduct;
 
         return(
@@ -36,13 +37,15 @@ class ProductDetail extends React.Component {
                 <table  className='customers font-iran-sans'>
                     <tbody>
                   <tr>
-                    <th>آیدی خریداران</th>
+                    <th>آیدی خریدار</th>
+                    <th>نام خریدار</th>
                     <th>تاریخ انقضا</th>
                   </tr>
                 {ntransaction.map((t)=>{
                     return(
                         <tr>
                             <td>{t.costumer}</td>
+                            <td>{costumers.find((c)=>c.id==t.costumer).fullName}</td>
                             <td>{t.expireDate.calendar()}</td>
                         </tr>
                     )
