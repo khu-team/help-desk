@@ -232,7 +232,7 @@ class AddSupportUser extends Component {
                     <div   >
                     <table className="Table1">
                         <label  >نقش:</label>
-                        <select  value={this.state.role} onChange={this.handelRole}>
+                        <select class="custom-select"  value={this.state.role} onChange={this.handelRole}>
                             {roles.map((role=>(<option key={role.id} value={role.id} >{role.name}</option>)))}
                         </select>
 </table>
@@ -241,12 +241,13 @@ class AddSupportUser extends Component {
                     <div >
                     <table className="Table1">
                         <label >دپارتمان:</label>
-                        <select   value={this.state.dept} onChange={this.handelDepartment}>
+                        <select class="custom-select"   value={this.state.dept} onChange={this.handelDepartment}>
                             {departments.map((dept=>(<option key={dept.id} value={dept.id} >{dept.name}</option>)))}
                         </select>
                         </table>
 
                     </div>
+
 
 
                     <div  >
