@@ -24,5 +24,4 @@ yarn-error.log*
 
 #editor
 .vscode
-
-/.idea/workspace.xml
+.idea
