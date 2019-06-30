@@ -7,30 +7,30 @@ import AssigneProductToCustomer from './AssigneProductToCustomer';
 import '../../styeles/addproduct.css'
 class AddProduct extends Component {
     state = { 
-        id: '',    
-        category: 'وب سایت و پرتال',
-        categoryId: 1,
+        id: this.props.product ? this.props.product.id : '',    
+        category: this.props.product ? this.props.product.category : 'وب سایت و پرتال',
+        categoryId: this.props.product ? this.props.product.categoryId : 1,
         error: '',
         mobileState: {
-            customerId: '',
-            platform: 'Android',
+            customerId: this.props.product ? this.props.product.customerId : '',
+            platform: this.props.product ? this.props.product.platform : 'Android',
         },
         websiteState: {
-            title: '',
-            customerId: '',
-            websiteType: '',
-            supportDuration: '',
-            frontEndLanguage: '',
-            backEndLanguage: ''
+            title: this.props.product ? this.props.product.title : '',
+            customerId: this.props.product ? this.props.product.customerId : '',
+            websiteType: this.props.product ? this.props.product.websiteType : '',
+            supportDuration: this.props.product ? this.props.product.supportDuration : '',
+            frontEndLanguage: this.props.product ? this.props.product.frontEndLanguage : '',
+            backEndLanguage: this.props.product ? this.props.product.backEndLanguage : ''
         },
         serverState: {
-            customerId: '',
-            serverCountry: '',
-            ram: '',
-            cpu: '',
-            hard: '',
-            support: '',
-            serverStatus: true
+            customerId: this.props.product ? this.props.product.customerId : '',
+            serverCountry: this.props.product ? this.props.product.serverCountry : '',
+            ram: this.props.product ? this.props.product.ram : '',
+            cpu: this.props.product ? this.props.product.cpu : '',
+            hard: this.props.product ? this.props.product.hard : '',
+            support: this.props.product ? this.props.product.support : '',
+            serverStatus: this.props.product ? this.props.product.serverStatus : true
         },
         products: []
      }
@@ -229,6 +229,13 @@ getCategoryFields = (categoryId)=>{
         this.setState({id})
     }
 
+    //handle edit
+
+    handleEdit = (e) => {
+        e.preventDefault()
+        console.log('edit done')
+    }
+
     //handle submit
 
     handleSubmit = (e) => {
@@ -315,7 +322,7 @@ getCategoryFields = (categoryId)=>{
             <form className="font-iran-sans">
                 <div className="form-head">
                     <h2>
-                        افزودن محصول
+                        {this.props.product ? 'اصلاح محصول' : 'افزودن محصول'} 
                     </h2>
                 </div>
             <div className="error">{this.state.error ? <h4>{this.state.error}</h4> : true}</div>
@@ -333,7 +340,11 @@ getCategoryFields = (categoryId)=>{
             {this.getCategoryFields(this.state.categoryId)}
             </div>
             <div className="button-wrappr">
-            <button className="add-product-button" onClick={this.handleSubmit}>ثبت محصول</button>
+            <button className="add-product-button" onClick={
+                this.props.product ? this.handleEdit : this.handleSubmit
+            }>
+                {this.props.product ? 'اصلاح محصول' : 'ثبت محصول'}
+            </button>
            </div>
             </form> 
 
