@@ -50,6 +50,7 @@ a {
   background-color: #47cf73;
   float: center;
   border-radius: 5px;
+  margin-top: 15px;
 }
 
 .answerForm__message--error {
@@ -58,4 +59,5 @@ a {
   background-color: #cf4747;
   float: center;
   border-radius: 5px;
+  margin-top: 15px;
 }

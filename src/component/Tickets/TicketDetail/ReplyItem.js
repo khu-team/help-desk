@@ -19,9 +19,15 @@ const ReplyItem = (props) => (
     <React.Fragment>
 
         <div className="replyDiv">
-            <div><span className="Date">{replySubmissonTimeFormatter(props.submissionTime)}</span><h4>پاسخ شماره {props.id}</h4></div>
-            <div>{props.description}</div>
-            <div>پشتیبان پاسخ دهنده: {supportTeamUserRenderer(props.userId)}</div>
+
+            <div className="replyDiv__title">
+                <span className="Date">
+                    {replySubmissonTimeFormatter(props.submissionTime)}
+                </span>
+                <h4>پاسخ شماره {props.id}</h4>
+            </div>
+            <div className="replyDiv__description">{props.description}</div>
+            <div className="replyDiv__supportUser">پشتیبان پاسخ دهنده: {supportTeamUserRenderer(props.userId)}</div>
 
         </div>
 
