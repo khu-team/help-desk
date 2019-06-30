@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductTable from "./ProductTable";
+import ShowTable from "./ShowTable";
 import '../../products.css';
-
+import Button from '@material-ui/core/Button';
 class ProductItem extends React.Component{
 
     state={
@@ -33,8 +33,10 @@ class ProductItem extends React.Component{
 render() {
     return(
         <div>
-            <button onClick={this.Show} className='font-iran-sans button-show'>نمایش</button>
-            {this.state.products.length > 0 && <ProductTable products={this.state.products}/>}
+            <button  onClick={this.Show} className='font-iran-sans button-show'>نمایش</button>
+           
+            {this.state.products.length > 0 && <ShowTable products={this.state.products}/>}
+
         </div>
     )
 }
