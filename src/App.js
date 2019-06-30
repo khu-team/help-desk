@@ -1,12 +1,12 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Navbar from "./component/Navbar";
 import Dashboard from "./component/Dashboard";
 import SupportTeamList from "./component/SupportTeam/SupportTeamList";
-import CostumersList from "./component/Costumers/CostumersList";
 import ProductsList from "./component/Products/ProductsList";
 import TicketsList from "./component/Tickets/TicketsList";
 import AddProduct from "./component/Products/AddProduct";
+import CostumersList from "./component/Costumers/CostumersList";
 import SubmitTicket from "./component/Tickets/TicketSubmisson/SubmitTicket";
 import TicketDetails from "./component/Tickets/TicketDetail/TicketDetails";
 import EditProduct from "./component/Edit/EditProduct";
