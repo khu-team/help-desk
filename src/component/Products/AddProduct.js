@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Server from './Server';
 import Website from './Website';
 import MobileApp from './MobileApp'
-import {categories} from '../../mockData/categories';
+import { categories } from '../../mockData/categories';
 import '../../styeles/addproduct.css'
 class AddProduct extends Component {
-    state = { 
-        id: this.props.product ? this.props.product.id : '',    
+    state = {
+        id: this.props.product ? this.props.product.id : '',
         category: this.props.product ? this.props.product.category : 'وب سایت و پرتال',
         categoryId: this.props.product ? this.props.product.categoryId : 1,
         error: '',
@@ -32,11 +32,11 @@ class AddProduct extends Component {
             serverStatus: this.props.product ? this.props.product.serverStatus : true
         },
         products: []
-     }
-  
+    }
+
     //Functions
     //Get Categoris fileds from their component
-getCategoryFields = (categoryId)=>{
+    getCategoryFields = (categoryId) => {
         switch (categoryId) {
             case 1:
                 return (<Website
@@ -47,13 +47,13 @@ getCategoryFields = (categoryId)=>{
                     handleFrontEndLanguageChange={this.handleFrontEndLanguageChange}
                     handleBackEndLanguageChange={this.handleBackEndLanguageChange}
                     localState={this.state.websiteState}
-                    />)
+                />)
             case 2:
-                return (<MobileApp 
-                    handleId={this.handleMobileIdChange} 
+                return (<MobileApp
+                    handleId={this.handleMobileIdChange}
                     handlePlatform={this.handlePlatformChange}
                     localState={this.state.mobileState}
-                    /> ) 
+                />)
             case 3:
                 return (<Server
                     handleId={this.handleServerIdChange}
@@ -64,8 +64,8 @@ getCategoryFields = (categoryId)=>{
                     handleSupportChange={this.handleSupportChange}
                     handleServerStatusChange={this.handleServerStatusChange}
                     localState={this.state.serverState}
-                    />) 
-            default: 
+                />)
+            default:
                 return (<Website
                     handleCustomerIdChange={this.handleCustomerIdChange}
                     handleTitleChange={this.handleTitleChange}
@@ -76,156 +76,154 @@ getCategoryFields = (categoryId)=>{
                     localState={this.state.websiteState}
                 />)
         }
-}   
-
-    //handel back-end language change
+    }
 
     handleBackEndLanguageChange = (e) => {
         const backEndLanguage = e.target.value
-        const {websiteState} = this.state
+        const { websiteState } = this.state
         websiteState.backEndLanguage = backEndLanguage
-        this.setState({websiteState}) 
+        this.setState({ websiteState })
     }
 
     //handle fornt-end language change
 
     handleFrontEndLanguageChange = (e) => {
         const frontEndLanguage = e.target.value
-        const {websiteState} = this.state
+        const { websiteState } = this.state
         websiteState.frontEndLanguage = frontEndLanguage
-        this.setState({websiteState})
+        this.setState({ websiteState })
     }
 
     //handle support duration change
 
     handleSupportDurationChange = (e) => {
         const supportDuration = e.target.value
-        const {websiteState} = this.state
+        const { websiteState } = this.state
         websiteState.supportDuration = supportDuration
-        this.setState({websiteState})
+        this.setState({ websiteState })
     }
 
     //handle website type change
 
     handelWebsiteTypeChange = (e) => {
         const websiteType = e.target.value
-        const {websiteState} = this.state
+        const { websiteState } = this.state
         websiteState.websiteType = websiteType
-        this.setState({websiteState})
+        this.setState({ websiteState })
     }
 
     //handle title change
 
     handleTitleChange = (e) => {
         const title = e.target.value
-        const {websiteState} = this.state
+        const { websiteState } = this.state
         websiteState.title = title
-        this.setState({websiteState})
+        this.setState({ websiteState })
     }
 
     //handle customer id change
 
     handleCustomerIdChange = (e) => {
         const customerId = e.target.value
-        const {websiteState} = this.state
+        const { websiteState } = this.state
         websiteState.customerId = customerId
-        this.setState({websiteState})
+        this.setState({ websiteState })
     }
 
     //handel server status
 
     handleServerStatusChange = (e) => {
         const status = e.target.value
-        const {serverState} = this.state
+        const { serverState } = this.state
         serverState.status = status
-        this.setState({serverState})
+        this.setState({ serverState })
     }
 
     //handle support change
 
     handleSupportChange = (e) => {
         const support = e.target.value
-        const {serverState} = this.state
+        const { serverState } = this.state
         serverState.support = support
-        this.setState({serverState})
+        this.setState({ serverState })
     }
 
     //handel hard change
 
     handleHardChange = (e) => {
-    const hard = e.target.value
-    const {serverState} = this.state
-    serverState.hard = hard
-    this.setState({serverState})
+        const hard = e.target.value
+        const { serverState } = this.state
+        serverState.hard = hard
+        this.setState({ serverState })
     }
 
     //handle cpu change
 
     handleCpuChange = (e) => {
         const cpu = e.target.value
-        const {serverState} = this.state
+        const { serverState } = this.state
         serverState.cpu = cpu
-        this.setState({serverState})
+        this.setState({ serverState })
     }
 
     //handel ram change
 
     handleRamChange = (e) => {
         const ram = e.target.value
-        const {serverState} = this.state
+        const { serverState } = this.state
         serverState.ram = ram
-        this.setState({serverState})
+        this.setState({ serverState })
     }
 
     //handle server country change
 
     handleServerCountryChange = (e) => {
         const serverCountry = e.target.value
-        const {serverState} = this.state
+        const { serverState } = this.state
         serverState.serverCountry = serverCountry
-        this.setState({serverState})
+        this.setState({ serverState })
     }
 
     //handle server id change
 
     handleServerIdChange = (e) => {
         const customerId = e.target.value
-        const {serverState} = this.state
+        const { serverState } = this.state
         serverState.customerId = customerId
-        this.setState({serverState})
+        this.setState({ serverState })
     }
 
     //Handel Category
 
-    handelCategory = (e)=> {
+    handelCategory = (e) => {
         const category = e.target.value;
         const categoryId = categories.find(arg => arg.name === category).id
-        this.setState({ category , categoryId })
-    } 
+        this.setState({ category, categoryId })
+    }
 
     //handle mobile id
 
     handleMobileIdChange = (e) => {
         const customerId = e.target.value
-        const {mobileState} = this.state
+        const { mobileState } = this.state
         mobileState.customerId = customerId
-        this.setState({mobileState})
+        this.setState({ mobileState })
     }
 
     //handelPlatform
 
     handlePlatformChange = (e) => {
         const platform = e.target.value
-        const {mobileState} = this.state
+        const { mobileState } = this.state
         mobileState.platform = platform
-        this.setState({mobileState})
+        this.setState({ mobileState })
     }
 
     //handle id change
 
     handleIdChange = (e) => {
         const id = e.target.value
-        this.setState({id})
+        this.setState({ id })
     }
 
     //handle edit
@@ -239,16 +237,17 @@ getCategoryFields = (categoryId)=>{
 
     handleSubmit = (e) => {
         e.preventDefault()
-        if(this.state.categoryId === 2) {
-            if(this.state.mobileState.customerId === '' || this.state.id === ''){
-                this.setState({error: 'لطفا ورودی های خود را اصلاح کنید'})
-            }else{
-                let {mobileState, products} = this.state
-                const {id, categoryId,category} = this.state
-                const {customerId, platform} = mobileState
-                products = [...products,{id, categoryId, category, customerId, platform}]
+        if (this.state.categoryId === 2) {
+            if (this.state.mobileState.customerId === '' || this.state.id === '') {
+                this.setState({ error: 'لطفا ورودی های خود را اصلاح کنید' })
+            } else {
+                let { mobileState, products } = this.state
+                const { id, categoryId, category } = this.state
+                const { customerId, platform } = mobileState
+                products = [...products, { id, categoryId, category, customerId, platform }]
                 let preState = this.state
-                preState = {...preState,
+                preState = {
+                    ...preState,
                     id: '',
                     error: '',
                     category: '',
@@ -258,18 +257,19 @@ getCategoryFields = (categoryId)=>{
                         platform: 'Android'
                     }
                 }
-                this.setState({...preState,products})
+                this.setState({ ...preState, products })
             }
-        }else if(this.state.categoryId === 1) {
-            if(Object.values(this.state.websiteState).some(arg => arg === '')) {
-                this.setState({error: 'لطفا ورودی های خود را اصلاح کنید'})
-            }else{
-                let {websiteState, products} = this.state
-                const {id, category, categoryId} = this.state
-                const {customerId, title, websiteType, backEndLanguage, frontEndLanguage, supportDuration} = websiteState
-                products = [...products, {id, category, categoryId, customerId, title, websiteType, backEndLanguage, frontEndLanguage, supportDuration}]
+        } else if (this.state.categoryId === 1) {
+            if (Object.values(this.state.websiteState).some(arg => arg === '')) {
+                this.setState({ error: 'لطفا ورودی های خود را اصلاح کنید' })
+            } else {
+                let { websiteState, products } = this.state
+                const { id, category, categoryId } = this.state
+                const { customerId, title, websiteType, backEndLanguage, frontEndLanguage, supportDuration } = websiteState
+                products = [...products, { id, category, categoryId, customerId, title, websiteType, backEndLanguage, frontEndLanguage, supportDuration }]
                 let preState = this.state
-                preState = {...preState,
+                preState = {
+                    ...preState,
                     id: '',
                     category: '',
                     categoryId: '',
@@ -283,18 +283,19 @@ getCategoryFields = (categoryId)=>{
                         websiteType: '',
                     }
                 }
-                this.setState({...preState,products})
+                this.setState({ ...preState, products })
             }
-        }else if(this.state.categoryId === 3) {
-            if(Object.values(this.state.serverState).some(arg => arg === '')) {
-                this.setState({error: 'لطفا ورودی های خود را اصلاح کنید'})
-            }else{
-                let {serverState, products} = this.state
-                const {id, category, categoryId} = this.state
-                const {customerId, hard, cpu, ram, support, serverCountry, serverStatus} = serverState
-                products = [...products, {id, categoryId, category, customerId, hard, cpu, ram, serverCountry, serverStatus, support}]
+        } else if (this.state.categoryId === 3) {
+            if (Object.values(this.state.serverState).some(arg => arg === '')) {
+                this.setState({ error: 'لطفا ورودی های خود را اصلاح کنید' })
+            } else {
+                let { serverState, products } = this.state
+                const { id, category, categoryId } = this.state
+                const { customerId, hard, cpu, ram, support, serverCountry, serverStatus } = serverState
+                products = [...products, { id, categoryId, category, customerId, hard, cpu, ram, serverCountry, serverStatus, support }]
                 let preState = this.state
-                preState = {...preState,
+                preState = {
+                    ...preState,
                     id: '',
                     error: '',
                     category: '',
@@ -309,47 +310,47 @@ getCategoryFields = (categoryId)=>{
                         serverStatus: false
                     }
                 }
-                this.setState({...preState, products})
+                this.setState({ ...preState, products })
             }
         }
 
     }
 
-    render() { 
-        return ( 
-            <div className="form-div">   
-            <form className="font-iran-sans">
-                <div className="form-head">
-                    <h2>
-                        {this.props.product ? 'اصلاح محصول' : 'افزودن محصول'} 
-                    </h2>
-                </div>
-            <div className="error">{this.state.error ? <h4>{this.state.error}</h4> : true}</div>
-            <div className="form-item">   
-            <input type="number" value={this.state.id} onChange={this.handleIdChange}></input>
-            <label>:شناسه محصول</label>
+    render() {
+        return (
+            <div className="form-div">
+                <form className="font-iran-sans">
+                    <div className="form-head">
+                        <h2>
+                            {this.props.product ? 'اصلاح محصول' : 'افزودن محصول'}
+                        </h2>
+                    </div>
+                    <div className="error">{this.state.error ? <h4>{this.state.error}</h4> : true}</div>
+                    <div className="form-item">
+                        <input type="number" value={this.state.id} onChange={this.handleIdChange}></input>
+                        <label>:شناسه محصول</label>
+                    </div>
+                    <div className="form-item">
+                        <select value={this.state.category} onChange={this.handelCategory}>
+                            {categories.map((category => (<option key={category.id} value={category.name} >{category.name}</option>)))}
+                        </select>
+                        <label>:دسته بندی </label>
+                    </div>
+                    <div>
+                        {this.getCategoryFields(this.state.categoryId)}
+                    </div>
+                    <div className="button-wrappr">
+                        <button className="add-product-button" onClick={
+                            this.props.product ? this.handleEdit : this.handleSubmit
+                        }>
+                            {this.props.product ? 'اصلاح محصول' : 'ثبت محصول'}
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div className="form-item">       
-            <select value={this.state.category} onChange={this.handelCategory}>
-                {categories.map((category=>(<option key={category.id} value={category.name} >{category.name}</option>)))}
-            </select>
-            <label>:دسته بندی </label>
-            </div>
-            <div>
-            {this.getCategoryFields(this.state.categoryId)}
-            </div>
-            <div className="button-wrappr">
-            <button className="add-product-button" onClick={
-                this.props.product ? this.handleEdit : this.handleSubmit
-            }>
-                {this.props.product ? 'اصلاح محصول' : 'ثبت محصول'}
-            </button>
-           </div>
-            </form> 
-            </div>   
-            
-         );
+
+        );
     }
 }
- 
+
 export default AddProduct;
