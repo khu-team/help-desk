@@ -1,8 +1,9 @@
 import React from 'react';
+import AddProduct from '../Products/AddProduct';
 
-const EditProduct = () => (
+const EditProduct = (props) => (
     <div>
-        Edit Product
+        <AddProduct product={props.product}/>
     </div>
 );
 
