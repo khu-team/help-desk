@@ -1,122 +1,195 @@
 /* CostumerSummary */
 .costumerSummary {
+  width: 100%;
+  flex-direction: column;
+  font-family: "IRANSans";
+  justify-content: center;
+  margin: 50px 0px 0px 50px !important;
+  padding: 20px 50px 10px 50px;
+  border-radius: 10px;
   background: linear-gradient(
     to bottom right,
     rgba(17, 107, 243, 0.705),
     rgb(39, 201, 168)
   );
-  border-radius: 5px;
   -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
   -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
   box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
-  margin-top: 25px !important;
 }
 
 /* rateForm */
 .rateForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: linear-gradient(
-    to bottom right,
-    rgba(17, 107, 243, 0.705),
-    rgb(39, 201, 168)
-  );
+  justify-content: center;
+  margin: 50px auto !important;
+  /* height: 350px; */
+  padding: 20px 50px 10px 50px;
+  border-radius: 10px;
   -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
   -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
   box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
-  margin-top: 65px;
-  border-radius: 5px;
+  background: linear-gradient(
+    to bottom right,
+    rgba(28, 101, 211, 0.726),
+    rgb(39, 201, 168)
+  );
+  font-family: "IRANSans";
 }
-.rateForm__commentArea {
-  width: 80%;
-  margin-top: 35px;
-}
+
 .rateForm__submissionSection {
   display: flex;
   width: 80%;
   flex-direction: row;
   justify-content: space-between;
-  margin: 35px;
+  font-family: "IRANSans";
 }
-.rateForm__submiissionSection__dropDown {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 25%;
-}
-.rateForm__submiissionSection__dropDown select {
-  width: 60px;
-  height: 40px;
+.rateForm__submissionSection h5 {
+  position: relative;
+  top: 25px;
 }
 .rateForm__submiissionSection__button {
   border-radius: 5px;
-  width: 12%;
-  margin-left: 10px;
+  font-family: "IRANSans";
+  height: 50px;
+  left: -98px;
+  position: relative;
+  width: 60px;
 }
 .rateForm__successMessage {
   display: flex;
   align-items: center;
+  background-color: rgb(87, 117, 87);
   border-radius: 8px;
   justify-content: center;
   color: white;
   width: 50%;
   height: 50px;
-  margin: 50px auto;
-  background-color: rgb(87, 117, 87);
+  margin: 150px auto;
+  font-family: "IRANSans";
 }
 .rateForm__message--error {
-  color: rgb(151, 11, 11) !important;
-  margin-top: 15px;
+  color: black !important;
+  text-align: center;
+  background-color: #cf4747;
+  border-radius: 5px;
+  margin: 0 auto 15px auto;
+  width: 40%;
 }
 
 /*replyList  */
-.replyList{
-  margin: 50px 0!important;
+.replyList {
+  margin: 50px 0px 30px 50px !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 100px;
-  border: 1px solid black;
-  background-color: antiquewhite
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  background: linear-gradient(
+    to bottom right,
+    rgba(17, 107, 243, 0.705),
+    rgb(39, 201, 168)
+  );
+  font-family: "IRANSans";
 }
-.replyList select{
-  background-color: aquamarine;
-  width: 25%;
-  margin-left: 30px;
-}
-.replyList label{ 
-  display:flex;
-  width: 50%;
-  background-color: aquamarine;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  
-}
+
 /* replyItem */
-.replyItem{
-  border: 1px solid black;
+.replyItem {
+  width: 100%;
+  margin: 0px 0px 45px 5px;
+  flex-direction: column;
+  font-family: "IRANSans";
+  justify-content: center;
+  padding: 20px 50px 10px 50px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  background: linear-gradient(
+    to bottom right,
+    rgba(17, 107, 243, 0.705),
+    rgb(39, 201, 168)
+  );
+  font-family: "IRANSans";
 }
-.replyItem div{
-  border: 1px solid black;
+.Date {
+  float: left;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 2px;
+}
+.replyItem div {
+  margin: 10px 0;
+  padding: 15px;
+  background-color: #fff;
+  text-align: right;
+  font-family: "IRANSans";
+}
+.replyDiv {
+  -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  border-radius: 20px;
+}
+.replyDiv__description {
+  border-bottom: 1px solid black;
+  border-radius: none!important;
+  font-weight: 500
+}
+.replyDiv__supportUser{
+  /* background-color: #beb8b860!important; */
+  border-radius: 10px;
+  padding-right: 5px!important;
+  font-size: 90%;
+}
+.replyDiv__title{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-left: none!important;
+  border-bottom: 1px solid black;
 }
 /* firstTicketDetails */
-.firstTicketDetails{
-  display: flex;
+.firstTicketDetails {
+  width: 100%;
   flex-direction: column;
+  font-family: "IRANSans";
   justify-content: center;
-  align-items: center;
+  margin: 30px auto !important;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  background: linear-gradient(
+    to bottom right,
+    rgba(28, 101, 211, 0.726),
+    rgb(39, 201, 168)
+  );
+  float: left;
 }
-.firstTicketDetails__title{
-  background-color: rgb(83, 207, 207);
+
+h4 {
+  text-align: center;
 }
-.firstTicketDetails div{
- border:1px solid black;
- width: 50%;
- text-align: center;
+
+.firstTicketDetails div {
+  margin: 10px;
+  text-align: center;
+  font-family: "IRANSans";
+  -webkit-box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.33);
+  background-color: rgba(250, 246, 246, 0.671);
+  border-radius: 5px;
 }
-.firstTicketDetails button{
- border:none;
+.firstTicketDetails button {
+  text-decoration: none;
+  border-radius: 20px;
+  text-align: center;
+  padding: 5px;
+  float: right;
+  font-family: "IRANSans";
 }

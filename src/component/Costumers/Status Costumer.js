@@ -1,3 +1,4 @@
+import React from 'react';
 import { costumers } from '../../mockData/costumers';
 
 export const Status =(state,id)=>{
