@@ -36,7 +36,7 @@ export const products = [
         price: 60000,
         discountPercentage: 0,
         duration: 3,
-        type: 2
+        type: 1
     },
     {
         id: 6,
