@@ -3,48 +3,95 @@ table.Table  {
 
     table-layout:fixed;
     width: 100%;
-    border-collapse: collapse;
-    border-width: 1px;
-    border-style: solid;
-    text-align: right;
+    border-collapse: separate;
+    border-width: 8px;
+    border-style:hidden;
+    text-align: center;
+    border-color: rgb(41, 140, 221);
+    background:#4158d0;
+    
+
 
 }
+table.Table1 {
 
-table.Table th{
-      border-width: 1px;
-      text-align: right;
-      border-style: solid;
-      border-color: lightskyblue;
-
-
-  }
-
-
-
-.row{
-     display: flex;
-     width:100%;
- } 
-  .app{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:  10vh;
-    width: 100%;
-  }
+  table-layout:fixed;
+  width:40%;
+  border-collapse:separate;
+  border-width: 5px;
+  border-style:ridge;
+  text-align: right;
+  border-color:  #34b41c;
+  background-color: rgb(182, 230, 127)
   
-  .fullName{
-  font-weight: bolder;
-    color:rgb(43, 255, 0);
+
+}
+table.Table2 {
+
+  table-layout:fixed;
+  
+  width:25%;
+  height: 90px;
+  border-collapse:separate;
+  border-width: 10px;
+  border-style: ridge;
+  text-align: center;
+  border-color:  #34b41c;
+  background:linear-gradient(#0099FF,#46d041 );
+}
+table.Table th{
+      border-width: 5px;
+      border-collapse: separate;
+      text-align: center;
+      border-style: ridge;
+      border-color:  #0099FF;
+          background-color: #33CCFF
+
+
 
   }
-  .vaz{
-     
-    color:rgb(0, 81, 255);
-    font-size: 27px;
-    font-style: unset;
+  button.button {
+
+    text-align: center;
+    background:blueviolet;
+    color: rgb(43, 86, 165);
+    padding: 0.5em 2em;
+    border:rgb(99, 45, 223);
+    border-radius: 5px;
+    border-style:ridge;
+
+    vertical-align: center;
+    font-family: "IRANSans";
   }
-.khat{
-    background-color:white; 
-    color:white;
+.font{
+  font-style:inherit;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', IRANSans , sans-serif;
+font-size: 18px;
+display: inline-block;
+-webkit-text-fill-color: #444444;
 }
+.font2{
+  font-style:inherit;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', IRANSans, sans-serif;
+  font-size: 25px;
+  display: inline-block;
+    color: #0b9306;
+    -webkit-text-fill-color: rgb(172, 231, 142);
+
+}
+.container-table100 {
+  position: absolute;
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  min-height: 100%;
+  background:linear-gradient(#4158d0, #c850c0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+  }
+
+  
+

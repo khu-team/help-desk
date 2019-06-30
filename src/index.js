@@ -5,7 +5,6 @@ import './supportTeam.css';
 import './tickets.css';
 import './products.css';
 import './costumers.css';
-import './AddTicket.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

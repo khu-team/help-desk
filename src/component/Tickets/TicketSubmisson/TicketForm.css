@@ -1,0 +1,141 @@
+input {
+  display: inline-block;
+  width: 50%;
+  font-family: inherit;
+  font-weight: inherit;
+  border-radius: 0.4rem;
+  border: 1px solid #999;
+  padding: 0.5em 2em;
+}
+input,
+select {
+  display: inline-block;
+  float: left;
+}
+label {
+  float: right;
+}
+.ticketForm__input-group {
+  width: 46% !important;
+  margin: 0 2%;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0.2rem 0.8rem 1.6rem var(--colorPrimary600);
+}
+input[type="text"] {
+  margin-left: 0px;
+}
+
+.addTicket {
+  margin: 50px auto;
+  width: 70%;
+  border-radius: 10px;
+  padding: 20px 50px 50px 50px;
+  box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  background: linear-gradient(
+    to bottom right,
+    rgba(28, 101, 211, 0.726),
+    rgb(39, 201, 168)
+  );
+  font-family: "IRANSans";
+}
+
+.addTicket__message--error {
+  color: #fff !important;
+  text-align: center;
+  background-color: #cf4747 !important;
+  float: center;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.addTicket__message--success {
+  color: black !important;
+  text-align: center;
+  background-color: #47cf73;
+  /* float: center; */
+  border-radius: 5px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+select {
+  display: inline-block;
+  padding: 2px;
+  margin: 2px;
+  font-family: inherit;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  width: 76%;
+  height: 40px;
+  font-size: 15px;
+  margin: 2px;
+  outline: none;
+}
+.ticketForm__input-group {
+  /* display: inline-block; */
+  width: 100% !important;
+  margin: 15px 0;
+}
+input {
+  width: 76% !important;
+  /* margin-left:inherit; */
+}
+
+.addTicket span {
+  margin-left: 5px;
+}
+label {
+  display: inline-block;
+  width: 74px;
+}
+
+input,
+select,
+textarea,
+label {
+  margin: 8px 3px;
+}
+textarea {
+  font-family: IRANSans;
+  width: 100% !important;
+  padding: 1em 2em;
+  border: 1px solid #999;
+  border-radius: 10px;
+  height: 200px;
+  resize: none;
+  margin: 15px auto !important;
+}
+textarea:focus {
+  outline: none;
+}
+@media screen and (min-width: 768px) {
+  /* select {
+    margin-bottom: 5px;
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+  } */
+  .ticketForm__input-group {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100%;
+  }
+  /* input{
+    width: 100%;
+  }
+  .addTicket{
+    padding-top: 20px;
+    padding-left: 60px;
+  }
+  textarea{
+    margin-top: 15px;
+  } */
+}
+h3 {
+  text-align: center;
+}
