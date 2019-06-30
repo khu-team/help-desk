@@ -127,7 +127,7 @@ class AddSupportUser extends Component {
     }
     
         handleSupportStatusChange = (e) => {
-        const status = e.currentTarget.value
+        const status = e.currentTarget.checked
         this.setState({status})
     }
     
@@ -173,7 +173,7 @@ class AddSupportUser extends Component {
                 <form className="font">
 
 
-                    <div >{this.state.error ? <h4>{this.state.error}</h4> : true}</div>
+                    <div><h4>{this.state.error}</h4></div>
 
 
 
@@ -328,29 +328,23 @@ class AddSupportUser extends Component {
 
 
 
-
                                     <div>
 
                                         <table className="Table1">
-                                            <div className="input-group mb-3">
+                                            <div className="input-group">
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text" >وضعیت پشتیبان</span>
                                                 </div>
                                                 <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                        <span>
-                <label className="btn btn-secondary"><span>فعال</span>< input type="radio" name="status" value={true}
-                                                                              onChange={this.handleSupportStatusChange}
-                                                                              checked/></label>
-                <label className="btn btn-secondary">غیرفعال<input type="radio" name="status" value={false}
-                                                                   onChange={this.handleSupportStatusChange} required/></label>
-                </span>
+
+                                                    <FormControlLabel
+                                                        control={<Switch checked={this.state.status} onChange={this.handleSupportStatusChange} />}
+
+                                                    />
                                                 </div>
                                             </div>
-
                                         </table>
-
                                     </div>
-
 
                     <div >
                         <button className="btn btn-success" onClick={this.handleSubmit}>ثبت پشتیبان</button>
