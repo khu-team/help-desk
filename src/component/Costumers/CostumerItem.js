@@ -1,24 +1,17 @@
 import React from 'react';
+import {Link} from "react-router-dom";
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 import {cityRenderer} from '../../component/Costumers/City Render'
 import {Status} from '../../component/Costumers/Status Costumer'
+
 export const CostumerItem = ({ fullName, city, id,status}) => (
-    <div > 
-     <table className="GentedTab GentedTab-header">
-  <tbody >
-    <tr className="GentedTab-Item">
-    
-      <th>{Status(status,id)}</th>
-      <th>{cityRenderer(city, id)}</th>
-      <th>{fullName} </th>
-      
-     
-    </tr>
-   
-  </tbody>
-</table>
 
-
-
-
-    </div>
-    );
+                  <TableRow>
+                  <TableCell>{id}</TableCell>
+                  <TableCell >{fullName}</TableCell>
+                  <TableCell >{cityRenderer(city, id)} </TableCell>
+                  <TableCell >{Status(status,id)}</TableCell>
+                  <TableCell><Link to={{pathname:`/EditCostumer/${id}`,state:{ID:id}}}> ویرایش </Link></TableCell>
+                 </TableRow>
+                 );
