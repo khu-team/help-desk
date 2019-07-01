@@ -1,14 +1,6 @@
 import React from 'react';
 import {products} from "../../mockData/products";
 import {transactions} from "../../mockData/transactions";
-import moment from 'moment-jalaali';
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import '../../products.css';
 import {costumers} from "../../mockData/costumers";
 
@@ -25,72 +17,71 @@ class ProductDetail extends React.Component {
 
         return(
             <div>
-            <Paper >
-          <Table className='sall'>
-          <TableHead >
-        <TableRow  className='headstyle'>
-          <TableCell className='cell'>آیدی محصول</TableCell>
-          <TableCell className='cell' align="right">نام </TableCell>
-         {category==3 &&<TableCell className='cell' align="right">مدت زمان فعالیت</TableCell>} 
-          <TableCell className='cell' align="right">قیمت</TableCell>
-          <TableCell className='cell' onClick={this.Sort}   align="right">درصد تخفیف </TableCell>
-            <TableCell className='cell' align="right">قیمت با تخفیف</TableCell>
+          <table className=' table table-striped customers font-iran-sans'>
+          <tbody>
+        <tr >
+          <th >آیدی محصول</th>
+          <th >نام </th>
+         {category==3 &&<th >مدت زمان فعالیت</th>}
+          <th >قیمت</th>
+          <th >درصد تخفیف </th>
+            <th>قیمت با تخفیف</th>
          
 
-        </TableRow>
-      </TableHead>
+        </tr>
+      </tbody>
 
-            <TableBody>
+            <tbody>
             
-              <TableRow >
+              <tr >
                
-                <TableCell align="right">{id}</TableCell>
-                <TableCell align="right">{name}</TableCell>
-                {category==3 &&<TableCell align="right">{duration}</TableCell>}
-                <TableCell align="right">{numeral(price).format('0,0')}تومان </TableCell>
-                <TableCell align="right">%{discountPercentage}</TableCell>
-                  <TableCell align="right">{numeral(nprice).format('0,0')}تومان </TableCell>
+                <td >{id}</td>
+                <td >{name}</td>
+                {category==3 &&<td >{duration}</td>}
+                <td >{numeral(price).format('0,0')}تومان </td>
+                <td >%{discountPercentage}</td>
+                  <td >{numeral(nprice).format('0,0')}تومان </td>
 
-              </TableRow>
+              </tr>
           
-            </TableBody>
-          </Table>
-        </Paper>  
+            </tbody>
+          </table>
 
 
 
-        <Paper >
-          <Table className='sall'>
-          <TableHead >
-        <TableRow  className='headstyle'>
-          <TableCell className='cell'>آیدی خریدار</TableCell>
-            <TableCell className='cell'>نام خریدار</TableCell>
-          <TableCell className='cell' align="right">تاریخ انقضا </TableCell>
+
+
+          <table className='  table table-striped customers font-iran-sans'>
+          <tbody>
+        <tr>
+          <th>آیدی خریدار</th>
+            <th>نام خریدار</th>
+          <th>تاریخ انقضا </th>
        
-        </TableRow>
-      </TableHead>
+        </tr>
+      </tbody>
 
-            <TableBody>
+            <tbody>
             
             {ntransaction.map((t)=>{
                     return(
-                        <TableRow>
-                            <TableCell>{t.costumer}</TableCell>
-                            <TableCell>{costumers.find((c)=>c.id==t.costumer).fullName}</TableCell>
-                            <TableCell>{t.expireDate.format('jYYYY/jM/jD')}</TableCell>
-                        </TableRow>
+                        <tr>
+                            <td>{t.costumer}</td>
+                            <td>{costumers.find((c)=>c.id==t.costumer).fullName}</td>
+                            <td>{t.expireDate.format('jYYYY/jM/jD')}</td>
+                        </tr>
                     )
                 })}
           
-            </TableBody>
-          </Table>
-        </Paper>  
+            </tbody>
+          </table>
+
 
 
 
             </div>
         )
-    }
+    };
 
 
     render() {
