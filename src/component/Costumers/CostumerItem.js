@@ -16,6 +16,10 @@ export const CostumerItem = ({ fullName, city, id,status}) => (
                  ((Status(status,id))==="فعال")?(<i class="material-icons">perm_identity</i>): (<i class="material-icons">record_voice_over</i>)
                   }{Status(status,id)} </TableCell>
 
-                  <TableCell><i class="material-icons">edit</i><Link to={{pathname:`/EditCostumer/${id}`,state:{ID:id}}}> </Link></TableCell>
+                  <TableCell> 
+                  <Link to = {{pathname:`/edit-product/${id}`,state:{ID:id}}}></Link><i class="material-icons" >edit</i></TableCell>
                  </TableRow>
                  );
+                 /**
+                  * ><a class="icon-link " href="/costumer/Editcustomer"><i class="material-icons" >edit</i></a>
+                  *<Link to = {{pathname:`/edit-product/${id}`,state:{ID:id}}}> */

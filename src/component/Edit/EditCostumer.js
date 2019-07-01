@@ -56,6 +56,16 @@ class Editcustomer extends React.Component {
 
         alert("ویرایش اطلاعات مشتری انجام شد...")
     }
+    ShowDetail=()=> {
+        var numeral = require('numeral');
+        const ID = this.props.location.state.ID
+       // const numcos=costumers.filter((t)=>t.==ID)
+       /* var numeral = require('numeral');
+        const ID = this.props.location.state.ID
+        const ntransaction=transactions.filter((t)=>t.product==ID)
+        const nproduct=products.find((p)=> p.id == ID)
+    const {id,name,price,category,duration,discountPercentage}=nproduct;*/
+}
 
 
     render() {

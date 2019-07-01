@@ -1,6 +1,7 @@
 
 import React from 'react';
 import '../../costumers.css';
+import {Link} from "react-router-dom";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,15 +10,27 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { costumers } from '../../mockData/costumers';
 import {CostumerItem} from './CostumerItem';
-
+import AddCustomer from './Add customer';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import Navbar from "./navbar";
 class ShowList extends React.Component {
-    
-        render() { 
-       
+
+  handelSubmit = () => {
+        
+     document.getElementById(AddCustomer);
+   
+  }
+
+        render() {   
             return (  
                 <div>
-                <i class="material-icons">add_circle</i>
-                 <Paper >
+                <a class="icon-link " href="/costumer/Addcustomer"><i class="material-icons" >add_circle</i></a>
+                 
+               
+                <Route path="/addcustomer" component={AddCustomer}/>
+                  
+                  
+                 <Paper>
                 <Table  className=''>
                 <TableHead >
               <TableRow  className=''>
