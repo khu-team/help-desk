@@ -40,7 +40,7 @@
     color: white;
 }
 
-.select-show {
+.select-show{
     direction: rtl;
     border: 0;
     margin-bottom: 10px;
@@ -56,11 +56,10 @@
     border-radius: 9px 9px 9px 9px;
     box-shadow: 1px 1px 11px #050733;
     background: linear-gradient(
-        to bottom right,
-        rgba(28, 101, 211, 0.726),
-        rgba(28, 101, 211, 0.726)
-       
-      );
+            to bottom right,
+            rgba(28, 101, 211, 0.726),
+            rgb(39, 201, 168)
+    );
     color: #ffffff;
 
     position: absolute;
@@ -81,33 +80,27 @@
     font-weight: bold;
     padding: 2px 15px;
 
-    background: #acffa5;
+    background: #ffffff;
     -webkit-appearance: none;
     overflow: hidden;
     width: 112px;
     border-radius: 9px 9px 9px 9px;
     box-shadow: 1px 1px 11px #050433;
     background: linear-gradient(
-        to bottom right,
-        rgba(28, 101, 211, 0.726),
-        rgba(28, 101, 211, 0.726)
-       
-      );
+            to bottom right,
+            rgba(28, 101, 211, 0.726),
+            rgb(39, 201, 168)
+    );
     color: #ffffff;
     position: absolute;
 
     float: right !important;
     right: 15%;
     top: 100px;
-
 }
 
 .select-show-renderer:hover{
-    background: linear-gradient(
-      to bottom right,
-      rgba(28, 101, 211, 0.726),
-      rgba(28, 101, 211, 0.726)
-    );
+    background-color:rgba(0, 0, 255, 0.61);
 }
 
 .price:hover{
@@ -115,7 +108,7 @@
 }
 
 .cooloor {
-   
-   
+
+    background-color: #6264c8;
     font-family: "IRANSans";
   }
