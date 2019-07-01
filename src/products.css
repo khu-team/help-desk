@@ -49,6 +49,10 @@
     top: 100px;
 }
 
+.select-show:hover{
+    background-color:rgba(0, 0, 255, 0.61);
+}
+
 .select-show-renderer {
     direction: rtl;
     border: 0;
@@ -74,7 +78,10 @@
 
 }
 
+.select-show-renderer:hover{
+    background-color: rgba(0, 0, 255, 0.47);
+}
 
 .price:hover{
-    background-color: #233482;
+    background-color: #6264c8;
 }

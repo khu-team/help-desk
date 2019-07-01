@@ -26,7 +26,7 @@ class ShowTable extends React.Component {
             return (
                 
               
-                <tr>
+                <tr className='font-iran-sans'>
                   <td>{id}</td>
                   <td>{name}</td>
                   <td >{num} تومان</td>
@@ -62,12 +62,12 @@ class ShowTable extends React.Component {
             <div>
             <table className=' tabel table-striped customers font-iran-sans'>
             <tbody >
-          <tr>
+          <tr className='font-iran-sans'>
             <th>ID</th>
             <th>نام محصول</th>
             <th className='price' onClick={this.Sort}>قیمت</th>
             <th>تخفیف</th>
-            <th className='price' onClick={this.Sort}>قیمت با تخفیف</th>
+            <th>قیمت با تخفیف</th>
             <th>جزییات</th>
             <th>اعمال تغییرات</th>
 

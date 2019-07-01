@@ -17,9 +17,9 @@ class ProductDetail extends React.Component {
 
         return(
             <div>
-          <table className=' table table-striped customers font-iran-sans'>
+          <table className=' table table-striped customers '>
           <tbody>
-        <tr >
+        <tr className='font-iran-sans'>
           <th >آیدی محصول</th>
           <th >نام </th>
          {category==3 &&<th >مدت زمان فعالیت</th>}
@@ -33,7 +33,7 @@ class ProductDetail extends React.Component {
 
             <tbody>
             
-              <tr >
+              <tr className='font-iran-sans'>
                
                 <td >{id}</td>
                 <td >{name}</td>
@@ -51,22 +51,21 @@ class ProductDetail extends React.Component {
 
 
 
-          <table className='  table table-striped customers font-iran-sans'>
+          <table className='  table table-striped customers '>
           <tbody>
-        <tr>
+        {ntransaction.length > 0 ? <tr className='font-iran-sans'>
           <th>آیدی خریدار</th>
             <th>نام خریدار</th>
           <th>تاریخ انقضا </th>
-       
-        </tr>
+        </tr> : <tr className='font-iran-sans'><th>در حال حاضر کسی این محصول را خریداری نکرده است</th></tr>}
       </tbody>
 
             <tbody>
             
             {ntransaction.map((t)=>{
                     return(
-                        <tr>
-                            <td>{t.costumer}</td>
+                        <tr className='font-iran-sans'>
+                             <td>{t.costumer}</td>
                             <td>{costumers.find((c)=>c.id==t.costumer).fullName}</td>
                             <td>{t.expireDate.format('jYYYY/jM/jD')}</td>
                         </tr>
@@ -75,7 +74,6 @@ class ProductDetail extends React.Component {
           
             </tbody>
           </table>
-
 
 
 
