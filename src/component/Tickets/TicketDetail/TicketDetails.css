@@ -44,7 +44,7 @@
   justify-content: space-between;
   font-family: "IRANSans";
 }
-.rateForm__submissionSection h5{
+.rateForm__submissionSection h5 {
   position: relative;
   top: 25px;
 }
@@ -100,7 +100,7 @@
 /* replyItem */
 .replyItem {
   width: 100%;
-  margin: 0px 0px 5px 5px;
+  margin: 0px 0px 45px 5px;
   flex-direction: column;
   font-family: "IRANSans";
   justify-content: center;
@@ -123,9 +123,8 @@
   padding: 2px;
 }
 .replyItem div {
-  margin: 10px;
-  padding: 5px;
-  border-radius: 20px;
+  margin: 10px 0;
+  padding: 15px;
   background-color: #fff;
   text-align: right;
   font-family: "IRANSans";
@@ -134,6 +133,25 @@
   -webkit-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
   -moz-box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
   box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+  border-radius: 20px;
+}
+.replyDiv__description {
+  border-bottom: 1px solid black;
+  border-radius: none!important;
+  font-weight: 500
+}
+.replyDiv__supportUser{
+  /* background-color: #beb8b860!important; */
+  border-radius: 10px;
+  padding-right: 5px!important;
+  font-size: 90%;
+}
+.replyDiv__title{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-left: none!important;
+  border-bottom: 1px solid black;
 }
 /* firstTicketDetails */
 .firstTicketDetails {
