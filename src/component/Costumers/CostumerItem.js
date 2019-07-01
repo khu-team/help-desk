@@ -14,7 +14,7 @@ export const CostumerItem = ({ fullName, city, id,status}) => (
                   <TableCell >{cityRenderer(city, id)} </TableCell>
                   <TableCell  >
                   {
-                 ((Status(status,id))==="فعال")? (<i class="material-icons costumerButtongreen"><tittle>فعال</tittle>record_voice_over</i>):(<i class="material-icons costumerButtonred"><tittle>غیرفعال</tittle>perm_identity</i>)
+                 ((Status(status,id))==="فعال")? (<i class="material-icons costumerButtongreen"><tittle class="font-iran-sans">فعال</tittle>record_voice_over</i>):(<i class="material-icons costumerButtonred"><tittle class="font-iran-sans">غیرفعال</tittle >perm_identity</i>)
                   }
                  </TableCell>
 
