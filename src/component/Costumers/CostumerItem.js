@@ -18,7 +18,7 @@ export const CostumerItem = ({ fullName, city, id,status}) => (
                   }
                  </TableCell>
 
-                  <TableCell><Link to = {{pathname:`/costumer/${id}`,state:{SID:id}}}><i class="material-icons" >edit</i></Link> 
+                  <TableCell><Link to = {{pathname:`/costumer/${id}`,state:{SID:id}}}><i class="material-icons colorgreen" ><tittle class="font-iran-sans">ویرایش</tittle>edit</i></Link> 
                   </TableCell>
                  </TableRow>
                  );
