@@ -61,9 +61,11 @@ class Editcustomer extends React.Component {
     render() {
         return (
             <div className="welcome">
-                <h1>:ویرایش اطلاعات مشتری</h1>
+            <link rel="stylesheet" type="text/css" href="../../costumers.css" />
+               
                 <div className="editForm">
                     <form className="marginForm">
+                     <p>اتنخاب مشتری</p>
                      
                         <label>
                             <select
@@ -75,17 +77,20 @@ class Editcustomer extends React.Component {
                                     <option key={costumer.id} value={costumer.id}>{costumer.fullName}</option>
                                 )
                                 )}
-                            </select>: انتخاب مشتری
-                        </label><br></br>
+                            </select>
+                        </label><br></br><br /><br /><br />
                         <button onClick={this.handelSubmit} className="costumerButton">ویرایش اطلاعات</button><br></br>
+                        <br></br><br></br><br></br><br></br><br></br>
                     </form>
-                   
+                   </div>
                     {this.state.showEditingForm && costumers.map((costumer) => {
-                        if (costumer.id == this.state.editId) {
+                        if (costumer.id === this.state.editId) {
                             return (
+                                <div className="costumerForm2">
                                 
-                                <form key={costumer.id}>
-                                    <hr></hr>
+                                <form  key={costumer.id}>
+                                
+                                    <p>نام مشتری</p>
                                     <label className="labels">
                                         <input
                                             className="inputName"
@@ -94,10 +99,12 @@ class Editcustomer extends React.Component {
                                             placeholder={costumer.fullName}
                                             onChange={this.handleInputChange}
                                             value={this.state.name}>
-                                        </input> : نام مشتری
+                                        </input> 
                                     </label><br></br>
-
-                                    <label className="labels">
+                                    <br />
+                                    <span > &nbsp;&nbsp;شهر</span>
+                                    <br />
+                                    <label className="labels ecitybutton">
                                         <select
                                             name="city"
                                             value={this.state.city}
@@ -108,9 +115,11 @@ class Editcustomer extends React.Component {
                                             <option value={3}>اصفهان</option>
                                             <option value={4}>یزد</option>
                                             <option value={5}>شیراز </option>
-                                        </select> : شهر
+                                        </select> 
                                     </label><br></br>
-
+                                        
+                                        <span> &nbsp; &nbsp; وضعیت </span>
+                            <br />
                                     <label className="labels">
                                         <select
                                             name="status"
@@ -119,20 +128,19 @@ class Editcustomer extends React.Component {
                                         >
                                             <option value={true}>فعال</option>
                                             <option value={false}>غیر فعال</option>
-                                        </select>: وضعیت مشتری
+                                        </select>
                                     </label><br></br>
-
+                                        <br/> <br />
                                     <button onClick={this.chengingHandelSubmit} className="costumerButton"> اعمال تغییرات</button>
                                 </form>
-
+                                </div>
                             )
                         }
                     }
                     )
                     }
                 </div>
-
-            </div>
+            
         );
     }
 }

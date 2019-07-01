@@ -12,7 +12,6 @@ class addcustomer extends React.Component {
     
     handelSubmit = (event) => {
         event.preventDefault();
-        
         let costumer = {};
 
         if (this.state.status == 1) {
@@ -43,9 +42,9 @@ class addcustomer extends React.Component {
 
     
     handleInputChange = (event) => {
-        event.preventDefault();
+        event.preventDefault(); 
         const target = event.target;
-        const value = target.name == 'city' ? +target.value : target.value;
+        const value = target.name === 'city' ? +target.value : target.value;
         const name = target.name;
         this.setState({
             id: costumers.length
@@ -60,25 +59,27 @@ class addcustomer extends React.Component {
 
     render() {
         return (
+            
+            
             <div className="welcome">
-                <h1>:افزودن مشتری</h1>
+            <link rel="stylesheet" type="text/css" href="../../costumers.css" />
+                
                 <div className="costumerForm">
-
+                <span> نام مشتری</span>
                     <form>
-                      
                         <label className="labels">
-                            <input
-                                className="inputName"
-                                name="name"
-                                type="text"
+                            <input className="inputName" name="name"
+                                type="name"  
                                 placeholder="نام مشتری"
                                 onChange={this.handleInputChange}
-                                value={this.state.name}></input> : نام مشتری
+                                value={this.state.name}>
+                            </input> 
                         </label> <br></br>
-
-                    
+                            <br />
+                        <span > &nbsp;&nbsp;شهر</span>
+                        <br />
                         <label className="labels">
-                            <select
+                            <select className="citybutton"
                                 name="city"
                                 value={this.state.city}
                                 onChange={this.handleInputChange} >
@@ -87,19 +88,21 @@ class addcustomer extends React.Component {
                                 <option value="3">اصفهان</option>
                                 <option value="4">یزد</option>
                                 <option value="5">شیراز </option>
-                            </select> : شهر</label><br></br>
+                            </select></label><br></br>
 
-                       
+                            <span> &nbsp; &nbsp; وضعیت </span>
+                            <br />
                         <label className="labels">
-                            <select
+                           <select className="status"
                                 name="status"
                                 value={this.state.status}
                                 onChange={this.handleInputChange} >
                                 <option value="1">فعال</option>
                                 <option value="0">غیر فعال</option>
-                            </select>: وضعیت مشتری
-                        </label><br></br>
-
+                            </select>
+                        </label>
+                        
+                        <br/><br/><br/><br/>
                         <button onClick={this.handelSubmit} className="costumerButton">افزودن مشتری</button>
                     </form>
                 </div>
