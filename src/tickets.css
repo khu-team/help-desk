@@ -8,40 +8,95 @@ body, html {
 	height: 100%;
 	font-family: sans-serif;
 }
-header{
-    position: relative;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 10px;
-    background: rgb(182, 230, 127);
-    box-sizing: border-box;
-    border-radius: 4px;
-    -webkit-box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
-    z-index: 2;
-    margin-top: 5%;
+
+
+
+
+.boxx2 {
+    width:70%;
+    height:100px;
+    background:#FFF;
+    margin:40px auto;
+    z-index: 5;
+}
+
+.boxx4 {
+    display: block;
+    width:40%;
+    height: 80px;
+    background:#FFF;
+    margin:40px auto;
+    z-index: 5;
+    left: 15%;
+}
+
+.boxx3 {
+    top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background:#FFF;
+    margin:40px auto;
+    z-index: 5;
+    position: absolute;
+}
+
+.effect
+{
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+  
+}
+
+
+.effect:after
+{
+  right:10px;
+  left:auto;
+  -webkit-transform:skew(8deg) rotate(3deg);
+  -moz-transform:skew(8deg) rotate(3deg);
+  -ms-transform:skew(8deg) rotate(3deg);
+  -o-transform:skew(8deg) rotate(3deg);
+  transform:skew(8deg) rotate(3deg);
 }
 
 .logo11{
     color: #069370;
     height: 60px;
-    font-size: 36px;
+    font-size: 24px;
+    line-height: 100px;
+    padding: 0 19px;
+    text-align: center;
+    box-sizing: border-box;
+    float: right;
+    font-weight: 500;
+    text-decoration: none !important;
+}
+
+.logo12{
+    color: #069370;
+    height: 60px;
+    font-size: 18px;
     line-height: 60px;
     padding: 0 19px;
     text-align: center;
     box-sizing: border-box;
     float: right;
-    font-weight: 700;
+    font-weight: 500;
+    margin-right: -30px;
     text-decoration: none !important;
 }
 
 .navf{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);   
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -96,20 +151,17 @@ header{
 
 }
 
-
-
-    .limiter {
+  .limiter {
     width: 100%;
     margin: 0 auto;
     }
 
     .container-table100 {
-    position: absolute;
     width: 100%;
     position: absolute;
-    top: 10%;
-    min-height: 90%;
-    background:linear-gradient(#4158d0, #c850c0);
+    top: 30%;
+    min-height: 70%;
+    background:linear-gradient(-30deg,#1ec4e9 0% ,#673ab7 50% , #262626 50% , #607d8b 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,7 +173,7 @@ header{
     width: 1170px;
     }
 
-    table {
+    .table2 {
         border-spacing: 1;
         border-collapse: collapse;
         background-color: white !important;
@@ -131,32 +183,32 @@ header{
         margin: 0 auto;
         position: relative;
     }
-    table * {
+    .table2 * {
     position: relative;
     }
-    table td, table th {
+    .table2 td, .table2 th {
     padding-left: 8px;
     }
-    table thead tr {
+    .table2 thead tr {
     height: 60px;
     background: #36304a;
     }
-    table tbody tr {
+    .table2 tbody tr {
     height: 50px;
     }
-    table tbody tr:last-child {
+    .table2 tbody tr:last-child {
     border: 0;
     }
-    table td, table th {
+    .table2 td, .table2 th {
     text-align: left;
     }
-    table td.l, table th.l {
+    .table2 td.l, .table2 th.l {
     text-align: right;
     }
-    table td.c, table th.c {
+    .table2 td.c, .table2 th.c {
     text-align: center;
     }
-    table td.r, table th.r {
+    .table2 td.r, .table2 th.r {
     text-align: center;
     }
 
@@ -228,31 +280,95 @@ header{
         padding-right: 100px;
     }
 
+    .flex{
+        position: absolute;
+        left: 17%;
+        margin-top: 1%;
+    }
+
+    .a{
+        position: relative;
+        padding: 25px 50px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 2em;
+        text-transform: uppercase;
+        font-family: serif;
+        letter-spacing: 4px;
+        overflow: hidden;
+        background: rgba(255,255,255,.1);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, .6);
+        z-index: 10;
+        color: #212529;
+    }
+    .a::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: rgba(190, 224, 177, 0.267);
+        z-index: 10;
+    }
+    .a::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,transparent,rgba(34, 218, 9, 0.4),transparent);
+        transition: 0.5s;
+    }
+    .a:hover:after{
+        left: 100%;
+    }
+
+
+
     @media screen and (max-width: 992px) {
+    .logo12{
+        font-size: 14px;
+    }
+    .boxx4{
+        width: 70%;
+        left: 0;
+    }
+    .a{
+        padding: 12px 25px;
+        font-size: 1em;
+        width: 40px;
+        overflow: hidden;
+        height: 20px;
+    }
+    .boxx3{
+        background: transparent;
+    }
     .container-table100{
         top: 25%;
     }
-    table {
+    .table2 {
         display: block;
     }
-    table > *, table tr, table td, table th {
+    .table2 > *, .table2 tr, .table2 td, .table2 th {
         display: block;
     }
-    table thead {
+    .table2 thead {
         display: none;
     }
-    table tbody tr {
+    .table2 tbody tr {
         height: auto;
         padding: 37px 0;
     }
-    table tbody tr td {
+    .table2 tbody tr td {
         padding-left: 40% !important;
         margin-bottom: 24px;
     }
-    table tbody tr td:last-child {
+    .table2 tbody tr td:last-child {
         margin-bottom: 0;
     }
-    table tbody tr td:before {
+    .table2 tbody tr td:before {
         font-family: OpenSans-Regular;
         font-size: 14px;
         color: #999999;
@@ -263,32 +379,32 @@ header{
         left: 30px;
         top: 0;
     }
-    table tbody tr td:nth-child(1):before {
-        content: "ID";
+    .table2 tbody tr td:nth-child(1):before {
+        content: "ردیف";
     }
-    table tbody tr td:nth-child(2):before {
-        content: "Title";
+    .table2 tbody tr td:nth-child(2):before {
+        content: "عنوان";
     }
-    table tbody tr td:nth-child(3):before {
-        content: "Priority";
+    .table2 tbody tr td:nth-child(3):before {
+        content: "اولویت";
     }
-    table tbody tr td:nth-child(4):before {
-        content: "Costumer";
+    .table2 tbody tr td:nth-child(4):before {
+        content: "مشتری";
     }
-    table tbody tr td:nth-child(5):before {
-        content: "Product";
+    .table2 tbody tr td:nth-child(5):before {
+        content: "محصول";
     }
-    table tbody tr td:nth-child(7):before {
-        content: "AnswerStatus";
+    .table2 tbody tr td:nth-child(7):before {
+        content: "پاسخگویی";
     }
-    table tbody tr td:nth-child(6):before {
-        content: "Department";
+    .table2 tbody tr td:nth-child(6):before {
+        content: "گروه";
     }
-    table tbody tr td:nth-child(8):before {
-        content: "SubmissionDateTime";
+    .table2 tbody tr td:nth-child(8):before {
+        content: "تاریخ ارسال";
     }
-    table tbody tr td:nth-child(9):before {
-        content: "Details";
+    .table2 tbody tr td:nth-child(9):before {
+        content: "جزئیات";
     }
 
     .column4,
@@ -326,53 +442,11 @@ header{
     }
     }
 
-    .flex{
-        position: absolute;
-        top: 14.5%;
-        right: 14%;
-    }
 
     .buttoon{
-        background:#1AAB8A;
-        border-radius: 50px;
-        color:rgb(0, 0, 0);
-        position:relative;
-        height:60px;
-        font-size:1.6em;
-        padding:0 2em;
-        cursor:pointer;
-        transition:800ms ease all;
-        outline:none;
         z-index: 10;
       }
-      .buttoon:hover{
-        background:rgb(148, 209, 219);
-        color:rgb(0, 0, 0);
-        border-radius: 50px;
-      }
-      .buttoon:before,.buttoon:after{
-        content:'';
-        position:absolute;
-        top:0;
-        right:0;
-        height:2px;
-        width:0;
-        background: rgb(1, 24, 18);
-        transition:400ms ease all;
-        border-radius: 50px;
-      }
-      .buttoon:after{
-        right:inherit;
-        top:inherit;
-        left:0;
-        bottom:0;
-        border-radius: 50px;
-      }
-      .buttoon:hover:before,.buttoon:hover:after{
-        width:100%;
-        transition:800ms ease all;
-        border-radius: 50px;
-      }
+
       .table-striped tbody tr:nth-of-type(odd) {
         background-color: white ;
     }
@@ -387,12 +461,67 @@ header{
     .table-hover tbody tr:hover {
         background-color: rgb(253, 253, 253)  !important;
     }
-    table tr td,table tr th{
+    .table tr td,.table tr th{
         text-align: center !important;
     }
     .row{
         margin: 0px !important;
     }
-    select{
-        width: 100% !important;
-    } 
+
+
+
+    .seelect {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 0 !important;
+        background: #2c3e50;
+        background-image: none;
+        }
+        
+        .seelect::-ms-expand {
+        display: none;
+        }
+       
+        .select {
+        position: relative;
+        display: flex;
+        width: 10em;
+        height: 3em;
+        line-height: 3;
+        background: #2c3e50;
+        overflow: hidden;
+        border-radius: .25em;
+        margin-left: 1%;
+        }
+        .seelect {
+        flex: 1;
+        padding: 0 3.5em;
+        color: #fff;
+        cursor: pointer;
+        }
+        
+        .select::after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 1em;
+        background: #34495e;
+        cursor: pointer;
+        pointer-events: none;
+        -webkit-transition: .25s all ease;
+        -o-transition: .25s all ease;
+        transition: .25s all ease;
+        }
+      
+        .select:hover::after {
+        color: #f39c12;
+        }
+
+
+
+      
