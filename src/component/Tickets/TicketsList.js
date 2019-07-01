@@ -23,8 +23,8 @@ class TicketsList extends React.Component{
 			<div>
 				<div className="flex">
 					<Tabs value={this.state.tabValue} onChange={this.onTabChange}>
-			  			<Tab label="Open Tickets"  className="buttoon" />
-			  			<Tab label="Closed Tickets"  className="buttoon" />
+			  			<Tab label="Open Tickets"  className="buttoon font-iran-sans" />
+			  			<Tab label="Closed Tickets"  className="buttoon font-iran-sans" />
 					</Tabs>
 				</div>
 				

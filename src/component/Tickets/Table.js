@@ -115,10 +115,10 @@ class Table extends React.Component{
 
 			<header>
 				<div className="row">
-					<div className="col-sm-4">
+					<div className="col-sm-5">
 						<a href="#" className="logo11 font-iran-sans"><p> فیلتر بر اساس :  </p></a>
 					</div>
-					<div className="col-sm-4">
+					<div className="col-sm-5">
 					<div className="menuuu"></div>
 					<nav className="navf">
 					<select value={this.state.filter} onChange={this.onFilterChange} className="font-iran-sans">
