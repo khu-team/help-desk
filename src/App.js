@@ -13,7 +13,7 @@ import EditProduct from "./component/Edit/EditProduct";
 import EditCostumer from "./component/Edit/EditCostumer";
 import EditSupportTeamUser from "./component/Edit/EditSupportTeamUser";
 import ProductDetail from "./component/Products/ProductDeatil";
-
+import Divider from '@material-ui/core/Divider';
 
 class App extends React.Component {
 
@@ -22,6 +22,7 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <Navbar/>
+                <Divider/>
                 <Switch>
                     <Route path="/" exact={true} component={Dashboard}/>
                     <Route path="/support-team" component={SupportTeamList}/>
