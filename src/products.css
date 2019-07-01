@@ -1,13 +1,22 @@
 .customers {
     border-collapse: collapse;
     top: 163px;
+    width: 94% !important; 
 }
 
-.customers td, .customers th {
+.customers td {
     border: 1px solid #ddd;
     text-align: center;
+    font-size: 14px;
 
 }
+.customers th {
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+
+}
+
 
 .customers tr:nth-child(even){background-color: #f2f2f2;}
 
@@ -17,12 +26,17 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #3c0882;
+    background: linear-gradient(
+        to bottom right,
+        rgba(28, 101, 211, 0.726),
+        rgba(28, 101, 211, 0.726)
+       
+      );
     color: white;
 }
 
 .button-show:hover{
-    background-color: #4CAF50;
+  
     color: white;
 }
 
@@ -41,7 +55,12 @@
     width: 112px;
     border-radius: 9px 9px 9px 9px;
     box-shadow: 1px 1px 11px #050733;
-    background-color: blue;
+    background: linear-gradient(
+        to bottom right,
+        rgba(28, 101, 211, 0.726),
+        rgba(28, 101, 211, 0.726)
+       
+      );
     color: #ffffff;
 
     position: absolute;
@@ -68,7 +87,12 @@
     width: 112px;
     border-radius: 9px 9px 9px 9px;
     box-shadow: 1px 1px 11px #050433;
-    background-color: blue;
+    background: linear-gradient(
+        to bottom right,
+        rgba(28, 101, 211, 0.726),
+        rgba(28, 101, 211, 0.726)
+       
+      );
     color: #ffffff;
     position: absolute;
 
@@ -79,9 +103,19 @@
 }
 
 .select-show-renderer:hover{
-    background-color: rgba(0, 0, 255, 0.47);
+    background: linear-gradient(
+      to bottom right,
+      rgba(28, 101, 211, 0.726),
+      rgba(28, 101, 211, 0.726)
+    );
 }
 
 .price:hover{
     background-color: #6264c8;
 }
+
+.cooloor {
+   
+   
+    font-family: "IRANSans";
+  }
