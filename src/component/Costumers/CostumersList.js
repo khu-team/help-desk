@@ -9,12 +9,14 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { costumers } from '../../mockData/costumers';
 import {CostumerItem} from './CostumerItem';
+
 class ShowList extends React.Component {
     
         render() { 
        
             return (  
                 <div>
+                <i class="material-icons">add_circle</i>
                  <Paper >
                 <Table  className=''>
                 <TableHead >
@@ -23,6 +25,7 @@ class ShowList extends React.Component {
                 <TableCell className='' align="right"> نام مشتری</TableCell>
                 <TableCell className='' align="right"> شهر </TableCell>
                 <TableCell className='' align="right">وضعیت</TableCell>
+               
                 <TableCell className='' align="right">اعمال تغییرات</TableCell>
               </TableRow>
             </TableHead>
