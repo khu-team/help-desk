@@ -7,6 +7,7 @@ import ProductsList from "./component/Products/ProductsList";
 import TicketsList from "./component/Tickets/TicketsList";
 import AddProduct from "./component/Products/AddProduct";
 import CostumersList from "./component/Costumers/CostumersList";
+import AddCostumer from "./component/Costumers/Add customer"
 import SubmitTicket from "./component/Tickets/TicketSubmisson/SubmitTicket";
 import TicketDetails from "./component/Tickets/TicketDetail/TicketDetails";
 import EditProduct from "./component/Edit/EditProduct";
@@ -29,6 +30,7 @@ class App extends React.Component {
                     <Route path="/costumers" component={CostumersList}/>
                     <Route path="/products" component={ProductsList}/>
                     <Route path="/add-product" component={AddProduct}/>
+                    <Route path="/add-costumer" component={AddCostumer}/>
                     <Route path="/tickets" component={TicketsList}/>
                     <Route path="/add-ticket" component={SubmitTicket}/>
                     <Route path="/edit-product/:id" component={EditProduct}/>

@@ -11,15 +11,13 @@ export const CostumerItem = ({ fullName, city, id,status}) => (
                   <TableCell>{id}</TableCell>
                   <TableCell >{fullName}</TableCell>
                   <TableCell >{cityRenderer(city, id)} </TableCell>
-                  <TableCell >
+                  <TableCell  >
                   {
-                 ((Status(status,id))==="فعال")?(<i class="material-icons">perm_identity</i>): (<i class="material-icons">record_voice_over</i>)
-                  }{Status(status,id)} </TableCell>
+                 ((Status(status,id))==="فعال")? (<i class="material-icons costumerButton">record_voice_over</i>):(<i class="material-icons costumerButton">perm_identity</i>)
+                  }<p className="costumerButton">{Status(status,id)}</p> </TableCell>
 
-                  <TableCell> 
-                  <Link to = {{pathname:`/edit-product/${id}`,state:{ID:id}}}></Link><i class="material-icons" >edit</i></TableCell>
+                  <TableCell><Link to = {{pathname:`/costumer/${id}`,state:{SID:id}}}><i class="material-icons" >edit</i></Link> 
+                  </TableCell>
                  </TableRow>
                  );
-                 /**
-                  * ><a class="icon-link " href="/costumer/Editcustomer"><i class="material-icons" >edit</i></a>
-                  *<Link to = {{pathname:`/edit-product/${id}`,state:{ID:id}}}> */
+           
