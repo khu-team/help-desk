@@ -2,6 +2,8 @@ import React from 'react';
 import {departments} from '../../mockData/departments';
 import {products} from '../../mockData/products';
 import TicketItem from './TicketItem';
+import 'bootstrap/dist/css/bootstrap.css';
+
 const productCategories = products.map((product) => product.name);
 productCategories.splice(0,0,'');
 const departmentss = departments.map((department) => department.name);
@@ -111,37 +113,38 @@ class Table extends React.Component{
 			<React.Fragment>
 		<div>
 
-		<header>
-		<div className="row">
-			<div className="col-sm-4">
-				<a href="#" className="logo11 font-iran-sans"><p> فیلتر بر اساس :  </p></a>
-			</div>
-			<div className="col-sm-4">
-			<div className="menuuu"></div>
-			<nav className="navf">
-			<select value={this.state.filter} onChange={this.onFilterChange} className="font-iran-sans">
-				{this.state.filters.map((fil) => (<option key={fil}>{fil}</option>))}
-			</select>
-			{this.state.showFilter && this.filterTable()}
-
-			</nav>
-
-			<div className="clear"></div>
-			</div>
-		</div>
-
-
+			<header>
+				<div className="row">
+					<div className="col-sm-4">
+						<a href="#" className="logo11 font-iran-sans"><p> فیلتر بر اساس :  </p></a>
+					</div>
+					<div className="col-sm-4">
+					<div className="menuuu"></div>
+					<nav className="navf">
+					<select value={this.state.filter} onChange={this.onFilterChange} className="font-iran-sans">
+						{this.state.filters.map((fil) => (<option key={fil}>{fil}</option>))}
+					</select>
+					{this.state.showFilter && this.filterTable()}
+	
+					</nav>
+	
+					<div className="clear"></div>
+					</div>
+				</div>
 
 
-	</header>
 
 
-		<div class="limiter">
-			<div class="container-table100">
-				<div class="wrap-table100">
-					<div class="table100">
+			</header>
+			
 
-				<table>
+		<div className="limiter">
+			<div className="container-table100">
+				<div className="wrap-table100">
+					<div className="table100">
+		<div class="row">
+			<div class="col-sm-12 table-responsive">
+				<table class="table table-striped table-hover " >
 					<thead>
 					<tr className="table100-head ">
 						<th className="column1 font-iran-sans">ردیف</th>
@@ -158,7 +161,9 @@ class Table extends React.Component{
 					<tbody>
 					{this.state.ticketss.map((item) => (<TicketItem ticket={item} key={item.id} />))}
 					</tbody>
-				</table>
+					</table>
+					</div>
+				</div>
 						</div>
 					</div>
 					<p>{this.state.error}</p>
