@@ -111,22 +111,29 @@ class Table extends React.Component{
 			<React.Fragment>
 		<div>
 
-			<header>
-				<a href="#" className="logo11"><p> : Filter by </p></a>
+		<header>
+		<div className="row">
+			<div className="col-sm-4">
+				<a href="#" className="logo11 font-iran-sans"><p> فیلتر بر اساس :  </p></a>
+			</div>
+			<div className="col-sm-4">
+			<div className="menuuu"></div>
+			<nav className="navf">
+			<select value={this.state.filter} onChange={this.onFilterChange} className="font-iran-sans">
+				{this.state.filters.map((fil) => (<option key={fil}>{fil}</option>))}
+			</select>
+			{this.state.showFilter && this.filterTable()}
 
-				<div className="menuuu"></div>
-				<nav className="navf">
-				<select value={this.state.filter} onChange={this.onFilterChange}>
-					{this.state.filters.map((fil) => (<option key={fil}>{fil}</option>))}
-				</select>
-				{this.state.showFilter && this.filterTable()}
+			</nav>
 
-				</nav>
-
-				<div className="clear"></div>
+			<div className="clear"></div>
+			</div>
+		</div>
 
 
-			</header>
+
+
+	</header>
 
 
 		<div class="limiter">
@@ -136,16 +143,16 @@ class Table extends React.Component{
 
 				<table>
 					<thead>
-					<tr className="table100-head">
-						<th className="column1">ID</th>
-						<th className="column2">Title</th>
-						<th className="column3">Priority</th>
-						<th className="column4">Costumer</th>
-						<th className="column5">Product</th>
-						<th className="column6">Department</th>
-						<th className="column7">AnswerStatus</th>
-						<th className="column8">SubmissionDateTime</th>
-						<th >Details</th>
+					<tr className="table100-head ">
+						<th className="column1 font-iran-sans">ردیف</th>
+						<th className="column2 font-iran-sans">عنوان</th>
+						<th className="column3 font-iran-sans">اولویت</th>
+						<th className="column4 font-iran-sans">مشتری</th>
+						<th className="column5 font-iran-sans">محصول</th>
+						<th className="column6 font-iran-sans">گروه</th>
+						<th className="column7 font-iran-sans">پاسخگویی</th>
+						<th className="column8 font-iran-sans">تاریخ ارسال</th>
+						<th className=" font-iran-sans">جزئیات</th>
 					</tr>
 					</thead>
 					<tbody>
