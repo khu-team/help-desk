@@ -5,37 +5,37 @@ const Website = (props) => {
         <div className="form-item">
             <input type="text" value={props.localState.customerId} onChange={props.handleCustomerIdChange}></input>
             <label>
-                :شناسه مشتری
+            شناسه مشتری  :
                 </label>
         </div>
         <div className="form-item">
             <input type="text" value={props.localState.title} onChange={props.handleTitleChange}></input>
             <label>
-                :عنوان
+            عنوان  :
             </label>
         </div>
         <div className="form-item">
             <input type="text" value={props.localState.websiteType} onChange={props.handleWebsiteTypeChange}></input>
             <label>
-                :نوع وبسایت
+            نوع وبسایت  :
                 </label>
         </div>
         <div className="form-item">
             <input type="number" value={props.localState.supportDuration} onChange={props.handleSupportDurationChange}></input>
             <label>
-           :مدت زمان پشتیبانی 
+            مدت زمان پشتیبانی   :
                 </label>
         </div>
         <div className="form-item">
             <input type="text" value={props.localState.frontEndLanguage} onChange={props.handleFrontEndLanguageChange}></input>
             <label>
-               :زبان فرانت اند
+            زبان فرانت اند  :
                 </label>
         </div>
         <div className="form-item">
             <input type="text" value={props.localState.backEndLanguage} onChange={props.handleBackEndLanguageChange}></input>
             <label>
-               زبان بک اند
+            زبان بک اند :
                 </label>
         </div>
     </React.Fragment>

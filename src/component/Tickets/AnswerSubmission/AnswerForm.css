@@ -6,9 +6,9 @@ button {
   border-radius: 5px;
   margin: 15px 10px 0 10px !important;
 }
-h3 {
+.answerForm__title {
   text-align: center;
-  margin: 0 0 20px 0 !important;
+  margin: 20px 0 20px 0 !important;
 }
 h4 {
   color: rgba(0, 0, 0, 0.582);
