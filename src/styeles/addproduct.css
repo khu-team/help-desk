@@ -3,11 +3,18 @@
     padding: 0;
 }
 .form-div{
+    padding-left:20px !important;
+    padding-right: 20px !important;
     text-align: right;
-    background: linear-gradient(to right, #74ebd5, #93a4f0);
-    width: 40%;
-    margin-left: 30%;
-    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    background: -webkit-linear-gradient(
+        top left,
+        rgba(28, 101, 211, 0.726),
+        rgb(39, 201, 168)
+        );
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
     border-radius: 4px;
     box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.75);
 }
@@ -27,7 +34,6 @@
     
 }
 .form-div input[type="number"],input[type="text"],select {
-    margin-left: 20px;
     border: none;
     border-radius: 5px;
     height: 35px;
@@ -41,12 +47,14 @@
 }
 .server-status{
     text-align: right;
-    direction: rtl;
-    float: left;
-    margin-left: 20px
+    direction: rtl !important;
+    float: left!important;
 }
 .form-div label{
-margin-right: 20px
+margin-right: 20px;
+width: 150px !important;
+direction: rtl !important;
+margin: 0px !important;
 }
 .add-product-button{
     font:inherit;
@@ -81,13 +89,12 @@ button:hover{
      position: relative;
      background-color: #f1f1f1;
      color: green;
-     top: 10px;
-     height: 30px;
-     width: 30px;
+     height: 30px !important;
+     width: 30px !important;
      border: 0;
      border-radius: 50px;
      cursor: pointer;     
-     margin-right: 7px;
+     margin-right: 2px !important;
      outline: none;
 }
 .form-radio:checked::before
@@ -110,4 +117,10 @@ button:hover{
 }
 .button-wrappr{
     text-align: center !important
+}
+
+
+
+label {
+    font-weight: 500;
 }

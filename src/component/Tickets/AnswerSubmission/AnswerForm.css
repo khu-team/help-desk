@@ -1,4 +1,7 @@
-button {
+#inputGroupFile01{
+  display:none;
+}
+.answerForm button,.answerForm label {
   background: blue;
   color: #fff;
   padding: 0.25em 0.25em;
@@ -6,15 +9,12 @@ button {
   border-radius: 5px;
   margin: 15px 10px 0 10px !important;
 }
-h3 {
+.answerForm__title {
   text-align: center;
-  margin: 0 0 20px 0 !important;
+  margin: 20px 0 20px 0 !important;
 }
-h4 {
+.answerForm h4 {
   color: rgba(0, 0, 0, 0.582);
-}
-a {
-  color: red;
 }
 .answerForm {
   display: flex;
@@ -41,6 +41,7 @@ a {
 }
 .answerForm__buttonGroup {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   border-radius: 20px;
 }

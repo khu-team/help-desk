@@ -23,7 +23,7 @@ class AssigneProductToCustomer extends Component {
          const tempproducts = this.state.products;
          const temp_check_duplicated = tempproducts.filter(p =>p.name==stateproduct);
          if(temp_check_duplicated.length===1){
-            alert("There is a product with this name!")
+            alert("شما این محصول را یکبار اضافه کردید !")
          }
          else{
             const newproduct = products.filter(p=>p.name===stateproduct)[0];
@@ -41,8 +41,12 @@ class AssigneProductToCustomer extends Component {
 
     handleAssigne = (e)=>{
     e.preventDefault();
+    if(this.state.products[0]){
     //SOMETHING FOR SENDING DATA TO SERVER FOR ASSIGNING PRODUCTS WITH CUSTOMER    
-    }
+}
+    else{
+        alert("لطفا حداقل یک محصول انتخاب کنید")
+    }}
 
     handelCostumerChange = (e) =>{
         const costumer = e.target.value;
@@ -55,22 +59,23 @@ class AssigneProductToCustomer extends Component {
 <form>
     
 <div className="assign-select-customer">       
-            <select  value={this.state.product} onChange={this.handelProductChange}>
+            <select className="assigne-select" value={this.state.product} onChange={this.handelProductChange}>
                 {products.map((product=>(<option  key={product.id} value={product.name} >{product.name}</option>)))}
             </select>
             </div>
-            <button onClick={this.handleAddProduct} className="assign-button">Add</button>
+            <button onClick={this.handleAddProduct} className="assign-button">افزودن</button>
 
 <br></br>
 </form>
+<br></br>            
 <ProductsInAssigne handleDeleteProduct={this.handleDeleteProduct} products={this.state.products}/>
 
 <br></br>
 <form className="assign-select-customer">
-    <select value={this.state.costumer} onChange={this.handelCostumerChange}>
+    <select className="assigne-select" value={this.state.costumer} onChange={this.handelCostumerChange}>
     {costumers.map((costumer=>(<option  key={costumer.id} value={costumer.fullName} >{costumer.fullName}</option>)))}
     </select>
-    <button onClick={this.handleAssigne} className="assign-button">Assigne</button>
+    <button onClick={this.handleAssigne} className="assign-button">اختصاص</button>
 </form>
 </div>
          );

@@ -21,7 +21,7 @@ class RateForm extends Component {
                         <h3>ثبت نظرات</h3>
                         {this.props.rateFormError && <div className="rateForm__message--error">{this.props.rateFormError}</div>}
                         <textarea
-                            className="answeform__commentArea"
+                            className="answerform__commentArea"
                             name="rateComment"
                             id="rateComment"
                             onChange={this.props.onRateCommentChange}
@@ -30,16 +30,16 @@ class RateForm extends Component {
 
 
                         <div className="rateForm__submissionSection" >
-                            <h5>امتیاز: </h5>
-                            <StarRatingComponent
-                                name="rate"
-                                onStarClick={this.onStarClick}
-                                starCount={5}
-                                value={this.state.rating}
-                            />
+                            <span className="rateForm__stars">
+                                <h5>امتیاز: </h5>
+                                <StarRatingComponent
+                                    name="rate"
+                                    onStarClick={this.onStarClick}
+                                    starCount={5}
+                                    value={this.state.rating}
+                                />
+                            </span>
                             <button type="submit" className="rateForm__submiissionSection__button">ثبت</button>
-
-
                         </div>
                     </form>
                     :

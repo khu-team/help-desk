@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment-jalaali';
+import Send from '@material-ui/icons/Send';
 import { products } from '../../../mockData/products';
 import { departments } from '../../../mockData/departments';
 // import 'bootstrap/dist/css/bootstrap.css';
@@ -177,10 +178,13 @@ class TicketForm extends Component {
                     </div>
 
 
-                        {/* textArea for description */}
-                        <textarea placeholder="توضیحات" name="description" cols="30" rows="10" value={this.state.description} onChange={(event) => this.onFormChange(event)}></textarea>
-                        <br></br>
-                    <button className="material-icons addTicket__button"> send</button>
+                    {/* textArea for description */}
+                    <textarea className="ticketForm__textarea" placeholder="توضیحات" name="description" cols="30" rows="10" value={this.state.description} onChange={(event) => this.onFormChange(event)}></textarea>
+                    <br></br>
+                    <button className="submit-button">
+                        <Send />
+
+                    </button>
                     {this.state.titleError && <p className="addTicket__message addTicket__message--error">{this.state.titleError}</p>}
                     {this.state.descriptionError && <p className="addTicket__message addTicket__message--error">{this.state.descriptionError}</p>}
                     {this.state.successMessage && <p className="addTicket__message--success">{this.state.successMessage}{this.state.formattedSubmissionDateTime}</p>}
