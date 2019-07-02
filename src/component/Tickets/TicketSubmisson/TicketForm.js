@@ -133,7 +133,7 @@ class TicketForm extends Component {
                         <div className="col-md-6"> {/* input for title  */}
                             <div className="ticketForm__input-group">
                                 <label htmlFor="title">عنوان :</label>
-                                <input placeholder="عنوان" type="text" name="title" value={this.state.title} onChange={(event) => this.onFormChange(event)} />
+                                <input placeholder="عنوان" type="text" name="title" id="title" value={this.state.title} onChange={(event) => this.onFormChange(event)} />
                             </div>
                         </div>
                         <div className="col-md-6">

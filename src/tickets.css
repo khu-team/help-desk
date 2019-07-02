@@ -18,6 +18,7 @@ header{
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 2;
+    margin-top: 5%;
 }
 
 .logo11{
@@ -34,36 +35,16 @@ header{
 }
 
 .navf{
-    float: right;
-}
-
-.clear{
-    clear: both;
-}
-
-.navf ul{
-    margin: 0;
-    padding: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);   
     display: flex;
 }
 
-.navf ul li {
-    list-style: none;
-}
 
-.navf ul li a{
-    display: block;
-    margin: 10px 0 ;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #262626;
-}
-
-.navf ul li a.action,
-.navf ul li a:hover{
-    background: #069370;
-    color: #fff;
-    transition: 0.5s;
+.clear{
+    clear: both;
 }
 
 
@@ -77,6 +58,12 @@ header{
 
 @media (max-width: 760px)
 {
+
+    .navf{
+        left: 75%;
+    }
+
+
     .menuuu{
         display: block;
         width: 40px;
@@ -104,22 +91,6 @@ header{
     }
 
 
-    .navf{
-        display: none;
-    }
-
-    .navf.active{
-        display: block;
-        width: 100%;
-    }
-
-    .navf.active ul{
-        display: block;
-    }
-
-    .navf.active ul li a{
-        margin: 0;
-    }
 
 }
 
@@ -321,6 +292,9 @@ header{
     table tbody tr td:nth-child(5):before {
         content: "Product";
     }
+    table tbody tr td:nth-child(7):before {
+        content: "AnswerStatus";
+    }
     table tbody tr td:nth-child(6):before {
         content: "Department";
     }
@@ -328,12 +302,13 @@ header{
         content: "SubmissionDateTime";
     }
     table tbody tr td:nth-child(9):before {
-        content: "Likes";
+        content: "Details";
     }
 
     .column4,
     .column5,
     .column6,
+    .column7,
     .column8,
     .column82,
     .column9 {
@@ -341,12 +316,14 @@ header{
     }
 
     .column4,
+    .column7,
     .column5,
     .column6,
     .column1,
     .column2,
     .column3,
     .column8,
+    .column82,
     .column9 {
         width: 100%;
     }
@@ -362,3 +339,51 @@ header{
         padding-right: 15px;
     }
     }
+
+    .flex{
+        position: absolute;
+        top: 14.5%;
+        right: 14%;
+    }
+
+    .buttoon{
+        background:#1AAB8A;
+        border-radius: 50px;
+        color:rgb(0, 0, 0);
+        position:relative;
+        height:60px;
+        font-size:1.6em;
+        padding:0 2em;
+        cursor:pointer;
+        transition:800ms ease all;
+        outline:none;
+        z-index: 10;
+      }
+      .buttoon:hover{
+        background:rgb(148, 209, 219);
+        color:rgb(0, 0, 0);
+        border-radius: 50px;
+      }
+      .buttoon:before,.buttoon:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: rgb(1, 24, 18);
+        transition:400ms ease all;
+        border-radius: 50px;
+      }
+      .buttoon:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+        border-radius: 50px;
+      }
+      .buttoon:hover:before,.buttoon:hover:after{
+        width:100%;
+        transition:800ms ease all;
+        border-radius: 50px;
+      }
