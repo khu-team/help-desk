@@ -159,8 +159,8 @@ body, html {
     .container-table100 {
     width: 100%;
     position: absolute;
-    top: 30%;
-    min-height: 70%;
+    top: 35%;
+    min-height: 100%;
     background:linear-gradient(-30deg,#1ec4e9 0% ,#673ab7 50% , #262626 50% , #607d8b 100%);
     display: flex;
     align-items: center;
@@ -354,7 +354,7 @@ body, html {
         background: transparent;
     }
     .container-table100{
-        top: 25%;
+        top: 45%;
     }
     .table2 {
         display: block;
@@ -455,12 +455,6 @@ body, html {
         z-index: 10;
       }
 
-      .table-striped tbody tr:nth-of-type(odd) {
-        background-color: white ;
-    }
-    .table-striped tbody tr:nth-of-type(even) {
-        background-color: rgb(207, 245, 165) ;
-    }
     .table-hover tbody tr:hover {
         color: #212529;
         background-color: #8aff04;
