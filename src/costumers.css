@@ -41,3 +41,51 @@
   outline: none;
   margin: 5px;
  box-sizing:content-box;}
+
+/* style fot addCustomer */
+
+.addCustomer__input-group {
+  width: 30% !important;
+  margin: 0 5%;
+}
+
+.addCustomer2__input-group {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100%;
+}
+
+
+
+.addCustomer {
+  margin: 30px auto;
+  width: 70%;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  /* box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33); */
+
+  background: linear-gradient(
+    to bottom right,
+    rgba(193, 252, 84, 0.726),
+    rgb(1, 49, 43)
+  );
+  font-family: "IRANSans";
+}
+
+.addCostumerButton{
+  color:bisque;
+  background-color: rgb(59, 3, 6);
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-top: 20px;
+  
+  box-shadow: 1px 1px 1px 0.5px rgba(241, 205, 207, 0.75);
+  
+}
+
+.addCostumerButton2{
+  text-align: center
+  
+}
