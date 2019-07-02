@@ -32,8 +32,8 @@ class ShowTable extends React.Component {
                   <td >{num} تومان</td>
                   <td >{discountPercentage}%</td>
                   <td >{numeral(nprice).format('0,0')} تومان </td>
-                  <td><Link to = {{pathname:`/product/${id}`, state:{ID:id}}}> جزییات </Link></td>
-                  <td><Link to = {{pathname:`/edit-product/${id}`,state:{ID:id}}}> ویرایش </Link></td>
+                  <td><Link to = {{pathname:`/product/${id}`, state:{ID:id}}} className='links'> جزییات </Link></td>
+                  <td><Link to = {{pathname:`/edit-product/${id}`,state:{ID:id}}} className='links'> ویرایش </Link></td>
     
                 </tr>
             
@@ -55,12 +55,11 @@ class ShowTable extends React.Component {
     
 
     render() { 
-       
-    
+
         return (
            
             <div>
-            <table className=' tabel table-striped customers font-iran-sans'>
+            <table className=' table table-striped customers font-iran-sans'>
             <tbody >
           <tr className='font-iran-sans'>
             <th>ID</th>

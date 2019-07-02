@@ -1,7 +1,9 @@
 .customers {
     border-collapse: collapse;
     top: 163px;
-    width: 94% !important; 
+    right: 30px;
+    width: 94% !important;
+    position: relative;
 }
 
 .customers td {
@@ -10,22 +12,15 @@
     font-size: 14px;
 
 }
+
+.customers tr:nth-child(even){background-color: #f2f2f2;}
+
 .customers th {
     border: 1px solid #ddd;
     text-align: center;
     font-size: 16px;
-
-}
-
-
-.customers tr:nth-child(even){background-color: #f2f2f2;}
-
-.customers tr:hover {background-color: #ddd;}
-
-.customers th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: center;
     background: linear-gradient(
         to bottom right,
         rgba(28, 101, 211, 0.726),
@@ -35,10 +30,6 @@
     color: white;
 }
 
-.button-show:hover{
-  
-    color: white;
-}
 
 .select-show{
     direction: rtl;
@@ -63,7 +54,7 @@
     color: #ffffff;
 
     position: absolute;
-    right: 5%;
+    right: 30px;
     top: 100px;
 }
 
@@ -79,7 +70,6 @@
     font-size: 13px;
     font-weight: bold;
     padding: 2px 15px;
-
     background: #ffffff;
     -webkit-appearance: none;
     overflow: hidden;
@@ -95,7 +85,7 @@
     position: absolute;
 
     float: right !important;
-    right: 15%;
+    right: 160px;
     top: 100px;
 }
 
@@ -107,8 +97,6 @@
     background-color: #6264c8;
 }
 
-.cooloor {
-
-    background-color: #6264c8;
-    font-family: "IRANSans";
-  }
+.links{
+    color: #3148ff;
+}
