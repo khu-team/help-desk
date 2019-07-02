@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import {departments} from "../../mockData/departments";
 import {roles} from "../../mockData/roles";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {supportTeamUsers} from "../../mockData/supportTeamUsers";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-
 
 
 class AddSupportUser extends Component {
@@ -21,7 +19,6 @@ class AddSupportUser extends Component {
         email:'',
         Select:null,
         editId: null,
-        showEdit:false,
         tittle:'',
         showAdd:false
 
@@ -35,7 +32,6 @@ class AddSupportUser extends Component {
         e.preventDefault();
         this.setState({
             showEdit:true,
-            tittle:'ویرایش پشتیبان',
             showAdd:false,
             error:''
 
@@ -48,7 +44,6 @@ class AddSupportUser extends Component {
         e.preventDefault();
         this.setState({
             showEdit:false,
-            tittle:'افزودن پشتیبان',
             showAdd:true,
             error:'',
             name:'',
@@ -63,49 +58,6 @@ class AddSupportUser extends Component {
     };
 
 
-
-    handelEdit = (e) => {
-        e.preventDefault();
-
-        let select='';
-        supportTeamUsers.some((support) => {
-                if (support.id == this.state.editId) {
-                    this.setState({
-                        showAdd:true,
-                        showEdit:false
-                    })
-                    select = support
-
-                    this.setState({
-                        Select: select,
-                        name: select.fullName,
-                        role:select.role,
-                        dept:select.department,
-                        phone: select.phoneNumber,
-                        email: select.email,
-                        error:''
-
-                    })
-
-                }
-                else if(select==='')  {
-                    this.setState({error:'آی دی وارد شده صحیح نیست',
-                        name:'',
-                        role:'',
-                        dept:'',
-                        phone:'',
-                        email:'',
-                    }  )
-                }
-            }
-        )
-
-    }
-
-    handleIdChange = (e) => {
-        const editId = e.target.value;
-        this.setState({editId})
-    };
 
     handelRole = (e)=> {
         const role = e.target.value;
@@ -166,67 +118,11 @@ class AddSupportUser extends Component {
         return (
 
             <div >
-
-
                 <div class="right">
                 <Fab color="secondary" aria-label="Add" onClick={this.handelAddButton}>
                     <AddIcon />
                 </Fab>
                 </div>
-
-                <button type="button" class="btn btn-primary btn-lg btn-block"  onClick={this.handelEditButton}>ویرایش مشخصات پشتیبانان</button>
-
-
-                {this.state.showEdit && this.showForm.map(() => {
-                        if (this.state.showEdit==true) {
-                            return (
-                                <div>
-                                    <React.Fragment>
-
-                                        <form className="addTicketSample ">
-                                            <div className="center">
-
-                        <div class="center">
-                                                <div className="error"><h4 className="center">{this.state.error}</h4></div>
-                        </div>
-                                                <div className="font2">
-
-                                                    <h2 className="font-iran-sans">
-                                                        {this.state.tittle}
-                                                    </h2>
-
-                                                </div>
-                                            </div>
-
-
-
-                                    <div>
-
-
-                                                <div>
-                                                    <label>آی دی پشتیبان:</label>
-                                                <input className="form-control" type="number" value={this.state.editId}
-                                                       onChange={this.handleIdChange}/>
-                                            </div>
-
-
-                                    </div>
-
-
-                                <div className="center">
-                                  <button type="button" className="btn btn-success " onClick={this.handelEdit}>جستوجوی پشتیبان</button>
-                                </div>
-                                        </form>
-                                    </React.Fragment>
-                                </div>
-                            )
-                        }
-
-                    }
-                )
-                }
-
-
 
 
                     { this.showForm.map(() => {
@@ -244,7 +140,7 @@ class AddSupportUser extends Component {
                                     <div className="font2">
 
                                             <h2 className="font-iran-sans">
-                                                {this.state.tittle}
+                                                افزودن پشتیبان
                                             </h2>
 
                                     </div>

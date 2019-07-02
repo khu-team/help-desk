@@ -39,3 +39,9 @@ button.MuiButtonBase-root.MuiIconButton-root.assign-delete-button.MuiIconButton-
     float: right !important;
     margin: 0px !important;
 }
+
+button.assign-button {
+    margin-right: 10px;
+}
+
+
