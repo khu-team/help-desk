@@ -179,9 +179,9 @@ class TicketForm extends Component {
 
 
                     {/* textArea for description */}
-                    <textarea placeholder="توضیحات" name="description" cols="30" rows="10" value={this.state.description} onChange={(event) => this.onFormChange(event)}></textarea>
+                    <textarea className="ticketForm__textarea" placeholder="توضیحات" name="description" cols="30" rows="10" value={this.state.description} onChange={(event) => this.onFormChange(event)}></textarea>
                     <br></br>
-                    <button className="addTicket__button">
+                    <button className="submit-button">
                         <Send />
 
                     </button>

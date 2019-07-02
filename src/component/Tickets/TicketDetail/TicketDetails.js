@@ -147,7 +147,7 @@ class TicketDetail extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="container font-iran-sans">
+                <div className="container ticketDetails font-iran-sans">
                     <div className="row">
                         <div className="col-md-5">
                             <CostumerSummary

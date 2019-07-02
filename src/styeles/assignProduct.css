@@ -37,4 +37,5 @@ button.MuiButtonBase-root.MuiIconButton-root.assign-delete-button.MuiIconButton-
 .assigne-select{
     width: 300px;
     float: right !important;
+    margin: 0px !important;
 }

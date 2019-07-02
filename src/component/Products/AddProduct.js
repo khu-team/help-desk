@@ -347,6 +347,7 @@ getCategoryFields = (categoryId)=>{
                 {this.props.product ? 'اصلاح محصول' : 'ثبت محصول'}
             </button>
            </div>
+                <br></br>
             </form> 
 
             </div>  
