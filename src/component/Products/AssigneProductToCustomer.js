@@ -41,8 +41,12 @@ class AssigneProductToCustomer extends Component {
 
     handleAssigne = (e)=>{
     e.preventDefault();
+    if(this.state.products[0]){
     //SOMETHING FOR SENDING DATA TO SERVER FOR ASSIGNING PRODUCTS WITH CUSTOMER    
-    }
+}
+    else{
+        alert("لطفا حداقل یک محصول انتخاب کنید")
+    }}
 
     handelCostumerChange = (e) =>{
         const costumer = e.target.value;
