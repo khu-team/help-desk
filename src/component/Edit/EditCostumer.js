@@ -83,7 +83,7 @@ class Editcustomer extends React.Component {
                             <label> انتخاب مشتری </label>
                             </nobr>
                             </div>
-                            <select name="editId" value={this.state.editId}  onChange={this.handleInputChange} >
+                            <select className="selectCostumer" name="editId" value={this.state.editId}  onChange={this.handleInputChange} >
 
                                 {costumers.map((costumer) => (
 
