@@ -22,15 +22,14 @@ class ShowList extends React.Component {
                 <div>
                 <a href="/add-costumer"> <i class="material-icons coloraddred" >add_circle</i></a>
                  <Paper>
-                <Table  className=''>
+                <Table  className='tableofcustomers '>
                 <TableHead >
               <TableRow  className=''>
-                <TableCell className=''>شماره</TableCell>
-                <TableCell className='' align="right"> نام مشتری</TableCell>
-                <TableCell className='' align="right"> شهر </TableCell>
-                <TableCell className='' align="right">وضعیت</TableCell>
-               
-                <TableCell className='' align="right">اعمال تغییرات</TableCell>
+                <TableCell  >شماره</TableCell>
+                <TableCell  className="alignright"> نام مشتری</TableCell>
+                <TableCell  className="alignright"> شهر </TableCell>
+                <TableCell  className="algincenter">وضعیت</TableCell>
+                <TableCell  className="alginright">اعمال تغییرات</TableCell>
               </TableRow>
             </TableHead>
                   <TableBody>
