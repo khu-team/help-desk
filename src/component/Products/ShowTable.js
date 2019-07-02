@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../products.css';
 import {Link} from "react-router-dom";
-
+import SwapVert from '@material-ui/icons/SwapVert';
 
 class ShowTable extends React.Component {
     state = { nozooli:'unkown' }
@@ -32,8 +32,8 @@ class ShowTable extends React.Component {
                   <td >{num} تومان</td>
                   <td >{discountPercentage}%</td>
                   <td >{numeral(nprice).format('0,0')} تومان </td>
-                  <td><Link to = {{pathname:`/product/${id}`, state:{ID:id}}} className='links'> جزییات </Link></td>
-                  <td><Link to = {{pathname:`/edit-product/${id}`,state:{ID:id}}} className='links'> ویرایش </Link></td>
+                  <td><Link to = {{pathname:`/product/${id}`, state:{ID:id}}}> جزییات </Link></td>
+                  <td><Link to = {{pathname:`/edit-product/${id}`,state:{ID:id}}}> ویرایش </Link></td>
     
                 </tr>
             
@@ -55,20 +55,26 @@ class ShowTable extends React.Component {
     
 
     render() { 
-
+       
+    
         return (
            
             <div>
-            <table className=' table table-striped customers font-iran-sans'>
+            <table className=' tabel table-striped customers font-iran-sans'>
             <tbody >
           <tr className='font-iran-sans'>
             <th>ID</th>
             <th>نام محصول</th>
-            <th className='price' onClick={this.Sort}>قیمت</th>
+            <th className='price' onClick={this.Sort}> <i class="material-icons icon-size "> <tittle class="font-iran-sans iconstyle"> قیمت</tittle>swap_vert</i></th>
             <th>تخفیف</th>
             <th>قیمت با تخفیف</th>
             <th>جزییات</th>
             <th>اعمال تغییرات</th>
+
+
+
+           
+
 
           </tr>
         </tbody>

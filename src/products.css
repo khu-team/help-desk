@@ -4,6 +4,7 @@
     right: 30px;
     width: 94% !important;
     position: relative;
+    border-radius: 5px !important;
 }
 
 .customers td {
@@ -103,4 +104,19 @@
 
 .dcustomers {
    top: 50px !important;
+}
+.iconstyle {
+    font-weight: 800;
+    font-size: 16px !important;
+    right: 5px;
+    position: relative;
+    top: -6px;
+    right: 13px;
+    cursor: pointer;
+}
+.icon-size {
+ 
+    font-size: 24px !important;
+    cursor: pointer;
+
 }
