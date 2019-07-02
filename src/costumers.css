@@ -135,8 +135,14 @@
     );
   color: white;
 }
-.positionbuttom{
+.errorreaditfield{
+  color:bisque;
+  background-color:  rgba(193, 252, 84, 0.726), rgb(1, 49, 43);
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-top: 20px;
   
-padding-left: 10%;
-padding-right: 10%;
+  text-align: center;
+  widows: 100%;
+  
 }

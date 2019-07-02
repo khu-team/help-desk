@@ -10,7 +10,7 @@ class Editcustomer extends React.Component {
         name: '',
         city: 1,
         status: true,
-        successMessage:'ویرایش انجام شد'
+        error:''
 
     }
   
@@ -47,15 +47,22 @@ class Editcustomer extends React.Component {
     chengingHandelSubmit = (event) => {
         event.preventDefault();
         console.log("gh", costumers[this.state.editId - 1]);
-       
+
+        if(this.state.name === '' ){
+            this.setState({error: 'نام نمی تواند خالی باشد'})
+        }
+        else{
+            this.setState({error:'ویرایش انجام شد'})
+        }
+
         costumers[this.state.editId - 1] = {
             id: +this.state.editId,
             fullName: this.state.name,
             city: +this.state.city,
-            status: JSON.parse(this.state.status)
+            status: JSON.parse(this.state.status),
         }
 
-        alert("ویرایش اطلاعات مشتری انجام شد...")
+     //   alert("ویرایش اطلاعات مشتری انجام شد...")
         
         
         
@@ -133,24 +140,22 @@ class Editcustomer extends React.Component {
                         <select name="status"  value={this.state.status} onChange={this.handleInputChange}>
 
                         <option value={true}>فعال</option>
-                                        <option value={false}>غیر فعال</option>
+                         <option value={false}>غیر فعال</option>
 
                         </select>
                         
                 </div> 
-         </div> <br></br> <br></br>  
-
-                              
-
-                                <button  onClick={this.chengingHandelSubmit} className=" addCostumerButton"> اعمال تغییرات</button>
-                                
+         </div> <br></br> <br></br> <div className="addCostumerButton2">
+                             <button  onClick={this.chengingHandelSubmit} className=" addCostumerButton"> اعمال تغییرات</button>
+                             <p class="errorreaditfield"> {this.state.error}</p>
+                             </div> 
                             </form>
-
+                
                     
             </div>
         </form>
         </React.Fragment>
-       ) /* costumers.find((c)=>c.id===ID).fullName */
+       ) 
     }
     render(){return this.NC()}
 
