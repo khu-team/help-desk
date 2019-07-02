@@ -9,7 +9,9 @@ class Editcustomer extends React.Component {
         SelectCostumer: {},
         name: '',
         city: 1,
-        status: true
+        status: true,
+        successMessage:'ویرایش انجام شد'
+
     }
   
 
@@ -37,17 +39,15 @@ class Editcustomer extends React.Component {
             SelectCostumer: selectCost,
             name: selectCost.fullName,
             city: selectCost.city,
-            status: selectCost.status
+            status: selectCost.status,
+            
         })
 
     }
-
-  
-
     chengingHandelSubmit = (event) => {
         event.preventDefault();
         console.log("gh", costumers[this.state.editId - 1]);
-
+       
         costumers[this.state.editId - 1] = {
             id: +this.state.editId,
             fullName: this.state.name,
@@ -56,6 +56,9 @@ class Editcustomer extends React.Component {
         }
 
         alert("ویرایش اطلاعات مشتری انجام شد...")
+        
+        
+        
     }
     NC=()=>{
         const ID = this.props.location.state.SID
@@ -66,7 +69,7 @@ class Editcustomer extends React.Component {
 
         
             <h3 className="addCostumerButton2">ویرایش اطلاعات مشتری</h3>
-            <div > 
+            <div > <br/><br/>
            
                             <form key={costumers.find((c)=>c.id===ID).ID}>
 
@@ -139,7 +142,8 @@ class Editcustomer extends React.Component {
 
                               
 
-                                <button onClick={this.chengingHandelSubmit} className="addCostumerButton"> اعمال تغییرات</button>
+                                <button  onClick={this.chengingHandelSubmit} className=" addCostumerButton"> اعمال تغییرات</button>
+                                
                             </form>
 
                     
