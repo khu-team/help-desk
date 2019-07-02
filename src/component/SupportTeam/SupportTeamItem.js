@@ -2,11 +2,10 @@ import React from 'react';
 import {RoleRenderer} from '../../component/SupportTeam/RoleRenderer'
 import {DepartmentRenderer} from "./DepartmentRenderer";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {handelEdit1} from '../../component/Edit/EditSupportTeamUser'
 
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
-import {Mood,SentimentDissatisfied} from '@material-ui/icons';
+import {Edit, Mood, SentimentDissatisfied} from '@material-ui/icons';
 import { green} from '@material-ui/core/colors';
 
 
@@ -44,7 +43,14 @@ export default function SupportTeamItem({fullName,email,phoneNumber,status,depar
                 </Button>
                 }</td>
                 <td>
-                    {handelEdit1(id)}
+                            <span>
+
+               <Button variant="contained" color="default" className="font-iran-sans" value={id}>ویرایش
+                <Edit/>
+            </Button>
+
+
+        </span>
                     </td>
             </tr>
             </tbody>
