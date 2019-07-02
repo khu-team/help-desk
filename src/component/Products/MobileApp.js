@@ -5,7 +5,7 @@ const MobileApp = (props) => {
         <div className="form-item">
         <input type="text" onChange={props.handleId} value={props.localState.customerId} />
         <label>
-            :شناسه مشتری 
+        شناسه مشتری : 
         </label>
         </div>
        <div className="form-item">
@@ -15,7 +15,7 @@ const MobileApp = (props) => {
             <option value="IOS">IOS</option>
         </select>
         <label>
-            :پلتفرم
+        پلتفرم :
         </label>
         </div>
         </React.Fragment>
