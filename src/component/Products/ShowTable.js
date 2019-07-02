@@ -60,7 +60,7 @@ class ShowTable extends React.Component {
         return (
            
             <div>
-            <table className=' tabel table-striped customers font-iran-sans'>
+            <table className=' table table-striped customers font-iran-sans'>
             <tbody >
           <tr className='font-iran-sans'>
             <th>ID</th>
