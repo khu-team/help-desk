@@ -1,5 +1,7 @@
 import React from 'react';
 import { costumers } from '../../mockData/costumers';
+import '../../../src/costumers.css'
+
 
 class addcustomer extends React.Component {
     state = {
@@ -12,6 +14,7 @@ class addcustomer extends React.Component {
     
     handelSubmit = (event) => {
         event.preventDefault();
+        
         let costumer = {};
 
         if (this.state.status == 1) {
@@ -42,9 +45,9 @@ class addcustomer extends React.Component {
 
     
     handleInputChange = (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
         const target = event.target;
-        const value = target.name === 'city' ? +target.value : target.value;
+        const value = target.name == 'city' ? +target.value : target.value;
         const name = target.name;
         this.setState({
             id: costumers.length
@@ -59,56 +62,98 @@ class addcustomer extends React.Component {
 
     render() {
         return (
-            
-            
-            <div className="welcome">
-            <link rel="stylesheet" type="text/css" href="../../costumers.css" />
-                
-                <div className="costumerForm">
-                <span> نام مشتری</span>
-                    <form>
-                        <label className="labels">
-                            <input className="inputName" name="name"
-                                type="name"  
-                                placeholder="نام مشتری"
-                                onChange={this.handleInputChange}
-                                value={this.state.name}>
-                            </input> 
-                        </label> <br></br>
-                            <br />
-                        <span > &nbsp;&nbsp;شهر</span>
-                        <br />
-                        <label className="labels">
-                            <select className="citybutton"
-                                name="city"
-                                value={this.state.city}
-                                onChange={this.handleInputChange} >
-                                <option value="1">تهران</option>
-                                <option value="2">کرج</option>
-                                <option value="3">اصفهان</option>
-                                <option value="4">یزد</option>
-                                <option value="5">شیراز </option>
-                            </select></label><br></br>
 
-                            <span> &nbsp; &nbsp; وضعیت </span>
-                            <br />
-                        <label className="labels">
-                           <select className="status"
-                                name="status"
-                                value={this.state.status}
-                                onChange={this.handleInputChange} >
-                                <option value="1">فعال</option>
-                                <option value="0">غیر فعال</option>
-                            </select>
-                        </label>
-                        
-                        <br/><br/><br/><br/>
-                        <button onClick={this.handelSubmit} className="costumerButton">افزودن مشتری</button>
-                    </form>
+            
+            <React.Fragment>
+
+             <form className="addCustomer container" onSubmit={(event) => this.onSubmit(event)}>
+
+                <h3>افزودن مشتری</h3>
+
+                 
+                <div className="col">
+
+
+                    <div className = "raw-md-4">
+                        <div className = "addCustomer2__input-group">
+
+                            <div className="addCostumerButton2">
+                            <label> نام مشتری </label>
+                            </div>
+
+                                <input placeholder= "نام مشتری" type="text" name="name" value={this.state.name} onChange={this.handleInputChange} />
+                        </div>
+                    </div><br></br>
+
                 </div>
-            </div>
+
+
+
+            <div className="col">
+        
+                <div className="raw-md-6">
+                <div className = "addCustomer2__input-group">
+                        
+                        <div className="addCostumerButton2">
+                        <label> شهر </label>
+                        </div>
+
+                        <select name="city" value={this.state.city} onChange={this.handleInputChange}>
+
+                            <option value="1">تهران</option>
+                            <option value="2">کرج</option>
+                            <option value="3">اصفهان</option>
+                            <option value="4">یزد</option>
+                            <option value="5">شیراز </option>
+
+                        </select>
+                    </div><br></br><br></br><br></br>
+                  </div>
+            
+
+
+
+
+            
+            <div className="raw-md-6">
+            <div className = "addCustomer2__input-group">
+            
+                        <div className="addCostumerButton2">
+                            
+                            <nobr>
+                             <label> وضعیت‌‌‌‌ مشتری </label>
+                             </nobr>
+                             
+
+                        </div>
+
+                            <select name="status"  value={this.state.status} onChange={this.handleInputChange}>
+
+                                <option value="1">فعال</option>
+                                <option value="0">غیرفعال</option>
+
+                            </select>
+                            
+                    </div> 
+             </div>
+
+    </div>
+
+    <div className="addCostumerButton2">
+        <br></br><br></br>
+    <button onClick={this.handelSubmit} className="addCostumerButton"> افزودن مشتری </button>
+    </div>
+
+   
+            </form>
+            
+
+            </React.Fragment>
         );
     }
 }
 
 export default addcustomer;
+
+
+
