@@ -49,11 +49,10 @@
     text-align: right;
     direction: rtl !important;
     float: left!important;
-    margin-left: 20px
 }
 .form-div label{
 margin-right: 20px;
-width: 160px !important;
+width: 150px !important;
 direction: rtl !important;
 margin: 0px !important;
 }
