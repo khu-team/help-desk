@@ -1,4 +1,7 @@
-.answerForm button {
+#inputGroupFile01{
+  display:none;
+}
+.answerForm button,.answerForm label {
   background: blue;
   color: #fff;
   padding: 0.25em 0.25em;
@@ -37,8 +40,9 @@
   resize: none;
 }
 .answerForm__buttonGroup {
-  /* display: flex; */
-  /* justify-content: space-between; */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
   border-radius: 20px;
 }
 .answerForm__message--success {
