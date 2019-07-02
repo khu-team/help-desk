@@ -21,7 +21,7 @@ class RateForm extends Component {
                         <h3>ثبت نظرات</h3>
                         {this.props.rateFormError && <div className="rateForm__message--error">{this.props.rateFormError}</div>}
                         <textarea
-                            className="answeform__commentArea"
+                            className="answerform__commentArea"
                             name="rateComment"
                             id="rateComment"
                             onChange={this.props.onRateCommentChange}
@@ -40,8 +40,6 @@ class RateForm extends Component {
                                 />
                             </span>
                             <button type="submit" className="rateForm__submiissionSection__button">ثبت</button>
-
-
                         </div>
                     </form>
                     :

@@ -36,28 +36,30 @@
   );
   font-family: "IRANSans";
 }
-.rateForm__stars{
+.rateForm h3 {
+  text-align: center;
+}
+
+.rateForm__submissionSection {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "IRANSans";
+}
+.rateForm__stars {
   display: flex!important;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
-}
-.rateForm__submissionSection {
-  display: flex;
-  width: 80%;
-  flex-direction: row;
-  justify-content: space-between;
-  font-family: "IRANSans";
-}
-.rateForm__submissionSection h5 {
-  position: relative;
-  top: 25px;
+  align-items: center;
+  float: right;
 }
 .rateForm__submiissionSection__button {
   border-radius: 5px;
   font-family: "IRANSans";
   height: 50px;
-  left: -98px;
+  right: 35px;
   position: relative;
   width: 60px;
 }
@@ -142,20 +144,20 @@
 }
 .replyDiv__description {
   border-bottom: 1px solid black;
-  border-radius: none!important;
-  font-weight: 500
+  border-radius: none !important;
+  font-weight: 500;
 }
-.replyDiv__supportUser{
+.replyDiv__supportUser {
   /* background-color: #beb8b860!important; */
   border-radius: 10px;
-  padding-right: 5px!important;
+  padding-right: 5px !important;
   font-size: 90%;
 }
-.replyDiv__title{
+.replyDiv__title {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
-  margin-left: none!important;
+  margin-left: none !important;
   border-bottom: 1px solid black;
 }
 /* firstTicketDetails */
@@ -178,7 +180,7 @@
   float: left;
 }
 
-h4 {
+.ticketDetails h4 {
   text-align: center;
 }
 
