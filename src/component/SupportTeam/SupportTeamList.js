@@ -11,7 +11,7 @@ export default function SupportTeamList() {
     return(
     <div >
 
-        <table class="Table  table-hover" >
+        <table class="Table table-striped table-hover" >
             <thead>
               <tr >
                   <th scope="col">نام کامل</th>
