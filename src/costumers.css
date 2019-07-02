@@ -86,6 +86,13 @@
 }
 
 .addCostumerButton2{
-  text-align: center
+  text-align: center;
+   widows: 100%;
   
+}
+
+.selectCostumer{
+  width: 820px;
+  margin-left: -375px;
+
 }
