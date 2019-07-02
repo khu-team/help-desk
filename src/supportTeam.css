@@ -1,31 +1,62 @@
 
+
 table.Table  {
 
   table-layout:fixed;
   width: 100%;
-  border-collapse: separate;
-  border-width: 8px;
+  border-collapse:collapse;
+  border-width: 1px;
   border-style:hidden;
   text-align: center;
   border-color: rgb(41, 140, 221);
-  background:#4158d0;
-  
-
-
-}
-table.Table1 {
-
-table-layout:fixed;
-width:40%;
-border-collapse:separate;
-border-width: 5px;
-border-style:ridge;
-text-align: right;
-border-color:  #34b41c;
-background-color: rgb(182, 230, 127)
-
+    color: white;
+    font-size: 16px;
 
 }
+
+table.Table tbody th{
+    border-width: 1px;
+    border-collapse: separate;
+    text-align: center;
+    border-style: ridge;
+    border-color:  #bbdefb;
+    background-color: #e3f2fd;
+}
+
+table.Table thead th{
+    border-width: 1px;
+    border-collapse: separate;
+    text-align: center;
+    border-style: ridge;
+    border-color:  #bbdefb;
+    background-color: #283593;
+}
+
+table.Table td{
+    border-width: 1px;
+    border-collapse: separate;
+    text-align: center;
+    border-style: ridge;
+    border-color:  #bbdefb;
+    background-color: #e3f2fd;
+    color:black;
+    font-size: 14px;
+}
+
+.addTicketSample {
+    margin: 40px auto;
+    width: 50%;
+    border-radius: 10px;
+    padding: 20px 50px 50px 50px;
+    box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
+    background: linear-gradient(
+            to bottom right,
+            rgba(28, 101, 211, 0.726),
+            rgb(39, 201, 168)
+    );
+    font-family: "IRANSans";
+}
+
 table.Table2 {
 
 table-layout:fixed;
@@ -39,17 +70,7 @@ text-align: center;
 border-color:  #34b41c;
 background:linear-gradient(#0099FF,#46d041 );
 }
-table.Table th{
-    border-width: 5px;
-    border-collapse: separate;
-    text-align: center;
-    border-style: ridge;
-    border-color:  #0099FF;
-        background-color: #33CCFF
 
-
-
-}
 button.button {
 
   text-align: center;
@@ -70,19 +91,28 @@ font-size: 18px;
 display: inline-block;
 -webkit-text-fill-color: #444444;
 }
+.error{
+    font-style:inherit;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', IRANSans, sans-serif;
+    font-size: 16px;
+    display: inline-block;
+    color: #b71c1c;
+    -webkit-text-fill-color:#b71c1c;
+    text-align: center;
+
+}
 .font2{
 font-style:inherit;
 font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', IRANSans, sans-serif;
-font-size: 25px;
+font-size: 20px;
 display: inline-block;
-  color: #0b9306;
-  -webkit-text-fill-color: rgb(172, 231, 142);
+ color: #1a237e;
+ -webkit-text-fill-color:black;
 
 }
 .container-table100 {
 position: absolute;
 width: 100%;
-position: absolute;
 top: 10%;
 min-height: 100%;
 background:linear-gradient(#4158d0, #c850c0);
@@ -92,5 +122,16 @@ justify-content: center;
 flex-wrap: wrap;
 padding: 33px 30px;
 }
+
+.center{
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+    margin: 5px 45px 10px;
+}
+
+
 
 

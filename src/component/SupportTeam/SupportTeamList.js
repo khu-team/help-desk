@@ -1,35 +1,34 @@
 import React from 'react';
-import {SupportTeamItem} from '../../component/SupportTeam/SupportTeamItem'
+import SupportTeamItem from '../../component/SupportTeam/SupportTeamItem'
 import { supportTeamUsers } from '../../mockData/supportTeamUsers'
 import AddSupportUser from '../../component/SupportTeam/AddSupportForm'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 
+export default function SupportTeamList() {
+    return(
+    <div >
 
-const SupportTeamList = () => (
-    <div className="welcome">
-        <table  className="Table" >
+        <table class="Table  table-hover" >
             <thead>
-              <tr className="font-iran-sans">
-                <th > وضعیت</th>
-                <th > تلفن تماس</th>
-                <th >ایمیل</th>
-                <th >دپارتمان</th>
-                <th >نقش</th>
-                <th>نام کامل</th>
-
-
+              <tr >
+                  <th scope="col">نام کامل</th>
+                  <th scope="col">نقش</th>
+                  <th scope="col">دپارتمان</th>
+                  <th scope="col">ایمیل</th>
+                  <th scope="col"> تلفن تماس</th>
+                  <th scope="col"> وضعیت</th>
+                  <th scope="col">ویرایش</th>
             </tr>
             </thead>
         </table>
         {supportTeamUsers.map((supporters) => (
             <SupportTeamItem  {...supporters} />
-
         ))}
-
     <AddSupportUser/>
 
     </div>
 );
-
-export default SupportTeamList ;
+}
