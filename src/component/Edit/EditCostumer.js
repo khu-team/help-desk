@@ -1,5 +1,6 @@
 import React from 'react';
 import { costumers } from '../../mockData/costumers';
+import '../../../src/costumers.css'
 
 class Editcustomer extends React.Component {
     state = {
@@ -60,69 +61,123 @@ class Editcustomer extends React.Component {
 
     render() {
         return (
-            <div className="welcome">
-                <h1>:ویرایش اطلاعات مشتری</h1>
-                <div className="editForm">
-                    <form className="marginForm">
-                     
-                        <label>
-                            <select
-                                name="editId"
-                                value={this.state.editId}
-                                onChange={this.handleInputChange}
-                            >
+
+            <React.Fragment>
+            <form className="addCustomer container" onSubmit={(event) => this.onSubmit(event)}>
+
+            
+                <h3>ویرایش اطلاعات مشتری</h3>
+
+
+                <div >
+                    
+                <div className="col">
+                <div className = "raw-md-6">
+
+                <div className = "addCustomer2__input-group">
+
+                        <label >
+
+                        <div className="addCostumerButton2">
+                            <nobr>
+                            <label> انتخاب مشتری </label>
+                            </nobr>
+                            </div>
+                            <select name="editId" value={this.state.editId}  onChange={this.handleInputChange} >
+
                                 {costumers.map((costumer) => (
-                                    <option key={costumer.id} value={costumer.id}>{costumer.fullName}</option>
+
+                                    <option key={costumer.id} value={costumer.id}> {costumer.fullName} </option>
                                 )
                                 )}
-                            </select>: انتخاب مشتری
+
+                            </select>
+
                         </label><br></br>
-                        <button onClick={this.handelSubmit} className="costumerButton">ویرایش اطلاعات</button><br></br>
-                    </form>
+                        </div>
+                        </div></div>
+
+                        <button onClick={this.handelSubmit} className="addCostumerButton">ویرایش اطلاعات</button><br></br>
+                    
                    
+
                     {this.state.showEditingForm && costumers.map((costumer) => {
                         if (costumer.id == this.state.editId) {
                             return (
                                 
                                 <form key={costumer.id}>
-                                    <hr></hr>
-                                    <label className="labels">
-                                        <input
-                                            className="inputName"
-                                            name="name"
-                                            type="text"
-                                            placeholder={costumer.fullName}
-                                            onChange={this.handleInputChange}
-                                            value={this.state.name}>
-                                        </input> : نام مشتری
-                                    </label><br></br>
 
-                                    <label className="labels">
-                                        <select
-                                            name="city"
-                                            value={this.state.city}
-                                            onChange={this.handleInputChange}
-                                        >
-                                            <option value={1} >تهران</option>
+                                    <hr></hr>
+
+                                    <div className="col">
+
+
+                    <div className = "raw-md-4">
+                        <div className = "addCustomer2__input-group">
+
+                            <div className="addCostumerButton2">
+                            <label> نام مشتری </label>
+                            </div>
+
+                                <input placeholder={costumer.fullName} type="text" name="name" value={this.state.name} onChange={this.handleInputChange} />
+                        </div>
+                    </div><br></br>
+
+                </div>
+
+
+
+                <div className="col">
+        
+        <div className="raw-md-6">
+        <div className = "addCustomer2__input-group">
+                
+                <div className="addCostumerButton2">
+                <label> شهر </label>
+                </div>
+
+                <select name="city" value={this.state.city} onChange={this.handleInputChange}>
+
+                <option value={1} >تهران</option>
                                             <option value={2}>کرج</option>
                                             <option value={3}>اصفهان</option>
                                             <option value={4}>یزد</option>
                                             <option value={5}>شیراز </option>
-                                        </select> : شهر
-                                    </label><br></br>
 
-                                    <label className="labels">
-                                        <select
-                                            name="status"
-                                            value={this.state.status}
-                                            onChange={this.handleInputChange}
-                                        >
-                                            <option value={true}>فعال</option>
+                </select>
+            </div><br></br><br></br><br></br>
+          </div>
+                     </div><br></br><br></br>                     
+
+
+
+                                  
+
+<div className="raw-md-6">
+            <div className = "addCustomer2__input-group">
+            
+                        <div className="addCostumerButton2">
+                            
+                            <nobr>
+                             <label> وضعیت‌‌‌‌ مشتری </label>
+                             </nobr>
+                             
+
+                        </div>
+
+                            <select name="status"  value={this.state.status} onChange={this.handleInputChange}>
+
+                            <option value={true}>فعال</option>
                                             <option value={false}>غیر فعال</option>
-                                        </select>: وضعیت مشتری
-                                    </label><br></br>
 
-                                    <button onClick={this.chengingHandelSubmit} className="costumerButton"> اعمال تغییرات</button>
+                            </select>
+                            
+                    </div> 
+             </div> <br></br> <br></br>  
+
+                                  
+
+                                    <button onClick={this.chengingHandelSubmit} className="addCostumerButton"> اعمال تغییرات</button>
                                 </form>
 
                             )
@@ -132,7 +187,9 @@ class Editcustomer extends React.Component {
                     }
                 </div>
 
-            </div>
+            
+            </form>
+            </React.Fragment>
         );
     }
 }
@@ -141,12 +198,4 @@ export default Editcustomer;
 
 
 
-// import React from 'react';
 
-// const EditCostumer = () => (
-//     <div>
-//         Edit Costumer
-//     </div>
-// );
-
-// export default EditCostumer;

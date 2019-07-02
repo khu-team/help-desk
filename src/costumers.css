@@ -1,154 +1,91 @@
-h1{
-    font-size: 30px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #13857E, #6B4DA8);
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 60px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
   }
-  table.GentedTab {
+
+  .costumerButton{
+    color:bisque;
+    background-color: rgb(18, 2, 161);
+    padding: 10px 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 3px 3px 3px 2px rgba(153, 153, 153, 0.75);
+}
+.coloraddred{
+  color: rgb(216, 43, 86);
+}
+/*****icons****/
+.icon-link {
   
-    width:100%;
-    table-layout: fixed;
-    background: -webkit-linear-gradient(left, #13857E, #6B4DA8);
-    background: linear-gradient(to right, #13857E, #6B4DA8);
-    font-family: 'iransans';
-  }
-   table.GentedTab th{
-    padding: 20px 15px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 16px;
-    color: #fff;
-    text-transform: uppercase;
-  }
   
-  .GentedTab-header{
-    background-color: rgba(255, 255, 255, 0.24);
-   }
-   .GentedTab-Item{
-    background-color: rgba(255, 255, 255, 0.034);
-   }
-
-
-   /*Base CSS*/
-.bold {
-  font-weight: bold;
-}
-h1{
-  padding: 10px 0 ;
-}
-.font-iran-sans {
-  font-family: IRANSans !important;
-}
-
-.navbar-item {
-  color: green;
+  vertical-align: middle;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
   margin: 5px;
+ box-sizing:content-box;}
+
+/* style fot addCustomer */
+
+.addCustomer__input-group {
+  width: 30% !important;
+  margin: 0 5%;
 }
 
-.navbar-active-item {
-  color: blue;
-  font-weight: bold;
-  margin: 5px;
+.addCustomer2__input-group {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100%;
 }
 
-.right-dir {
-  direction: rtl !important;
-}
 
-.right-txt {
-  text-align: right !important;
-}
 
-.center-text {
-  text-align: center !important;
-}
-
-.welcomeCostumer{
-  text-align: center;
-  margin: 50px 0;
-  font-size: 26px;
-  font-style: italic;
-  color:gray;
-}
-.welcome{
-  text-align: center;
-  margin: 50px 0;
-  font-size: 26px;
-  font-style: italic;
-  color:gray;
-}
-.navbar{
-  position: relative;
-  padding: 50px 0 10px 0;
-}
-.navbar a{
-  color:white;
-  background-color: rgb(18, 2, 161);
-  text-decoration: none;
-  box-shadow: 3px 3px 3px 2px rgba(80, 80, 80, 0.75);
-  /* margin-top: 20px; */
-  margin: 20px 5px;
-  border: 1px solid gray;
+.addCustomer {
+  margin: 30px auto;
+  width: 70%;
   border-radius: 10px;
-  padding: 10px 20px;
-  position: relative;
-  text-align: center !important;
+  padding: 20px 20px 20px 20px;
+  /* box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33); */
+
+  background: linear-gradient(
+    to bottom right,
+    rgba(193, 252, 84, 0.726),
+    rgb(1, 49, 43)
+  );
+  font-family: "IRANSans";
 }
-.inputName{
-  padding: 5px;
-  border-radius: 7px;
-  text-align: center;
-  box-shadow: 2px 2px 2px 1px rgba(177, 177, 177, 0.65);
-}
-.labels{
-  margin-top:10px;
-}
-.costumerForm{
-  text-align: center;
-  border:1px solid rgb(189, 189, 189);
-  border-radius: 10px;
-  padding: 20px 50px;
-  margin: 50px 0 50px 450px;
-  width: 350px;
-  height: 230px;
-  background-color: rgb(248, 248, 248);
-  box-shadow: 3px 3px 3px 2px rgba(153, 153, 153, 0.75);
-}
-.costumerButton{
+
+.addCostumerButton{
   color:bisque;
-  background-color: rgb(18, 2, 161);
-  padding: 10px 25px;
-  border-radius: 10px;
+  background-color: rgb(59, 3, 6);
+  padding: 10px 30px;
+  border-radius: 5px;
   margin-top: 20px;
-  box-shadow: 3px 3px 3px 2px rgba(153, 153, 153, 0.75);
-}
-.editForm{
-  background-color: rgb(248, 248, 248);
-  box-shadow: 3px 3px 3px 2px rgba(153, 153, 153, 0.75);
-  border:1px solid rgb(189, 189, 189);
-  border-radius: 10px;
-  width: 350px;
-  height: 430px;
-  margin: 50px 0 50px 450px;
-}
-select{
-  padding: 5px;
-  text-align: center;
-  border-radius: 7px;
-  margin:10px;
-  box-shadow: 2px 2px 2px 2px rgba(163, 163, 163, 0.65);
-}
-form{
-  padding: 10px;
-}
-hr{
-  border: 1px solid rgb(202, 202, 202);
-  margin-bottom: 20px;
+  
+  box-shadow: 1px 1px 1px 0.5px rgba(241, 205, 207, 0.75);
   
 }
-.marginForm{
-  margin-top: 20px;
+
+.addCostumerButton2{
+  text-align: center
+  
 }
