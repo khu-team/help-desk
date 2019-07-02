@@ -318,6 +318,7 @@ getCategoryFields = (categoryId)=>{
 
     render() { 
         return ( 
+            <React.Fragment>
             <div className="form-div">   
             <form className="font-iran-sans">
                 <div className="form-head">
@@ -328,13 +329,13 @@ getCategoryFields = (categoryId)=>{
             <div className="error">{this.state.error ? <h4>{this.state.error}</h4> : true}</div>
             <div className="form-item">   
             <input type="number" value={this.state.id} onChange={this.handleIdChange}></input>
-            <label>:شناسه محصول</label>
+            <label> شناسه محصول:</label>
             </div>
             <div className="form-item">       
             <select value={this.state.category} onChange={this.handelCategory}>
                 {categories.map((category=>(<option key={category.id} value={category.name} >{category.name}</option>)))}
             </select>
-            <label>:دسته بندی </label>
+            <label>دسته بندی : </label>
             </div>
             <div>
             {this.getCategoryFields(this.state.categoryId)}
@@ -348,12 +349,19 @@ getCategoryFields = (categoryId)=>{
            </div>
             </form> 
 
-
-            <AssigneProductToCustomer />
-
             </div>  
-
-            
+<div className="form-div font-iran-sans">
+<div className="form-head">
+                   <br></br>
+                    <h2>
+                         اختصاص محصول به مشتری
+                    </h2>
+                    <br></br>
+                </div>
+<AssigneProductToCustomer />
+<br></br>
+</div>
+</React.Fragment>
          );
     }
 }
