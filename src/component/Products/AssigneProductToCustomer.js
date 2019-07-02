@@ -63,6 +63,7 @@ class AssigneProductToCustomer extends Component {
 
 <br></br>
 </form>
+<br></br>            
 <ProductsInAssigne handleDeleteProduct={this.handleDeleteProduct} products={this.state.products}/>
 
 <br></br>

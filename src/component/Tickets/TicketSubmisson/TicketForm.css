@@ -1,4 +1,4 @@
-input {
+.addTicket input {
   display: inline-block;
   width: 50%;
   font-family: inherit;
@@ -7,12 +7,12 @@ input {
   border: 1px solid #999;
   padding: 0.5em 2em;
 }
-input,
-select {
-  display: inline-block;
+.addTicket input,
+.addTicket select {
+  display: block;
   float: left;
 }
-label {
+.addTicket label {
   float: right;
 }
 .ticketForm__input-group {
@@ -20,11 +20,11 @@ label {
   margin: 0 2%;
 }
 
-input:focus {
+.addTicket input:focus {
   outline: none;
   box-shadow: 0.2rem 0.8rem 1.6rem var(--colorPrimary600);
 }
-input[type="text"] {
+.addTicket input[type="text"] {
   margin-left: 0px;
 }
 
@@ -48,7 +48,9 @@ input[type="text"] {
   background-color: #cf4747 !important;
   float: center;
   border-radius: 5px;
-  margin: 2px;
+  margin: 15px auto;
+  padding: 5px;
+  width: 40%;
 }
 
 .addTicket__message--success {
@@ -58,10 +60,11 @@ input[type="text"] {
   /* float: center; */
   border-radius: 5px;
   width: 60%;
-  margin: 0 auto;
+  margin: 15px auto;
+  padding: 5px;
 }
 
-select {
+.addTicket select {
   display: inline-block;
   padding: 2px;
   margin: 2px;
@@ -79,7 +82,7 @@ select {
   width: 100% !important;
   margin: 15px 0;
 }
-input {
+.ticketForm__input-group input {
   width: 76% !important;
   /* margin-left:inherit; */
 }
@@ -87,18 +90,18 @@ input {
 .addTicket span {
   margin-left: 5px;
 }
-label {
+.ticketForm__input-group label {
   display: inline-block;
   width: 74px;
 }
 
-input,
-select,
-textarea,
-label {
+.addTicket input,
+.addTicket select,
+.addTicket textarea,
+.addTicket label,.answerform__commentArea {
   margin: 8px 3px;
 }
-textarea {
+.addTicket textarea,.answerform__commentArea {
   font-family: IRANSans;
   width: 100% !important;
   padding: 1em 2em;
@@ -108,10 +111,10 @@ textarea {
   resize: none;
   margin: 15px auto !important;
 }
-textarea:focus {
+.addTicket textarea:focus,.answerform__commentArea:focus {
   outline: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   /* select {
     margin-bottom: 5px;
     width: 100%;
@@ -123,9 +126,8 @@ textarea:focus {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 100%;
   }
-  /* input{
+  /* .ticketForm__input-group input{
     width: 100%;
   }
   .addTicket{
@@ -136,6 +138,13 @@ textarea:focus {
     margin-top: 15px;
   } */
 }
-h3 {
+.addTicket h3 {
   text-align: center;
+}
+
+.submit-button,.rateForm__submiissionSection__button{
+  background-color: rgba(0, 0, 255, 160);
+  border: none;
+  padding: 8px;
+  color: white;
 }
