@@ -62,13 +62,11 @@ class addcustomer extends React.Component {
 
     render() {
         return (
-
-            
             <React.Fragment>
 
              <form className="addCustomer container" onSubmit={(event) => this.onSubmit(event)}>
 
-                <h3>افزودن مشتری</h3>
+                <h3 className="addCostumerButton2">افزودن مشتری</h3>
 
                  
                 <div className="col">
@@ -152,7 +150,6 @@ class addcustomer extends React.Component {
         );
     }
 }
-
 export default addcustomer;
 
 
