@@ -21,10 +21,11 @@ class TicketsList extends React.Component{
 			<React.Fragment>
 
 			<div>
+
 				<div className="flex">
 					<Tabs value={this.state.tabValue} onChange={this.onTabChange}>
-			  			<Tab label="Open Tickets"  className="buttoon" />
-			  			<Tab label="Closed Tickets"  className="buttoon" />
+			  			<Tab label="تیکت های بسته"  className="a font-iran-sans" />
+			  			<Tab label="تیکت های باز"  className="a font-iran-sans" />
 					</Tabs>
 				</div>
 				
