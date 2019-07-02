@@ -329,6 +329,9 @@ body, html {
         background-color: #666 !important;
         color: white;
     }
+    .a:focus::before {
+        background-color: transparent;
+    }
 
 
 
@@ -483,7 +486,6 @@ body, html {
         outline: 0;
         box-shadow: none;
         border: 0 !important;
-        background: #2c3e50;
         background-image: none;
         }
         
@@ -497,15 +499,16 @@ body, html {
         width: 10em;
         height: 3em;
         line-height: 3;
-        background: #2c3e50;
+        border: 2px solid rgb(108, 117, 108);
         overflow: hidden;
         border-radius: .25em;
         margin-left: 1%;
+        cursor: pointer;
         }
         .seelect {
         flex: 1;
         padding: 0 3.5em;
-        color: #fff;
+        color: black;
         cursor: pointer;
         }
         
@@ -526,6 +529,9 @@ body, html {
         .select:hover::after {
         color: #f39c12;
         }
+
+
+        
 
 
 
