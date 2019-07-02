@@ -60,12 +60,19 @@ class AnswerForm extends Component {
                     <h3 className="answerForm__title">فرم پاسخ</h3>
                     <textarea className="answerform__commentArea" onChange={this.onFormChange} placeholder="توضیحات" value={this.state.description}></textarea>
                     <div className="answerForm__buttonGroup">
-                        <button type="submit">
-                            <Send />
-                        </button>
-                        <button type="button">
-                            <AttachFile />
-                        </button>
+                    
+                    
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile01"
+      aria-describedby="inputGroupFileAddon01"></input>
+       <button type="submit"><Send /></button>
+    <label class="custom-file-label" for="inputGroupFile01"><AttachFile/></label>
+  </div>
+
+                   
+                    {/* <bu type="file"></input> */}
+  
+  
                     </div>
                     {(this.state.answerSuccessMessage) ?
                         <p className="answerForm__message--success">{this.state.answerSuccessMessage}{this.state.formattedSubmissionTime}</p>
