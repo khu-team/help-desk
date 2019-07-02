@@ -9,7 +9,8 @@ class addcustomer extends React.Component {
         city: 1,
         status: 1,
         id: 0,
-        data: costumers
+        data: costumers,
+        error:''
     }
     
     handelSubmit = (event) => {
@@ -40,7 +41,13 @@ class addcustomer extends React.Component {
         }
         costumers.push(costumer);
 
-        alert("مشتری اضافه شد")
+        
+        if(this.state.name === '' ){
+            this.setState({error: 'نام نمی تواند خالی باشد'})
+        }
+        else{
+            this.setState({error:' ثبت شد'})
+        }
     }
 
     
@@ -62,15 +69,13 @@ class addcustomer extends React.Component {
 
     render() {
         return (
-
-            
             <React.Fragment>
 
              <form className="addCustomer container" onSubmit={(event) => this.onSubmit(event)}>
 
-                <h3>افزودن مشتری</h3>
+                <h3 className="addCostumerButton2">افزودن مشتری</h3>
 
-                 
+                 <br/><br/>
                 <div className="col">
 
 
@@ -85,7 +90,7 @@ class addcustomer extends React.Component {
                         </div>
                     </div><br></br>
 
-                </div>
+                       </div>
 
 
 
@@ -107,7 +112,7 @@ class addcustomer extends React.Component {
                             <option value="5">شیراز </option>
 
                         </select>
-                    </div><br></br><br></br><br></br>
+                    </div><br></br><br></br>
                   </div>
             
 
@@ -142,6 +147,9 @@ class addcustomer extends React.Component {
     <div className="addCostumerButton2">
         <br></br><br></br>
     <button onClick={this.handelSubmit} className="addCostumerButton"> افزودن مشتری </button>
+    <br />
+    <p class="errorreaditfield"> {this.state.error}</p>
+
     </div>
 
    
@@ -152,7 +160,6 @@ class addcustomer extends React.Component {
         );
     }
 }
-
 export default addcustomer;
 
 
