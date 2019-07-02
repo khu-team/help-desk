@@ -1,3 +1,5 @@
+import moment from 'moment-jalaali';
+
 export const tickets = [
     {
         id: 1,
@@ -10,7 +12,7 @@ export const tickets = [
         department: 1,
         answerStatus: false,
         rate: undefined,
-        submissionDateTime: 'not-set',
+        submissionDateTime: moment().format('jYYYY/jMM/jDD'),
     },
     {
         id: 2,
@@ -23,7 +25,7 @@ export const tickets = [
         department: 3,
         answerStatus: false,
         rate: undefined,
-        submissionDateTime: 'not-set',
+        submissionDateTime: moment().subtract(3, 'days').format('jYYYY/jMM/jDD'),
     },
     {
         id: 3,
@@ -34,9 +36,9 @@ export const tickets = [
         description: 'توضیحات برای اپلیکیشن',
         product: 3,
         department: 2,
-        answerStatus: false,
+        answerStatus: true,
         rate: undefined,
-        submissionDateTime: 'not-set',
+        submissionDateTime: moment().subtract(1, 'months').format('jYYYY/jMM/jDD'),
     },
     {
         id: 4,
@@ -49,6 +51,6 @@ export const tickets = [
         department: 1,
         answerStatus: false,
         rate: undefined,
-        submissionDateTime: 'not-set',
+        submissionDateTime: moment().subtract(3, 'days').format('jYYYY/jMM/jDD'),
     },
 ];
