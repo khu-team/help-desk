@@ -46,16 +46,16 @@
   cursor: pointer;
   outline: none;
   margin: 5px;
- box-sizing:content-box;}
+  box-sizing:content-box;}
 
 .postionicon{
   position: relative;
   left:100px;
-  bottom: 0px;
+  top:0px;
 }
 .positionpeple{
   position: relative;
-  bottom:-10px;
+  top:15px;
 }
 /* style fot addCustomer */
 
@@ -77,18 +77,19 @@
   top:88px;
   left:10%;
   right:3%;
-  padding: 10px;
+  padding: 10px 10px 20px;
   text-align: right;
   background: linear-gradient(
     to bottom left ,
     #1565c0,#1976d2
-   
-);;
+);
   color: white;
-  font-size: 30px;
+  
   width: 94% !important; 
   direction: rtl;
-	font-family:'IRANSans';
+  font-family:'IRANSans';
+  font-size: 24px;
+
 }
 
 .addCustomer {
