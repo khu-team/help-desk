@@ -20,8 +20,10 @@ class ShowList extends React.Component {
         render() {   
             return (  
                 <div>
-                <a href="/add-costumer"> <i class="material-icons coloraddred" >add_circle</i></a>
-                 <Paper>
+                <p class=" taboftoptable"><i class="material-icons positionpeple"> people</i>لیست مشتریان</p>
+                <a href="/add-costumer"> <i class="material-icons coloraddred postionicon" >person_add</i></a>
+                
+                
                 <Table  className='tableofcustomers '>
                 <TableHead >
               <TableRow  className=''>
@@ -31,14 +33,15 @@ class ShowList extends React.Component {
                 <TableCell  className="algincenter">وضعیت</TableCell>
                 <TableCell  className="alginright">اعمال تغییرات</TableCell>
               </TableRow>
-            </TableHead>
+
+               </TableHead>
                   <TableBody>
                   {costumers.map((costumer) => (
                     <CostumerItem key={costumer.id} {...costumer} />
                 ))}
                   </TableBody>
                 </Table>
-              </Paper>  
+                
                 </div>
             )
            

@@ -90,7 +90,7 @@ class addcustomer extends React.Component {
                         </div>
                     </div><br></br>
 
-                </div>
+                       </div>
 
 
 

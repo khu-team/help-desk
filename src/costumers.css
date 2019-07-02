@@ -34,7 +34,7 @@
     box-shadow: 3px 3px 3px 2px rgba(153, 153, 153, 0.75);
 }
 .coloraddred{
-  color: rgb(216, 43, 86);
+  color: rgb(247, 247, 247);
 }
 
 /*****icons****/
@@ -48,6 +48,15 @@
   margin: 5px;
  box-sizing:content-box;}
 
+.postionicon{
+  position: relative;
+  left:100px;
+  bottom: 0px;
+}
+.positionpeple{
+  position: relative;
+  bottom:-10px;
+}
 /* style fot addCustomer */
 
 .addCustomer__input-group {
@@ -63,7 +72,24 @@
   width: 100%;
 }
 
-
+.taboftoptable{
+  position: relative;
+  top:88px;
+  left:10%;
+  right:3%;
+  padding: 10px;
+  text-align: right;
+  background: linear-gradient(
+    to bottom left ,
+    #1565c0,#1976d2
+   
+);;
+  color: white;
+  font-size: 30px;
+  width: 94% !important; 
+  direction: rtl;
+	font-family:'IRANSans';
+}
 
 .addCustomer {
   margin: 30px auto;
@@ -105,7 +131,10 @@
 /**table*/
 .tableofcustomers {
   border-collapse: collapse;
-  top: 163px;
+  top: 80px;
+  position: relative;
+  right:3%;
+  left:10%;
   width: 94% !important; 
 }
 
