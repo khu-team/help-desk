@@ -1,29 +1,91 @@
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 60px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
 
-table.GeneratedTable {
+  .costumerButton{
+    color:bisque;
+    background-color: rgb(18, 2, 161);
+    padding: 10px 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 3px 3px 3px 2px rgba(153, 153, 153, 0.75);
+}
+.coloraddred{
+  color: rgb(216, 43, 86);
+}
+/*****icons****/
+.icon-link {
   
-    table-layout:fixed;
-    width: 100%;
-    background-color: #ffffff;
-    border-collapse: collapse;
-    border-width: 2px;
-    border-color: #61af5a;
-    border-style: solid;
-    color: #000000;
-    
-  }
   
-  table.GeneratedTable td, table.GeneratedTable th {
-    border-width: 2px;
-    border-color: #61af5a; 
-    text-align: right;
-    border-style: solid;
-    padding: 5px;
-   
-  }
+  vertical-align: middle;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  margin: 5px;
+ box-sizing:content-box;}
+
+/* style fot addCustomer */
+
+.addCustomer__input-group {
+  width: 30% !important;
+  margin: 0 5%;
+}
+
+.addCustomer2__input-group {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100%;
+}
+
+
+
+.addCustomer {
+  margin: 30px auto;
+  width: 70%;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  /* box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33); */
+
+  background: linear-gradient(
+    to bottom right,
+    rgba(193, 252, 84, 0.726),
+    rgb(1, 49, 43)
+  );
+  font-family: "IRANSans";
+}
+
+.addCostumerButton{
+  color:bisque;
+  background-color: rgb(59, 3, 6);
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-top: 20px;
   
-  table.GeneratedTable thead {
-    background-color: #61af5a;
-  }
-.size{
- font-size: 20px;
+  box-shadow: 1px 1px 1px 0.5px rgba(241, 205, 207, 0.75);
+  
+}
+
+.addCostumerButton2{
+  text-align: center
+  
 }

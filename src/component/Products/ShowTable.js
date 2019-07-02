@@ -2,14 +2,6 @@ import React from 'react';
 import '../../products.css';
 import {Link} from "react-router-dom";
 
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-
 
 class ShowTable extends React.Component {
     state = { nozooli:'unkown' }
@@ -21,26 +13,29 @@ class ShowTable extends React.Component {
     
     
         if(this.state.nozooli==true)
-            this.props.products.sort((a, b) => (b.newprice - a.newprice))
+            this.props.products.sort((a, b) => (b.price - a.price))
         if(this.state.nozooli==false)
-            this.props.products.sort((a, b) => (a.newprice - b.newprice))
-    
+            this.props.products.sort((a, b) => (a.price - b.price))
+
     
         return this.props.products.map((product,index) => {
-            const { id, name, price , discountPercentage , newprice } = product ;
+            const num = numeral(product.price).format('0,0');
+            const persent= product.discountPercentage/100;
+            const nprice=product.price -persent*product.price;
+            const { id, name , discountPercentage  } = product ;
             return (
                 
               
-                <TableRow>
-                  <TableCell>{id}</TableCell>
-                  <TableCell >{name}</TableCell>
-                  <TableCell >{price} تومان</TableCell>
-                  <TableCell >{discountPercentage}%</TableCell>
-                  <TableCell >{numeral(newprice).format('0,0')} تومان </TableCell>
-                  <TableCell><Link to = {{pathname:`/product/${id}`, state:{ID:id}}}> جزییات </Link></TableCell>
-                  <TableCell><Link to = {{pathname:`/edit-product/${id}`,state:{ID:id}}}> Edit </Link></TableCell>
+                <tr className='font-iran-sans'>
+                  <td>{id}</td>
+                  <td>{name}</td>
+                  <td >{num} تومان</td>
+                  <td >{discountPercentage}%</td>
+                  <td >{numeral(nprice).format('0,0')} تومان </td>
+                  <td><Link to = {{pathname:`/product/${id}`, state:{ID:id}}}> جزییات </Link></td>
+                  <td><Link to = {{pathname:`/edit-product/${id}`,state:{ID:id}}}> ویرایش </Link></td>
     
-                </TableRow>
+                </tr>
             
             )
         })
@@ -52,7 +47,7 @@ class ShowTable extends React.Component {
             this.setState({nozooli:false})
         else
             this.setState({nozooli:true})
-    }
+    };
     
       
     
@@ -65,25 +60,23 @@ class ShowTable extends React.Component {
         return (
            
             <div>
-              <Paper >
-            <Table className='sall'>
-            <TableHead >
-          <TableRow  className='headstyle'>
-            <TableCell className='cell'>ID</TableCell>
-            <TableCell className='cell' align="right">نام محصول</TableCell>
-            <TableCell className='cell' align="right">قیمت</TableCell>
-            <TableCell className='cell' align="right">تخفیف</TableCell>
-            <TableCell className='cell' onClick={this.Sort}   align="right">قیمت با تخفیف</TableCell>
-            <TableCell className='cell' align="right">جزییات</TableCell>
-            <TableCell className='cell' align="right">اعمال تغییرات</TableCell>
+            <table className=' tabel table-striped customers font-iran-sans'>
+            <tbody >
+          <tr className='font-iran-sans'>
+            <th>ID</th>
+            <th>نام محصول</th>
+            <th className='price' onClick={this.Sort}>قیمت</th>
+            <th>تخفیف</th>
+            <th>قیمت با تخفیف</th>
+            <th>جزییات</th>
+            <th>اعمال تغییرات</th>
 
-          </TableRow>
-        </TableHead>
-              <TableBody>
+          </tr>
+        </tbody>
+              <tbody>
               {this.renderTableData()}
-              </TableBody>
-            </Table>
-          </Paper>  
+              </tbody>
+            </table>
             </div>
         )
        

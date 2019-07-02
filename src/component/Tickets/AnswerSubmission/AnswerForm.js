@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Send from '@material-ui/icons/Send';
+import AttachFile from '@material-ui/icons/AttachFile';
 import './AnswerForm.css';
 import moment from 'moment-jalaali';
 
@@ -55,11 +57,15 @@ class AnswerForm extends Component {
         return (
             <React.Fragment>
                 <form className="answerForm form-group" onSubmit={this.onSubmit}>
-                    <h3>فرم پاسخ</h3>
+                    <h3 className="answerForm__title">فرم پاسخ</h3>
                     <textarea className="answerform__commentArea" onChange={this.onFormChange} placeholder="توضیحات" value={this.state.description}></textarea>
                     <div className="answerForm__buttonGroup">
-                        <button type="submit" className="material-icons">send</button>
-                        <button type="button" className="form-control-file" className="material-icons">attachment</button>
+                        <button type="submit">
+                            <Send />
+                        </button>
+                        <button type="button">
+                            <AttachFile />
+                        </button>
                     </div>
                     {(this.state.answerSuccessMessage) ?
                         <p className="answerForm__message--success">{this.state.answerSuccessMessage}{this.state.formattedSubmissionTime}</p>
