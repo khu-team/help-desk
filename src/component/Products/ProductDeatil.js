@@ -17,9 +17,9 @@ class ProductDetail extends React.Component {
 
         return(
             <div>
-          <table className=' table table-striped customers '>
+          <table className=' table table-striped customers dcustomers'>
           <tbody>
-        <tr className='font-iran-sans'>
+        <tr className='font-iran-sans '>
           <th >آیدی محصول</th>
           <th >نام </th>
          {category==3 &&<th >مدت زمان فعالیت</th>}
@@ -51,9 +51,9 @@ class ProductDetail extends React.Component {
 
 
 
-          <table className='  table table-striped customers '>
+          <table className='  table table-striped customers dcustomers'>
           <tbody>
-        {ntransaction.length > 0 ? <tr className='font-iran-sans'>
+        {ntransaction.length > 0 ? <tr className='font-iran-sans '>
           <th>آیدی خریدار</th>
             <th>نام خریدار</th>
           <th>تاریخ انقضا </th>
@@ -83,6 +83,7 @@ class ProductDetail extends React.Component {
 
 
     render() {
+
         return this.ShowDetail()
 
     }

@@ -1,6 +1,6 @@
 .customers {
     border-collapse: collapse;
-    top: 163px;
+    top: 130px;
     right: 30px;
     width: 94% !important;
     position: relative;
@@ -99,4 +99,8 @@
 
 .links{
     color: #3148ff;
+}
+
+.dcustomers {
+   top: 50px !important;
 }
