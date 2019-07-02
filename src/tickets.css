@@ -216,9 +216,10 @@ body, html {
     .table100-head th{
     font-family: OpenSans-Regular;
     font-size: 18px;
-    color: #fff;
+    color: #283593;
     line-height: 1.2;
     font-weight: unset;
+    color: white;
     }
 
 
