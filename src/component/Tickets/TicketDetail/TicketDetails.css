@@ -36,7 +36,12 @@
   );
   font-family: "IRANSans";
 }
-
+.rateForm__stars{
+  display: flex!important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
 .rateForm__submissionSection {
   display: flex;
   width: 80%;

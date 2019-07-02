@@ -48,7 +48,9 @@ input[type="text"] {
   background-color: #cf4747 !important;
   float: center;
   border-radius: 5px;
-  margin: 2px;
+  margin: 15px auto;
+  padding: 5px;
+  width: 40%;
 }
 
 .addTicket__message--success {
@@ -58,7 +60,8 @@ input[type="text"] {
   /* float: center; */
   border-radius: 5px;
   width: 60%;
-  margin: 0 auto;
+  margin: 15px auto;
+  padding: 5px;
 }
 
 select {
@@ -111,7 +114,7 @@ textarea {
 textarea:focus {
   outline: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   /* select {
     margin-bottom: 5px;
     width: 100%;
@@ -123,7 +126,6 @@ textarea:focus {
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 100%;
   }
   /* input{
     width: 100%;
