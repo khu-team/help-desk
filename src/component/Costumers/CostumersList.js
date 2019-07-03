@@ -1,6 +1,7 @@
 
 import React from 'react';
 import '../../costumers.css';
+import {Link} from 'react-router-dom';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -21,7 +22,9 @@ class ShowList extends React.Component {
             return (  
                 <div>
                 <p class=" taboftoptable"><i class="material-icons positionpeple"> people</i>لیست مشتریان</p>
-                <a href="/add-costumer"> <i class="material-icons coloraddred postionicon" >person_add</i></a>
+                <Link to="/add-costumer"> 
+                <i class="material-icons coloraddred postionicon" >person_add</i>
+                </Link>
                 
                 
                 <Table  className='tableofcustomers '>
