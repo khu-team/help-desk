@@ -1,13 +1,14 @@
-.costumerButtongreen{
+.costumerButtongreen
+{
     font-size: 14px;
-    
     color:bisque;
     background-color: rgb(37, 90, 24);
     padding: 10px 25px;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px rgba(153, 153, 153, 0.75);
 }
-.costumerButtonred{
+.costumerButtonred
+{
     font-size: 14px;
     color:bisque;
     background-color: rgb(216, 43, 86);
