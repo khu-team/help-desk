@@ -7,7 +7,6 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import {Link} from 'react-router-dom'
 import { costumers } from '../../mockData/costumers';
 import {CostumerItem} from './CostumerItem';
 import AddCostumer from'./Add customer';
