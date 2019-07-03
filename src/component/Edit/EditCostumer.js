@@ -2,8 +2,10 @@ import React from 'react';
 import { costumers } from '../../mockData/costumers';
 import '../../../src/costumers.css'
 
-class Editcustomer extends React.Component {
-    state = {
+class Editcustomer extends React.Component
+{
+    state =
+     {
         editId: this.props.location.state.SID,
         showEditingForm: false,
         SelectCostumer: {},
@@ -24,34 +26,37 @@ class Editcustomer extends React.Component {
         });
     }
  
-    handelSubmit = (event) => {
+    handelSubmit = (event) =>
+     {
         event.preventDefault();
         let selectCost;
-        costumers.map((costumer) => {
-            if (costumer.id == this.state.editId) {
+        costumers.map((costumer) =>
+         {
+            if (costumer.id == this.state.editId)
+             {
                 selectCost = costumer
-            }
-        }
+             }
+         }
         )
 
-        this.setState({
-            showEditingForm: true,
-            SelectCostumer: selectCost,
-            name: selectCost.fullName,
-            city: selectCost.city,
-            status: selectCost.status,
-            
-        })
+        this.setState({ showEditingForm: true,SelectCostumer: selectCost,name: selectCost.fullName,
+            city: selectCost.city, status: selectCost.status  })
 
     }
-    chengingHandelSubmit = (event) => {
+
+
+
+    chengingHandelSubmit = (event) =>
+     {
         event.preventDefault();
         console.log("gh", costumers[this.state.editId - 1]);
 
-        if(this.state.name === '' ){
+        if(this.state.name === '' )
+        {
             this.setState({error: 'نام نمی تواند خالی باشد'})
         }
-        else{
+        else
+        {
             this.setState({error:'ویرایش انجام شد'})
         }
 
@@ -61,103 +66,61 @@ class Editcustomer extends React.Component {
             city: +this.state.city,
             status: JSON.parse(this.state.status),
         }
-
-     //   alert("ویرایش اطلاعات مشتری انجام شد...")
-        
-        
         
     }
-    NC=()=>{
-        const ID = this.props.location.state.SID
-
+    Editcustomer=()=>{
+        const ID = this.props.location.state.SID;
        return(
-        <React.Fragment>
+     <React.Fragment>
         <form className="addCustomer container" onSubmit={(event) => this.onSubmit(event)}>
-
-        
             <h3 className="addCostumerButton2">ویرایش اطلاعات مشتری</h3>
-            <div > <br/><br/>
-           
-                            <form key={costumers.find((c)=>c.id===ID).ID}>
-
-                               
-
-                                <div className="col">
-
-                <div className = "raw-md-4">
-                    <div className = "addCustomer2__input-group">
-
-                        <div className="addCostumerButton2">
-                        <label> نام مشتری </label>
-                        </div>
-
-                            <input placeholder={costumers.find((c)=>c.id===ID).fullName} type="text" name="name" value={this.state.name} onChange={this.handleInputChange} />
-                    </div>
-                </div><br></br>
-
-            </div>
-
-
-
-            <div className="col">
-    
-    <div className="raw-md-6">
-    <div className = "addCustomer2__input-group">
-            
-            <div className="addCostumerButton2">
-            <label> شهر </label>
-            </div>
-
-            <select name="city" value={this.state.city} onChange={this.handleInputChange}>
-
+            <div><br/><br/>
+                 <form key={costumers.find((c)=>c.id===ID).ID}>
+                    <div className="col raw-md-4">
+                         <div className = "addCustomer2__input-group">   
+                              <label  className="addCostumerButton2"> نام مشتری </label>
+                              <input placeholder={costumers.find((c)=>c.id===ID).fullName} type="text" name="name" value={this.state.name} onChange={this.handleInputChange} />
+                         </div>
+                     </div><br/>
+               <div className="col raw-md-6">
+                 <div className = "addCustomer2__input-group">  
+                      <label  className="addCostumerButton2"> شهر </label>
+                
+                     <select name="city" value={this.state.city} onChange={this.handleInputChange}>
                                         <option value={1} >تهران</option>
                                         <option value={2}>کرج</option>
                                         <option value={3}>اصفهان</option>
                                         <option value={4}>یزد</option>
                                         <option value={5}>شیراز </option>
-
-            </select>
-        </div><br></br>
-      </div>
-                 </div>                     
-
-
-
-                              
-
-<div className="raw-md-6">
-        <div className = "addCustomer2__input-group">
-        
-                    <div className="addCostumerButton2">
-                        
-                        <nobr>
-                         <label> وضعیت‌‌‌‌ مشتری </label>
-                         </nobr>
-                         
-
+                     </select>
+                 </div><br/>
+                </div>           
+              <div className="raw-md-6">
+               <div className = "addCustomer2__input-group">
+                    <div className="addCostumerButton2">  
+                        <nobr> <label> وضعیت‌‌‌‌ مشتری </label></nobr>
                     </div>
 
-                        <select name="status"  value={this.state.status} onChange={this.handleInputChange}>
-
+                    <select name="status"  value={this.state.status} onChange={this.handleInputChange}>
                         <option value={true}>فعال</option>
-                         <option value={false}>غیر فعال</option>
-
-                        </select>
+                        <option value={false}>غیر فعال</option>
+                    </select>
                         
                 </div> 
-         </div> <br></br> <br></br> <div className="addCostumerButton2">
-                             <button  onClick={this.chengingHandelSubmit} className=" addCostumerButton"> اعمال تغییرات</button>
-                             <p class="errorreaditfield"> {this.state.error}</p>
-                             </div> 
-                            </form>
-                
-                    
+              </div> <br/><br/>
+                 <div className="postion-eadit-button">
+                             <button  onClick={this.chengingHandelSubmit} className=" add-product-button"> اعمال تغییرات</button>
+                             <p class="error-edit-field"> {this.state.error}</p>
+                </div> 
+            </form>       
             </div>
         </form>
-        </React.Fragment>
+    </React.Fragment>
        ) 
     }
-    render(){return this.NC()}
+
+    render(){return this.Editcustomer()}
 
 }
+
 export default Editcustomer;

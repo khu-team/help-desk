@@ -2,7 +2,6 @@ import React from 'react';
 import { costumers } from '../../mockData/costumers';
 import '../../../src/costumers.css'
 
-
 class addcustomer extends React.Component {
     state = {
         name: '',
@@ -18,50 +17,53 @@ class addcustomer extends React.Component {
         
         let costumer = {};
 
-        if (this.state.status == 1) {
-            costumer = {
+        if (this.state.status === 1)
+         {
+            costumer =
+             {
                 id: this.state.id,
                 fullName: this.state.name,
                 city: this.state.city,
                 status: true
-            }
-        } else {
-            costumer = {
+             }
+         }
+         else
+          {
+            costumer =
+             {
                 id: this.state.id,
                 fullName: this.state.name,
                 city: this.state.city,
                 status: false
-            }
+              }
         }
         
-        if (this.state.id == this.state.data.length + 1) {
-            this.setState({
-                data: [...this.state.data, costumer],
-            })
+        if (this.state.id=== this.state.data.length + 1) 
+        {
+            this.setState({ data: [...this.state.data, costumer], });
         }
+
         costumers.push(costumer);
 
-        
-        if(this.state.name === '' ){
+        if(this.state.name === '' )
+        {
             this.setState({error: 'نام نمی تواند خالی باشد'})
         }
-        else{
+        else
+        {
             this.setState({error:' ثبت شد'})
         }
     }
 
     
-    handleInputChange = (event) => {
+    handleInputChange = (event) =>
+     {
         event.preventDefault();
         const target = event.target;
-        const value = target.name == 'city' ? +target.value : target.value;
+        const value = target.name === 'city' ? +target.value : target.value;
         const name = target.name;
-        this.setState({
-            id: costumers.length
-        })
-        this.setState((pre) => {
-            id: pre.id++
-        })
+        this.setState({id: costumers.length })
+        this.setState((pre) => { id: pre.id++})
         this.setState({
             [name]: value,
         });
@@ -71,34 +73,26 @@ class addcustomer extends React.Component {
         return (
             <React.Fragment>
 
-             <form className="addCustomer container" onSubmit={(event) => this.onSubmit(event)}>
-
-                <h3 className="addCostumerButton2">افزودن مشتری</h3>
-
-                 <br/><br/>
+              <form className="addCustomer container" onSubmit={(event) => this.onSubmit(event)}>
+                <h3 className="addCostumerButton2">افزودن مشتری</h3><br/><br/>
+ 
                 <div className="col">
-
-
                     <div className = "raw-md-4">
                         <div className = "addCustomer2__input-group">
 
                             <div className="addCostumerButton2">
                             <label> نام مشتری </label>
                             </div>
-
-                                <input placeholder= "نام مشتری" type="text" name="name" value={this.state.name} onChange={this.handleInputChange} />
-                        </div>
-                    </div><br></br>
-
-                       </div>
-
-
+                                <input placeholder= "نام مشتری" type="text" name="name" value={this.state.name}
+                                 onChange={this.handleInputChange} />
+                         </div>
+                    </div><br/>
+                </div>
 
             <div className="col">
-        
                 <div className="raw-md-6">
-                <div className = "addCustomer2__input-group">
-                        
+                    <div className = "addCustomer2__input-group">
+        
                         <div className="addCostumerButton2">
                         <label> شهر </label>
                         </div>
@@ -110,53 +104,34 @@ class addcustomer extends React.Component {
                             <option value="3">اصفهان</option>
                             <option value="4">یزد</option>
                             <option value="5">شیراز </option>
-
-                        </select>
-                    </div><br></br><br></br>
-                  </div>
+                         </select>
+                    </div><br/><br/>
+                </div>
             
-
-
-
-
-            
-            <div className="raw-md-6">
-            <div className = "addCustomer2__input-group">
-            
-                        <div className="addCostumerButton2">
+                  <div className="raw-md-6">
+                     <div className = "addCustomer2__input-group">
+                         <div className="addCostumerButton2">
                             
                             <nobr>
                              <label> وضعیت‌‌‌‌ مشتری </label>
                              </nobr>
-                             
-
-                        </div>
-
+                         </div>
                             <select name="status"  value={this.state.status} onChange={this.handleInputChange}>
-
                                 <option value="1">فعال</option>
                                 <option value="0">غیرفعال</option>
-
-                            </select>
-                            
-                    </div> 
+                             </select>   
+                     </div> 
              </div>
-
-    </div>
+         </div>
 
     <div className="addCostumerButton2">
-        <br></br><br></br>
-    <button onClick={this.handelSubmit} className="addCostumerButton"> افزودن مشتری </button>
-    <br />
-    <p class="errorreaditfield"> {this.state.error}</p>
-
+        <br/><br/>
+        <button onClick={this.handelSubmit} className="add-product-button"> افزودن مشتری </button>
+        <br />
+        <p class="errorreaditfield"> {this.state.error}</p>
     </div>
-
-   
-            </form>
-            
-
-            </React.Fragment>
+  </form>
+</React.Fragment>
         );
     }
 }
