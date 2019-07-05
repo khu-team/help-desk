@@ -26,7 +26,7 @@ class App extends React.Component {
                 <Divider/>
                 <Switch>
                     <Route path="/" exact={true} component={Dashboard}/>
-                    <Route path="/support-team" component={SupportTeamList}/>
+                    <Route path="/support-team" exact={true} component={SupportTeamList}/>
                     <Route path="/costumers" component={CostumersList}/>
                     <Route path="/products" component={ProductsList}/>
                     <Route path="/add-product" component={AddProduct}/>
