@@ -5,10 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {supportTeamUsers} from "../../mockData/supportTeamUsers";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-
-
 
 
 class AddSupportUser extends Component {
@@ -42,19 +38,19 @@ class AddSupportUser extends Component {
 
         })
 
-    }
+    };
 
     setRole = (role)=>{
         const Role = roles.find((Role)=> Role.id == role);
         this.setState({roleId:Role.name});
-    }
+    };
 
     setDept= (department)=>{
         if(department){
             const Dept = departments.find((dept)=> dept.id == department);
             this.setState({deptId:Dept.name});
         }
-    }
+    };
 
 
 
@@ -92,6 +88,7 @@ class AddSupportUser extends Component {
     handleSubmit = (e)=>{
         e.preventDefault();
         const number = this.state.phone;
+        const email = this.state.email;
 
         if(this.state.name === '' || this.state.phone === ''||this.state.status === ''||this.state.email === ''){
             this.setState({error: 'لطفا همه فیلد ها را کامل کنید'})
@@ -99,6 +96,10 @@ class AddSupportUser extends Component {
 
         else if(number.toString().length !== 11){
             this.setState({error:'شماره موبایل وارد شده صحیح نیست'})
+        }
+
+        else if(email.split("").filter(x => x === "@").length !== 1 || email.indexOf(".") === -1||email.length < 5) {
+            this.setState({error:'ایمیل وارد شده صحیح نیست'})
         }
 
         else{
