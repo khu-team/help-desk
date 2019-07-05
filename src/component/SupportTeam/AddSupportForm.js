@@ -23,7 +23,8 @@ class AddSupportUser extends Component {
         Select:null,
         editId: null,
         tittle:'',
-        showAdd:false
+        showAdd:false,
+        emailError:''
     };
 
 
@@ -95,8 +96,10 @@ class AddSupportUser extends Component {
                this.setState({error:'شماره موبایل وارد شده صحیح نیست'})
            }
 
-          else if(email.split("").filter(x => x === "@").length !== 1 || email.indexOf(".") === -1||email.length < 5) {
-               this.setState({error:'ایمیل وارد شده صحیح نیست'})
+           if(email.split("").filter(x => x === "@").length !== 1 || email.indexOf(".") === -1 ) {
+               if (email !== ''){
+                   this.setState({emailError: 'ایمیل وارد شده صحیح نیست'})
+               }
            }
 
            else{
@@ -148,9 +151,9 @@ class AddSupportUser extends Component {
                                     <form >
                                         <div class=" center">
 
-
-                                            <div class="error"><h4 class="center">{this.state.error}</h4></div><br/>
-
+                                            <div class="error"><h5 class="center">{this.state.error}</h5></div><br/>
+                                            <div className="error"><h5 className="center">{this.state.emailError}</h5></div>
+                                            <br/>
 
                                 <div class="center">
                                     <div className="font2">
