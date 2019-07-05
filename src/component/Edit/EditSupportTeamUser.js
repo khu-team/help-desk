@@ -102,8 +102,6 @@ class AddSupportUser extends Component {
         }
 
         else{
-
-            this.setState({...refreshState});
             this.setState({error:'با موفقیت ویرایش شد'})
         }
     };
@@ -125,9 +123,9 @@ class AddSupportUser extends Component {
                                 <div class="center">
                                     <div className="font2">
 
-                                        <h2 className="font-iran-sans">
+                                        <h3 className="font-iran-sans">
                                             تغییر مشخصات پشتیبان
-                                        </h2> <br/>
+                                        </h3> <br/>
 
                                     </div>
 
