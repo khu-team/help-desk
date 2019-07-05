@@ -85,6 +85,7 @@ class AddSupportUser extends Component {
 
 
            const number = this.state.phone;
+           const email = this.state.email;
 
            if(this.state.name === '' || this.state.phone === ''||this.state.status === ''||this.state.email === ''){
                this.setState({error: 'لطفا همه فیلد ها را کامل کنید'})
@@ -92,6 +93,10 @@ class AddSupportUser extends Component {
 
           else if(number.toString().length !== 11){
                this.setState({error:'شماره موبایل وارد شده صحیح نیست'})
+           }
+
+          else if(email.split("").filter(x => x === "@").length !== 1 || email.indexOf(".") === -1||email.length < 5) {
+               this.setState({error:'ایمیل وارد شده صحیح نیست'})
            }
 
            else{
