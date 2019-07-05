@@ -11,7 +11,7 @@ class TypeRenderer extends React.Component {
 
     handleChange = name => event => {
         if(event.target.value == 0) {
-            const fproducts = products.find((product) => product.type !== null).type;
+            const fproducts = products.filter((product) => product.category == 3);
             this.setState({products:fproducts})
         }
         else {
