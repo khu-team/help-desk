@@ -16,8 +16,8 @@ class AddSupportUser extends Component {
         status:true,
         phone:'',
         email:'',
-        emailError:''
-
+        successSubmit:''
+        
     };
 
     componentDidMount(){
@@ -91,22 +91,30 @@ class AddSupportUser extends Component {
         const number = this.state.phone;
         const email = this.state.email;
 
-        if(this.state.name === '' || this.state.phone === ''||this.state.status === ''||this.state.email === ''){
-            this.setState({error: 'لطفا همه فیلد ها را کامل کنید'})
+
+
+         if(this.state.name === '' || this.state.phone === ''||this.state.status === ''||this.state.email === ''){
+            this.setState({error: 'لطفا همه فیلد ها را کامل کنید',
+                successSubmit:''})
         }
 
         else if(number.toString().length !== 11){
-            this.setState({error:'شماره موبایل وارد شده صحیح نیست'})
+            this.setState({error:'شماره موبایل وارد شده صحیح نیست',
+                successSubmit:''})
         }
 
-        if(email.split("").filter(x => x === "@").length !== 1 || email.indexOf(".") === -1 ) {
-            if (email !== ''){
-                this.setState({emailError: 'ایمیل وارد شده صحیح نیست'})
-            }
+        else if(email.split("").filter(x => x === "@").length !== 1 || email.indexOf(".") === -1 ) {
+                this.setState({error: 'ایمیل وارد شده صحیح نیست',
+                    successSubmit:''})
+
         }
+
+
 
         else{
-            this.setState({error:'با موفقیت ویرایش شد'})
+            this.setState({successSubmit:'با موفقیت ویرایش شد',
+                error:''
+            })
         }
     };
 
@@ -120,9 +128,9 @@ class AddSupportUser extends Component {
                         <form >
                             <div class=" center">
 
-                                <div className="error"><h5 className="center">{this.state.error}</h5></div>
+                                <div className="error-submit"><h5 className="center">{this.state.error}</h5></div>
                                 <br/>
-                                <div className="error"><h5 className="center">{this.state.emailError}</h5></div>
+                                <div className="success-submit"><h5 className="center">{this.state.successSubmit}</h5></div>
                                 <br/>
 
 
