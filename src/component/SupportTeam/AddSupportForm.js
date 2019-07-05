@@ -6,10 +6,13 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import { supportTeamUsers } from '../../mockData/supportTeamUsers';
 
 
 class AddSupportUser extends Component {
     state = {
+        id:0,
+        data:supportTeamUsers,
         name:'',
         roleId: 1,
         error: '',
@@ -21,8 +24,6 @@ class AddSupportUser extends Component {
         editId: null,
         tittle:'',
         showAdd:false
-
-
     };
 
 
@@ -41,8 +42,6 @@ class AddSupportUser extends Component {
             dept:'',
             phone:'',
             email:''
-
-
         })
 
     };
@@ -81,7 +80,11 @@ class AddSupportUser extends Component {
     
        handleSubmit = (e)=>{
         e.preventDefault();
-        const number = this.state.phone;
+
+           let SupportUser = {};
+
+
+           const number = this.state.phone;
 
            if(this.state.name === '' || this.state.phone === ''||this.state.status === ''||this.state.email === ''){
                this.setState({error: 'لطفا همه فیلد ها را کامل کنید'})
@@ -92,15 +95,32 @@ class AddSupportUser extends Component {
            }
 
            else{
-               let refreshState = this.state;
-               refreshState = {...refreshState,
-                   name:'',
-                   phone:'',
-                   email:''
-               };
 
-               this.setState({...refreshState});
-               this.setState({error:'با موفقیت ثبت شد'})
+               SupportUser =
+                   {
+                       id: this.state.id,
+                       fullName: this.state.name,
+                       email: this.state.email,
+                       status: this.state.status,
+                       phoneNumber:this.state.phone,
+                       role:this.state.roleId,
+                       department:this.state.deptId
+
+                   };
+
+               if (this.state.id=== this.state.data.length + 1)
+               {
+                   this.setState({ data: [...this.state.data, SupportUser], });
+               }
+               supportTeamUsers.push(SupportUser);
+
+
+
+               this.setState({error:'با موفقیت ثبت شد',
+                   name:'',
+                   email:'',
+                   phone:''
+               })
                    }
         };
 
@@ -212,7 +232,7 @@ class AddSupportUser extends Component {
 
 
                     <div className="center">
-                        <button className="btn btn-primary" onClick={this.handleSubmit}>ثبت پشتیبان</button>
+                        <button  className="btn btn-primary"  onClick={this.handleSubmit}>ثبت پشتیبان</button>
 
 
                     </div>
