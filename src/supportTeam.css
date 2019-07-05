@@ -5,13 +5,10 @@ table.Table  {
   table-layout:fixed;
   width: 100%;
   border-collapse:collapse;
-  border-width: 1px;
-  border-style:hidden;
   text-align: center;
-  border-color: rgb(41, 140, 221);
     color: white;
     font-size: 16px;
-
+    border: 1px;
 }
 
 table.Table tbody th{
@@ -41,6 +38,7 @@ table.Table td{
     background-color: #e3f2fd;
     color:black;
     font-size: 14px;
+    padding: 7px;
 }
 
 .addTicketSample {
@@ -157,7 +155,3 @@ padding: 33px 30px;
     justify-content: center !important;
     width: 100%;
 }
-
-
-
-
