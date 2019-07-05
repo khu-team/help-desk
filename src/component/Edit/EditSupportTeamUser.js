@@ -20,9 +20,6 @@ class AddSupportUser extends Component {
         status:true,
         phone:'',
         email:'',
-        title:'ویرایش مشخصات پشتیبان',
-        btn:'ثبت ویرایش'
-
 
     };
 
@@ -60,23 +57,6 @@ class AddSupportUser extends Component {
     }
 
 
-
-    handelAddButton = (e) => {
-        e.preventDefault();
-        this.setState({
-            tittle:'افزودن پشتیبان',
-            error:'',
-            name:'',
-            role:'',
-            dept:'',
-            phone:'',
-            email:'',
-            title:'افزودن پشتیبان جدید',
-            btn:'ثبت پشتیبان'
-
-        })
-
-    };
 
 
     handelRole = (e)=> {
@@ -122,15 +102,9 @@ class AddSupportUser extends Component {
         }
 
         else{
-            let refreshState = this.state;
-            refreshState = {...refreshState,
-                name:'',
-                phone:'',
-                email:''
-            };
 
             this.setState({...refreshState});
-            this.setState({error:'با موفقیت ثبت شد'})
+            this.setState({error:'با موفقیت ویرایش شد'})
         }
     };
 
@@ -138,13 +112,6 @@ class AddSupportUser extends Component {
         return (
 
             <div >
-
-
-                <div class="right">
-                    <Fab color="secondary" aria-label="Add" onClick={this.handelAddButton}>
-                        <AddIcon />
-                    </Fab>
-                </div>
 
                 <React.Fragment>
                     <div className="addTicketSample">
@@ -159,7 +126,7 @@ class AddSupportUser extends Component {
                                     <div className="font2">
 
                                         <h2 className="font-iran-sans">
-                                            افزودن پشتیبان
+                                            تغییر مشخصات پشتیبان
                                         </h2> <br/>
 
                                     </div>
@@ -240,7 +207,7 @@ class AddSupportUser extends Component {
 
 
                                         <div className="center">
-                                            <button className="btn btn-primary" onClick={this.handleSubmit}>ثبت پشتیبان</button>
+                                            <button className="btn btn-primary" onClick={this.handleSubmit}>ثبت تغییرات</button>
 
 
                                         </div>
