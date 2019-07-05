@@ -89,15 +89,11 @@ font-size: 18px;
 display: inline-block;
 -webkit-text-fill-color: #444444;
 }
-.error{
-    font-style:inherit;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', IRANSans, sans-serif;
-    font-size: 16px;
-    display: inline-block;
-    color: #b71c1c;
-    -webkit-text-fill-color:#b71c1c;
+.error-submit{
+    color: #fdfffb;
+    background-color: #aa2100;
     text-align: center;
-
+    display: inline-block;
 }
 .font2{
 font-style:inherit;
@@ -154,4 +150,12 @@ padding: 33px 30px;
     align-items: center !important;
     justify-content: center !important;
     width: 100%;
+}
+
+.success-submit{
+    color: #fdfffb;
+    background-color:#006b0f ;
+    text-align: center;
+    display: inline-block;
+
 }
