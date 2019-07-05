@@ -45,7 +45,7 @@ table.Table td{
 
 .addTicketSample {
     margin: 40px auto;
-    width: 50%;
+    width: 40%;
     border-radius: 10px;
     padding: 20px 50px 50px 50px;
     box-shadow: 4px 4px 26px 1px rgba(0, 0, 0, 0.33);
@@ -130,6 +130,32 @@ padding: 33px 30px;
 .right {
     text-align: right;
     margin: 5px 45px 10px;
+}
+
+.white-text{
+    color:white;
+}
+
+.select_form{
+    width: 65%;
+}
+.textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.input-support {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100%;
 }
 
 
