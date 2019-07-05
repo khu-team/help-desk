@@ -10,7 +10,7 @@ class PlatformRenderer extends Component {
 
     handleChange = name => event => {
         if(event.target.value == 0) {
-            const fproducts = products.filter((product) => product.category == 2);
+            const fproducts = products.find((product) => product.platform!==null).platform;
             this.setState({products:fproducts})
         }else {
             const fproducts = this.props.products.filter((product) => product.platform == event.target.value);
