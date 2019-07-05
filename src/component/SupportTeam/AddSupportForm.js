@@ -28,17 +28,7 @@ class AddSupportUser extends Component {
 
      showForm=[1];
 
-    handelEditButton = (e) => {
-        e.preventDefault();
-        this.setState({
-            showEdit:true,
-            showAdd:false,
-            error:''
 
-
-        })
-
-    }
 
     handelAddButton = (e) => {
         e.preventDefault();
@@ -129,78 +119,96 @@ class AddSupportUser extends Component {
                         if (this.state.showAdd===true) {
                             return (
                                 <React.Fragment>
-
-                                    <form className="addTicketSample ">
+                                <div className="addTicketSample">
+                                    <form >
                                         <div class=" center">
 
 
-                                            <div class="error"><h4 class="center">{this.state.error}</h4></div>
+                                            <div class="error"><h4 class="center">{this.state.error}</h4></div><br/>
+
 
                                 <div class="center">
                                     <div className="font2">
 
                                             <h2 className="font-iran-sans">
                                                 افزودن پشتیبان
-                                            </h2>
+                                            </h2> <br/>
 
                                     </div>
-                    <div class="ticketForm__input-group center">
+
+                                    <div className="col">
+
+                  <div className="raw-md-6">
+                    <div className = "input-support " >
 
                         <label htmlFor="title">  نام کامل:</label>
-                        <input name="title" class="inputName" type="text" value={this.state.name} onChange={this.handleNameChange}/>
+                        <input className="form-control" type="text" value={this.state.name} onChange={this.handleNameChange}/>
 
-                    </div>
+                    </div> <br/>
+                  </div>
 
-                                    <div class="ticketForm__input-group ">
+                                <div class="col">
+                                 <div className="raw-md-6">
+                                    <div className = "input-support ">
                                                 <label > نقش پشتیبان: </label>
                                                 <select  value={this.state.role}
                                                         onChange={this.handelRole}>
                                                     {roles.map((role => (
                                                         <option key={role.id} value={role.id}>{role.name}</option>)))}
                                                 </select>
-                                    </div>
+                                    </div> </div>
+                                     <br/>
+                                 </div>
 
 
 
+                                        <div className="raw-md-6">
+                                        <div>
+                                                <div   className = "input-support ">
+                                                    <label > دپارتمان:</label>
 
-
-                                                <div class= "ticketForm__input-group " >
-                                                    <label  > دپارتمان:</label>
-
-                                                <select value={this.state.dept}
+                                                <select   value={this.state.dept}
                                                         onChange={this.handelDepartment}>
                                                     {departments.map((dept => (
                                                         <option key={dept.id} value={dept.id}>{dept.name}</option>)))}
                                                 </select>
-                                            </div>
+                                            </div><br/>
+                                        </div>
+                                        </div>
 
 
-
-
-                                                <div class="ticketForm__input-group ">
+                                        <div className="raw-md-6">
+                                                <div className = "input-support ">
                                                     <label  >شماره موبایل:</label>
-                                                    <input className="form-control" type="number" value={this.state.phone}
+                                                    <div class="select_form">
+                                                    <input class=" form-control" type="number" value={this.state.phone}
                                                        onChange={this.handlePhoneChange}/>
-                                            </div>
+                                                    </div>
+                                            </div> <br/>
+                                        </div>
 
 
-
-                                                <div class="ticketForm__input-group">
-                                                    <label >ایمیل پشتیبان:</label>
-                                                <input type="email" className="form-control" value={this.state.email}
+                                        <div className="raw-md-6">
+                                                <div className = "input-support ">
+                                                    <lvabel >ایمیل پشتیبان:</lvabel>
+                                                    <div class="select_form">
+                                                <input class="form-control" type="email"  value={this.state.email}
                                                        onChange={this.handleEmailChange}/>
-                                            </div>
+                                                    </div>
+                                            </div><br/>
+                                        </div>
 
 
 
-
-                                                <div className="ticketForm__input-group">
-                                                    <label  >وضعیت پشتیبان</label>
+                                        <div className="raw-md-6">
+                                                <div className = "input-support ">
+                                                    <label  > وضعیت پشتیبان:</label>
 
                                                     <FormControlLabel
                                                         control={<Switch checked={this.state.status} onChange={this.handleSupportStatusChange} />}
                                                     />
-                                                </div>
+                                                </div><br/>
+                                        </div>
 
 
                     <div className="center">
@@ -208,10 +216,12 @@ class AddSupportUser extends Component {
 
 
                     </div>
+                                    </div><br/>
 
 </div>
                                 </div>
                         </form>
+                                </div>
                         </React.Fragment>
                             )
                         }
