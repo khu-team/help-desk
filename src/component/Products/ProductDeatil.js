@@ -15,13 +15,14 @@ class ProductDetail extends React.Component {
         const persent= discountPercentage/100;
         const nprice=price -persent*price;
 
+
         return(
             <div>
           <table className=' table table-striped customers dcustomers'>
           <tbody>
         <tr className='font-iran-sans '>
-          <th >آیدی محصول</th>
-          <th >نام </th>
+          <th >شناسه محصول</th>
+          <th >نام محصول</th>
          {category==3 &&<th >مدت زمان فعالیت</th>}
           <th >قیمت</th>
           <th >درصد تخفیف </th>
@@ -37,7 +38,7 @@ class ProductDetail extends React.Component {
                
                 <td >{id}</td>
                 <td >{name}</td>
-                {category==3 &&<td >{duration}</td>}
+                {category==3 &&<td >{duration}ماه </td>}
                 <td >{numeral(price).format('0,0')}تومان </td>
                 <td >%{discountPercentage}</td>
                   <td >{numeral(nprice).format('0,0')}تومان </td>
@@ -54,7 +55,7 @@ class ProductDetail extends React.Component {
           <table className='  table table-striped customers dcustomers'>
           <tbody>
         {ntransaction.length > 0 ? <tr className='font-iran-sans '>
-          <th>آیدی خریدار</th>
+          <th>شناسه خریدار</th>
             <th>نام خریدار</th>
           <th>تاریخ انقضا </th>
         </tr> : <tr className='font-iran-sans'><th>در حال حاضر کسی این محصول را خریداری نکرده است</th></tr>}
