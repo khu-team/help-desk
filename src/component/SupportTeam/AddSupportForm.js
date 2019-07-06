@@ -6,10 +6,13 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import { supportTeamUsers } from '../../mockData/supportTeamUsers';
 
 
 class AddSupportUser extends Component {
     state = {
+        id:0,
+        data:supportTeamUsers,
         name:'',
         roleId: 1,
         error: '',
@@ -20,25 +23,14 @@ class AddSupportUser extends Component {
         Select:null,
         editId: null,
         tittle:'',
-        showAdd:false
-
-
+        showAdd:false,
+        successSubmit:''
     };
 
 
      showForm=[1];
 
-    handelEditButton = (e) => {
-        e.preventDefault();
-        this.setState({
-            showEdit:true,
-            showAdd:false,
-            error:''
 
-
-        })
-
-    }
 
     handelAddButton = (e) => {
         e.preventDefault();
@@ -50,8 +42,9 @@ class AddSupportUser extends Component {
             role:'',
             dept:'',
             phone:'',
-            email:''
-
+            email:'',
+            successSubmit:'',
+            
 
         })
 
@@ -91,26 +84,61 @@ class AddSupportUser extends Component {
     
        handleSubmit = (e)=>{
         e.preventDefault();
-        const number = this.state.phone;
+
+           let SupportUser = {};
+
+
+
+           const number = this.state.phone;
+           const email = this.state.email;
+
 
            if(this.state.name === '' || this.state.phone === ''||this.state.status === ''||this.state.email === ''){
-               this.setState({error: 'لطفا همه فیلد ها را کامل کنید'})
+               this.setState({error: 'لطفا همه فیلد ها را کامل کنید',
+                   successSubmit:''})
            }
 
-          else if(number.toString().length !== 11){
-               this.setState({error:'شماره موبایل وارد شده صحیح نیست'})
+           else if(number.toString().length !== 11){
+               this.setState({error:'شماره موبایل وارد شده صحیح نیست',
+                   successSubmit:''})
            }
+          else if(email.split("").filter(x => x === "@").length !== 1 || email.indexOf(".") === -1 ) {
+
+                   this.setState({error: 'ایمیل وارد شده صحیح نیست',
+                       successSubmit:''})
+
+           }
+
+
 
            else{
-               let refreshState = this.state;
-               refreshState = {...refreshState,
-                   name:'',
-                   phone:'',
-                   email:''
-               };
 
-               this.setState({...refreshState});
-               this.setState({error:'با موفقیت ثبت شد'})
+               SupportUser =
+                   {
+                       id: this.state.id,
+                       fullName: this.state.name,
+                       email: this.state.email,
+                       status: this.state.status,
+                       phoneNumber:this.state.phone,
+                       role:this.state.roleId,
+                       department:this.state.deptId
+
+                   };
+
+               if (this.state.id=== this.state.data.length + 1)
+               {
+                   this.setState({ data: [...this.state.data, SupportUser], });
+               }
+               supportTeamUsers.push(SupportUser);
+
+
+
+               this.setState({successSubmit:'با موفقیت ثبت شد',
+                   name:'',
+                   email:'',
+                   phone:'',
+                   error:'',
+               })
                    }
         };
 
@@ -129,89 +157,110 @@ class AddSupportUser extends Component {
                         if (this.state.showAdd===true) {
                             return (
                                 <React.Fragment>
-
-                                    <form className="addTicketSample ">
+                                <div className="addTicketSample">
+                                    <form >
                                         <div class=" center">
 
+                                            <div class="error-submit"><h5 class="center">{this.state.error}</h5></div><br/>
+                                            <div className="success-submit"><h5 className="center">{this.state.successSubmit}</h5></div>
 
-                                            <div class="error"><h4 class="center">{this.state.error}</h4></div>
+                                            <br/>
 
                                 <div class="center">
                                     <div className="font2">
 
                                             <h2 className="font-iran-sans">
                                                 افزودن پشتیبان
-                                            </h2>
+                                            </h2> <br/>
 
                                     </div>
-                    <div class="ticketForm__input-group center">
+
+                                    <div className="col">
+
+                  <div className="raw-md-6">
+                    <div className = "input-support " >
 
                         <label htmlFor="title">  نام کامل:</label>
-                        <input name="title" class="inputName" type="text" value={this.state.name} onChange={this.handleNameChange}/>
+                        <input className="form-control" type="text" value={this.state.name} onChange={this.handleNameChange}/>
 
-                    </div>
+                    </div> <br/>
+                  </div>
 
-                                    <div class="ticketForm__input-group ">
+                                <div class="col">
+                                 <div className="raw-md-6">
+                                    <div className = "input-support ">
                                                 <label > نقش پشتیبان: </label>
                                                 <select  value={this.state.role}
                                                         onChange={this.handelRole}>
                                                     {roles.map((role => (
                                                         <option key={role.id} value={role.id}>{role.name}</option>)))}
                                                 </select>
-                                    </div>
+                                    </div> </div>
+                                     <br/>
+                                 </div>
 
 
 
+                                        <div className="raw-md-6">
+                                        <div>
+                                                <div   className = "input-support ">
+                                                    <label > دپارتمان:</label>
 
-
-                                                <div class= "ticketForm__input-group " >
-                                                    <label  > دپارتمان:</label>
-
-                                                <select value={this.state.dept}
+                                                <select   value={this.state.dept}
                                                         onChange={this.handelDepartment}>
                                                     {departments.map((dept => (
                                                         <option key={dept.id} value={dept.id}>{dept.name}</option>)))}
                                                 </select>
-                                            </div>
+                                            </div><br/>
+                                        </div>
+                                        </div>
 
 
-
-
-                                                <div class="ticketForm__input-group ">
+                                        <div className="raw-md-6">
+                                                <div className = "input-support ">
                                                     <label  >شماره موبایل:</label>
-                                                    <input className="form-control" type="number" value={this.state.phone}
+                                                    <div class="select_form">
+                                                    <input class=" form-control" type="number" value={this.state.phone}
                                                        onChange={this.handlePhoneChange}/>
-                                            </div>
+                                                    </div>
+                                            </div> <br/>
+                                        </div>
 
 
-
-                                                <div class="ticketForm__input-group">
-                                                    <label >ایمیل پشتیبان:</label>
-                                                <input type="email" className="form-control" value={this.state.email}
+                                        <div className="raw-md-6">
+                                                <div className = "input-support ">
+                                                    <lvabel >ایمیل پشتیبان:</lvabel>
+                                                    <div class="select_form">
+                                                <input class="form-control" type="email"  value={this.state.email}
                                                        onChange={this.handleEmailChange}/>
-                                            </div>
+                                                    </div>
+                                            </div><br/>
+                                        </div>
 
 
 
-
-                                                <div className="ticketForm__input-group">
-                                                    <label  >وضعیت پشتیبان</label>
+                                        <div className="raw-md-6">
+                                                <div className = "input-support ">
+                                                    <label  > وضعیت پشتیبان:</label>
 
                                                     <FormControlLabel
                                                         control={<Switch checked={this.state.status} onChange={this.handleSupportStatusChange} />}
                                                     />
-                                                </div>
+                                                </div><br/>
+                                        </div>
 
 
                     <div className="center">
-                        <button className="btn btn-primary" onClick={this.handleSubmit}>ثبت پشتیبان</button>
+                        <button  className="btn btn-primary"  onClick={this.handleSubmit}>ثبت پشتیبان</button>
 
 
                     </div>
+                                    </div><br/>
 
 </div>
                                 </div>
                         </form>
+                                </div>
                         </React.Fragment>
                             )
                         }

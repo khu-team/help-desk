@@ -9,9 +9,9 @@ import { green} from '@material-ui/core/colors';
 import {NavLink} from "react-router-dom";
 
 
-const ColorButton = withStyles(theme => ({
+const ColorStatusButton = withStyles(theme => ({
     root: {
-        color: theme.palette.getContrastText(green[500]),
+        color: theme.palette.getContrastText(green[900]),
         backgroundColor: green[500],
         '&:hover': {
             backgroundColor: green[700],
@@ -19,13 +19,24 @@ const ColorButton = withStyles(theme => ({
     },
 }))(Button);
 
+const ColorEditButton = withStyles(theme => ({
+    root: {
+        color: theme.palette.getContrastText(green[900]),
+        backgroundColor: green[800],
+        '&:hover': {
+            backgroundColor: green[300],
+        },
+    },
+}))(Button);
+
+
 
 export default function SupportTeamItem({fullName,email,phoneNumber,status,department,role,id}) {
     return (
     <div >
 
 
-        <table class="Table ">
+        <table class="Table table-striped  ">
             <tbody >
             <tr className="font-iran-sans">
                 <td>{fullName} </td>
@@ -33,19 +44,20 @@ export default function SupportTeamItem({fullName,email,phoneNumber,status,depar
                 <td>{DepartmentRenderer(department, id)}</td>
                 <td>{email} </td>
                 <td>{phoneNumber}</td>
-                <td>{(status===true) ?  <ColorButton variant="contained" color="primary" className="font-iran-sans">
-                   &nbsp;فعال&nbsp;&nbsp;
+                <td>{(status===true) ?  <ColorStatusButton variant="contained" color="primary" className="font-iran-sans">
+
+                    <div className="white-text" > &nbsp;فعال&nbsp;&nbsp; </div>
                     <Mood />
-                </ColorButton> :<Button variant="contained" color="secondary" className="font-iran-sans" >
-                    غیرفعال
-                    <SentimentDissatisfied  />
+                </ColorStatusButton> :<Button variant="contained" color="secondary" className="font-iran-sans" >
+                     غیرفعال
+                    <SentimentDissatisfied className="white-text"  />
                 </Button>
                 }</td>
                 <td>
                     <NavLink to = {{pathname:`/support-team/${id}`,state:{ID:id}}} >
-               <Button variant="contained" color="default" className="font-iran-sans" value={id}>ویرایش
+                        <ColorEditButton  variant="contained" color="default" className="font-iran-sans white-text" value={id}> ویرایش
                 <Edit/>
-            </Button>
+            </ColorEditButton>
                     </NavLink>
 
 
